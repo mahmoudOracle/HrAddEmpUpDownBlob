@@ -33,19 +33,32 @@
     EntityUsage="CourseInstitutions"
     AliasName="COURSE_INSTITUTIONS_ID"/>
   <ViewAttribute
-    Name="AddressId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="AddressId"
-    EntityUsage="CourseInstitutions"
-    AliasName="ADDRESS_ID"/>
-  <ViewAttribute
     Name="CourseInstitutionsName"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="CourseInstitutionsName"
     EntityUsage="CourseInstitutions"
     AliasName="COURSE_INSTITUTIONS_NAME"/>
+  <ViewAttribute
+    Name="Phone"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Phone"
+    EntityUsage="CourseInstitutions"
+    AliasName="PHONE"/>
+  <ViewAttribute
+    Name="Webstie"
+    PrecisionRule="true"
+    EntityAttrName="Webstie"
+    EntityUsage="CourseInstitutions"
+    AliasName="WEBSTIE"/>
+  <ViewAttribute
+    Name="AddressId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AddressId"
+    EntityUsage="CourseInstitutions"
+    AliasName="ADDRESS_ID"/>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"
@@ -75,24 +88,16 @@
     EntityUsage="CourseInstitutions"
     AliasName="MODIFIED_ON"/>
   <ViewAttribute
-    Name="Phone"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="Phone"
-    EntityUsage="CourseInstitutions"
-    AliasName="PHONE"/>
-  <ViewAttribute
     Name="Version"
     PrecisionRule="true"
     EntityAttrName="Version"
     EntityUsage="CourseInstitutions"
     AliasName="VERSION"/>
-  <ViewAttribute
-    Name="Webstie"
-    PrecisionRule="true"
-    EntityAttrName="Webstie"
-    EntityUsage="CourseInstitutions"
-    AliasName="WEBSTIE"/>
+  <ViewLinkAccessor
+    Name="CoursesVO"
+    ViewLink="addEmp.model.bc.viewLinks.CoursesInstitutionCourseVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

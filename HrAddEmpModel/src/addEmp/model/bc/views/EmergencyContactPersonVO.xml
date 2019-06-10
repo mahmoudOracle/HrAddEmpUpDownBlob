@@ -22,6 +22,29 @@
         ResId="addEmp.model.bc.views.EmergencyContactPersonVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="SharedStaticLOVAppModule_RefRelationShips1_1"
+    ViewObjectName="HrBCmodel.bc.staticLOV.RefRelationShips"
+    AMUsageName="SharedStaticLOVAppModule"
+    ViewInstanceName="RefRelationShips1"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_RelationId"
+    ListVOName="SharedStaticLOVAppModule_RefRelationShips1_1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RelationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Relation"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="EmerfgencyContactPersons"
     Entity="HrBCmodel.bc.entities.EmerfgencyContactPersons"/>
@@ -32,20 +55,6 @@
     EntityAttrName="EmergencyContactId"
     EntityUsage="EmerfgencyContactPersons"
     AliasName="EMERGENCY_CONTACT_ID"/>
-  <ViewAttribute
-    Name="CreatedBy"
-    IsUpdateable="false"
-    PrecisionRule="true"
-    EntityAttrName="CreatedBy"
-    EntityUsage="EmerfgencyContactPersons"
-    AliasName="CREATED_BY"/>
-  <ViewAttribute
-    Name="CreatedOn"
-    IsUpdateable="false"
-    PrecisionRule="true"
-    EntityAttrName="CreatedOn"
-    EntityUsage="EmerfgencyContactPersons"
-    AliasName="CREATED_ON"/>
   <ViewAttribute
     Name="EmployeeId"
     IsNotNull="true"
@@ -61,6 +70,12 @@
     EntityUsage="EmerfgencyContactPersons"
     AliasName="FIRST_NAME"/>
   <ViewAttribute
+    Name="MiddleName"
+    PrecisionRule="true"
+    EntityAttrName="MiddleName"
+    EntityUsage="EmerfgencyContactPersons"
+    AliasName="MIDDLE_NAME"/>
+  <ViewAttribute
     Name="LastName"
     IsNotNull="true"
     PrecisionRule="true"
@@ -68,11 +83,26 @@
     EntityUsage="EmerfgencyContactPersons"
     AliasName="LAST_NAME"/>
   <ViewAttribute
-    Name="MiddleName"
+    Name="RelationId"
+    IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="MiddleName"
+    EntityAttrName="RelationId"
     EntityUsage="EmerfgencyContactPersons"
-    AliasName="MIDDLE_NAME"/>
+    AliasName="RELATION_ID"
+    LOVName="LOV_RelationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OfficeNo"
+    PrecisionRule="true"
+    EntityAttrName="OfficeNo"
+    EntityUsage="EmerfgencyContactPersons"
+    AliasName="OFFICE_NO"/>
   <ViewAttribute
     Name="MobileNo"
     IsNotNull="true"
@@ -80,6 +110,26 @@
     EntityAttrName="MobileNo"
     EntityUsage="EmerfgencyContactPersons"
     AliasName="MOBILE_NO"/>
+  <ViewAttribute
+    Name="PhoneNo"
+    PrecisionRule="true"
+    EntityAttrName="PhoneNo"
+    EntityUsage="EmerfgencyContactPersons"
+    AliasName="PHONE_NO"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="EmerfgencyContactPersons"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedOn"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="CreatedOn"
+    EntityUsage="EmerfgencyContactPersons"
+    AliasName="CREATED_ON"/>
   <ViewAttribute
     Name="ModifiedBy"
     IsUpdateable="false"
@@ -94,25 +144,6 @@
     EntityAttrName="ModifiedOn"
     EntityUsage="EmerfgencyContactPersons"
     AliasName="MODIFIED_ON"/>
-  <ViewAttribute
-    Name="OfficeNo"
-    PrecisionRule="true"
-    EntityAttrName="OfficeNo"
-    EntityUsage="EmerfgencyContactPersons"
-    AliasName="OFFICE_NO"/>
-  <ViewAttribute
-    Name="PhoneNo"
-    PrecisionRule="true"
-    EntityAttrName="PhoneNo"
-    EntityUsage="EmerfgencyContactPersons"
-    AliasName="PHONE_NO"/>
-  <ViewAttribute
-    Name="RelationId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="RelationId"
-    EntityUsage="EmerfgencyContactPersons"
-    AliasName="RELATION_ID"/>
   <ViewAttribute
     Name="Version"
     PrecisionRule="true"

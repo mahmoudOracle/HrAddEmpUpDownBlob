@@ -7,7 +7,4 @@
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
   ClearCacheOnRollback="true">
-  <ViewUsage
-    Name="BaseEmployees1"
-    ViewObjectName="addEmp.model.bc.views.BaseEmployees"/>
 </AppModule>

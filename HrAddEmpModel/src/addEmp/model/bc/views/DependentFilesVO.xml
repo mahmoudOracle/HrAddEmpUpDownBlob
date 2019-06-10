@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="DependentFiles"
+  Name="DependentFilesVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -19,9 +19,32 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="addEmp.model.bc.views.DependentFiles_LABEL"/>
+        ResId="addEmp.model.bc.views.DependentFilesVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="SharedStaticLOVAppModule_RefAttachmentType1_1"
+    ViewObjectName="HrBCmodel.bc.staticLOV.RefAttachmentType"
+    AMUsageName="SharedStaticLOVAppModule"
+    ViewInstanceName="RefAttachmentType1"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AttachmentTypeId"
+    ListVOName="SharedStaticLOVAppModule_RefAttachmentType1_1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AttachmentTypeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Attachment"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="DependentFiles"
     Entity="HrBCmodel.bc.entities.DependentFiles"/>
@@ -33,19 +56,34 @@
     EntityUsage="DependentFiles"
     AliasName="DEPENDENT_FILES_ID"/>
   <ViewAttribute
-    Name="AttachedFile"
-    IsQueriable="false"
+    Name="DependentId"
+    IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="AttachedFile"
+    EntityAttrName="DependentId"
     EntityUsage="DependentFiles"
-    AliasName="ATTACHED_FILE"/>
+    AliasName="DEPENDENT_ID"/>
   <ViewAttribute
     Name="AttachmentTypeId"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="AttachmentTypeId"
     EntityUsage="DependentFiles"
-    AliasName="ATTACHMENT_TYPE_ID"/>
+    AliasName="ATTACHMENT_TYPE_ID"
+    LOVName="LOV_AttachmentTypeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AttachedFile"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="AttachedFile"
+    EntityUsage="DependentFiles"
+    AliasName="ATTACHED_FILE"/>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"
@@ -60,13 +98,6 @@
     EntityAttrName="CreatedOn"
     EntityUsage="DependentFiles"
     AliasName="CREATED_ON"/>
-  <ViewAttribute
-    Name="DependentId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="DependentId"
-    EntityUsage="DependentFiles"
-    AliasName="DEPENDENT_ID"/>
   <ViewAttribute
     Name="ModifiedBy"
     IsUpdateable="false"

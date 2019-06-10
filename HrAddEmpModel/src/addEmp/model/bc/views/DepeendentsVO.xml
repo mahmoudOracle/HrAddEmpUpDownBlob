@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="EmpContactHomeCountryVO"
+  Name="DepeendentsVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -19,7 +19,7 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="addEmp.model.bc.views.EmpContactHomeCountryVO_LABEL"/>
+        ResId="addEmp.model.bc.views.DepeendentsVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewAccessor
@@ -27,6 +27,12 @@
     ViewObjectName="HrBCmodel.bc.staticLOV.RefRelationShips"
     AMUsageName="SharedStaticLOVAppModule"
     ViewInstanceName="RefRelationShips1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="SharedStaticLOVAppModule_RefGender1_1"
+    ViewObjectName="HrBCmodel.bc.staticLOV.RefGender"
+    AMUsageName="SharedStaticLOVAppModule"
+    ViewInstanceName="RefGender1"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_RelationId"
@@ -45,49 +51,73 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_GenderId"
+    ListVOName="SharedStaticLOVAppModule_RefGender1_1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GenderId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Gender"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
-    Name="EmployeeContactHomeCountry"
-    Entity="HrBCmodel.bc.entities.EmployeeContactHomeCountry"/>
+    Name="Dependents"
+    Entity="HrBCmodel.bc.entities.Dependents"/>
   <ViewAttribute
-    Name="ContactHomeId"
+    Name="DependentId"
     IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="ContactHomeId"
-    EntityUsage="EmployeeContactHomeCountry"
-    AliasName="CONTACT_HOME_ID"/>
+    EntityAttrName="DependentId"
+    EntityUsage="Dependents"
+    AliasName="DEPENDENT_ID"/>
   <ViewAttribute
     Name="EmployeeId"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="EmployeeId"
-    EntityUsage="EmployeeContactHomeCountry"
+    EntityUsage="Dependents"
     AliasName="EMPLOYEE_ID"/>
   <ViewAttribute
     Name="FirstName"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="FirstName"
-    EntityUsage="EmployeeContactHomeCountry"
+    EntityUsage="Dependents"
     AliasName="FIRST_NAME"/>
   <ViewAttribute
     Name="MiddleName"
     PrecisionRule="true"
     EntityAttrName="MiddleName"
-    EntityUsage="EmployeeContactHomeCountry"
+    EntityUsage="Dependents"
     AliasName="MIDDLE_NAME"/>
   <ViewAttribute
     Name="LastName"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="LastName"
-    EntityUsage="EmployeeContactHomeCountry"
+    EntityUsage="Dependents"
     AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="Dob"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Dob"
+    EntityUsage="Dependents"
+    AliasName="DOB"/>
   <ViewAttribute
     Name="RelationId"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="RelationId"
-    EntityUsage="EmployeeContactHomeCountry"
+    EntityUsage="Dependents"
     AliasName="RELATION_ID"
     LOVName="LOV_RelationId">
     <Properties>
@@ -98,58 +128,59 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="HomeNo"
-    PrecisionRule="true"
-    EntityAttrName="HomeNo"
-    EntityUsage="EmployeeContactHomeCountry"
-    AliasName="HOME_NO"/>
-  <ViewAttribute
-    Name="MobileNo"
+    Name="GenderId"
     IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="MobileNo"
-    EntityUsage="EmployeeContactHomeCountry"
-    AliasName="MOBILE_NO"/>
-  <ViewAttribute
-    Name="OfficeNo"
-    PrecisionRule="true"
-    EntityAttrName="OfficeNo"
-    EntityUsage="EmployeeContactHomeCountry"
-    AliasName="OFFICE_NO"/>
+    EntityAttrName="GenderId"
+    EntityUsage="Dependents"
+    AliasName="GENDER_ID"
+    LOVName="LOV_GenderId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="EmployeeContactHomeCountry"
+    EntityUsage="Dependents"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="CreatedOn"
     IsUpdateable="false"
     PrecisionRule="true"
     EntityAttrName="CreatedOn"
-    EntityUsage="EmployeeContactHomeCountry"
+    EntityUsage="Dependents"
     AliasName="CREATED_ON"/>
   <ViewAttribute
     Name="ModifiedBy"
     IsUpdateable="false"
     PrecisionRule="true"
     EntityAttrName="ModifiedBy"
-    EntityUsage="EmployeeContactHomeCountry"
+    EntityUsage="Dependents"
     AliasName="MODIFIED_BY"/>
   <ViewAttribute
     Name="ModifiedOn"
     IsUpdateable="false"
     PrecisionRule="true"
     EntityAttrName="ModifiedOn"
-    EntityUsage="EmployeeContactHomeCountry"
+    EntityUsage="Dependents"
     AliasName="MODIFIED_ON"/>
   <ViewAttribute
     Name="Version"
     PrecisionRule="true"
     EntityAttrName="Version"
-    EntityUsage="EmployeeContactHomeCountry"
+    EntityUsage="Dependents"
     AliasName="VERSION"/>
+  <ViewLinkAccessor
+    Name="DependentFilesVO"
+    ViewLink="addEmp.model.bc.viewLinks.DependentDependentFilesVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

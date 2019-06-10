@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Courses"
+  Name="CoursesVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -19,9 +19,30 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="addEmp.model.bc.views.Courses_LABEL"/>
+        ResId="addEmp.model.bc.views.CoursesVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="CourseInstitutionVO1"
+    ViewObjectName="addEmp.model.bc.views.CourseInstitutionVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CourseInstitutionsId"
+    ListVOName="CourseInstitutionVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CourseInstitutionsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CourseInstitutionsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CourseInstitutionsName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Courses"
     Entity="HrBCmodel.bc.entities.Courses"/>
@@ -33,19 +54,27 @@
     EntityUsage="Courses"
     AliasName="COURSE_ID"/>
   <ViewAttribute
-    Name="CourseInstitutionsId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="CourseInstitutionsId"
-    EntityUsage="Courses"
-    AliasName="COURSE_INSTITUTIONS_ID"/>
-  <ViewAttribute
     Name="CourseName"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="CourseName"
     EntityUsage="Courses"
     AliasName="COURSE_NAME"/>
+  <ViewAttribute
+    Name="CourseInstitutionsId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CourseInstitutionsId"
+    EntityUsage="Courses"
+    AliasName="COURSE_INSTITUTIONS_ID"
+    LOVName="LOV_CourseInstitutionsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"
@@ -80,6 +109,11 @@
     EntityAttrName="Version"
     EntityUsage="Courses"
     AliasName="VERSION"/>
+  <ViewLinkAccessor
+    Name="EmployeeCoursesVO"
+    ViewLink="addEmp.model.bc.viewLinks.CoursesEmpCoursesVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

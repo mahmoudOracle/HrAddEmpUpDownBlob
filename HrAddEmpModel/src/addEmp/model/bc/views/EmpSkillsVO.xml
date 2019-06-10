@@ -22,6 +22,27 @@
         ResId="addEmp.model.bc.views.EmpSkillsVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="SkillsVO1"
+    ViewObjectName="addEmp.model.bc.views.SkillsVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_SkillId"
+    ListVOName="SkillsVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SkillId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SkillId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SkillName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="EmployeeSkills"
     Entity="HrBCmodel.bc.entities.EmployeeSkills"/>
@@ -32,6 +53,34 @@
     EntityAttrName="EmployeeSkillId"
     EntityUsage="EmployeeSkills"
     AliasName="EMPLOYEE_SKILL_ID"/>
+  <ViewAttribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="EmployeeSkills"
+    AliasName="EMPLOYEE_ID"/>
+  <ViewAttribute
+    Name="SkillId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SkillId"
+    EntityUsage="EmployeeSkills"
+    AliasName="SKILL_ID"
+    LOVName="LOV_SkillId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SkillYears"
+    PrecisionRule="true"
+    EntityAttrName="SkillYears"
+    EntityUsage="EmployeeSkills"
+    AliasName="SKILL_YEARS"/>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"
@@ -47,13 +96,6 @@
     EntityUsage="EmployeeSkills"
     AliasName="CREATED_ON"/>
   <ViewAttribute
-    Name="EmployeeId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="EmployeeId"
-    EntityUsage="EmployeeSkills"
-    AliasName="EMPLOYEE_ID"/>
-  <ViewAttribute
     Name="ModifiedBy"
     IsUpdateable="false"
     PrecisionRule="true"
@@ -67,19 +109,6 @@
     EntityAttrName="ModifiedOn"
     EntityUsage="EmployeeSkills"
     AliasName="MODIFIED_ON"/>
-  <ViewAttribute
-    Name="SkillId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="SkillId"
-    EntityUsage="EmployeeSkills"
-    AliasName="SKILL_ID"/>
-  <ViewAttribute
-    Name="SkillYears"
-    PrecisionRule="true"
-    EntityAttrName="SkillYears"
-    EntityUsage="EmployeeSkills"
-    AliasName="SKILL_YEARS"/>
   <ViewAttribute
     Name="Version"
     PrecisionRule="true"

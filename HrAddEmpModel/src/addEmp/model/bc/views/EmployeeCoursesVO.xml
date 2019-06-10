@@ -22,6 +22,27 @@
         ResId="addEmp.model.bc.views.EmployeeCoursesVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="CoursesVO1"
+    ViewObjectName="addEmp.model.bc.views.CoursesVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CourseId"
+    ListVOName="CoursesVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CourseId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CourseId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CourseName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="EmployeeCourses"
     Entity="HrBCmodel.bc.entities.EmployeeCourses"/>
@@ -33,12 +54,39 @@
     EntityUsage="EmployeeCourses"
     AliasName="EMPLOYEE_COURSE_ID"/>
   <ViewAttribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="EmployeeCourses"
+    AliasName="EMPLOYEE_ID"/>
+  <ViewAttribute
     Name="CourseId"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="CourseId"
     EntityUsage="EmployeeCourses"
-    AliasName="COURSE_ID"/>
+    AliasName="COURSE_ID"
+    LOVName="LOV_CourseId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="EmployeeCourses"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="EmployeeCourses"
+    AliasName="END_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"
@@ -54,19 +102,6 @@
     EntityUsage="EmployeeCourses"
     AliasName="CREATED_ON"/>
   <ViewAttribute
-    Name="EmployeeId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="EmployeeId"
-    EntityUsage="EmployeeCourses"
-    AliasName="EMPLOYEE_ID"/>
-  <ViewAttribute
-    Name="EndDate"
-    PrecisionRule="true"
-    EntityAttrName="EndDate"
-    EntityUsage="EmployeeCourses"
-    AliasName="END_DATE"/>
-  <ViewAttribute
     Name="ModifiedBy"
     IsUpdateable="false"
     PrecisionRule="true"
@@ -80,12 +115,6 @@
     EntityAttrName="ModifiedOn"
     EntityUsage="EmployeeCourses"
     AliasName="MODIFIED_ON"/>
-  <ViewAttribute
-    Name="StartDate"
-    PrecisionRule="true"
-    EntityAttrName="StartDate"
-    EntityUsage="EmployeeCourses"
-    AliasName="START_DATE"/>
   <ViewAttribute
     Name="Version"
     PrecisionRule="true"

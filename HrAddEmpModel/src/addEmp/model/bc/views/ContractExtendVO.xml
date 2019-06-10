@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="ContractExtendView"
+  Name="ContractExtendVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -19,7 +19,7 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="addEmp.model.bc.views.ContractExtendView_LABEL"/>
+        ResId="addEmp.model.bc.views.ContractExtendVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <EntityUsage
@@ -40,6 +40,20 @@
     EntityUsage="ContractExtend"
     AliasName="CONTRACT_ID"/>
   <ViewAttribute
+    Name="ExtendStartDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ExtendStartDate"
+    EntityUsage="ContractExtend"
+    AliasName="EXTEND_START_DATE"/>
+  <ViewAttribute
+    Name="ExtendEndDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ExtendEndDate"
+    EntityUsage="ContractExtend"
+    AliasName="EXTEND_END_DATE"/>
+  <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"
     PrecisionRule="true"
@@ -53,20 +67,6 @@
     EntityAttrName="CreatedOn"
     EntityUsage="ContractExtend"
     AliasName="CREATED_ON"/>
-  <ViewAttribute
-    Name="ExtendEndDate"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="ExtendEndDate"
-    EntityUsage="ContractExtend"
-    AliasName="EXTEND_END_DATE"/>
-  <ViewAttribute
-    Name="ExtendStartDate"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="ExtendStartDate"
-    EntityUsage="ContractExtend"
-    AliasName="EXTEND_START_DATE"/>
   <ViewAttribute
     Name="ModifiedBy"
     IsUpdateable="false"

@@ -33,6 +33,13 @@
     EntityUsage="Skills"
     AliasName="SKILL_ID"/>
   <ViewAttribute
+    Name="SkillName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SkillName"
+    EntityUsage="Skills"
+    AliasName="SKILL_NAME"/>
+  <ViewAttribute
     Name="Comments"
     PrecisionRule="true"
     EntityAttrName="Comments"
@@ -67,18 +74,16 @@
     EntityUsage="Skills"
     AliasName="MODIFIED_ON"/>
   <ViewAttribute
-    Name="SkillName"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="SkillName"
-    EntityUsage="Skills"
-    AliasName="SKILL_NAME"/>
-  <ViewAttribute
     Name="Version"
     PrecisionRule="true"
     EntityAttrName="Version"
     EntityUsage="Skills"
     AliasName="VERSION"/>
+  <ViewLinkAccessor
+    Name="EmpSkillsVO"
+    ViewLink="addEmp.model.bc.viewLinks.SkillsEmpSkillsVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

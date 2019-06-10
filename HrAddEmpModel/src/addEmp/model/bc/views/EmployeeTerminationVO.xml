@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="EmployeeTermination"
+  Name="EmployeeTerminationVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -19,9 +19,32 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="addEmp.model.bc.views.EmployeeTermination_LABEL"/>
+        ResId="addEmp.model.bc.views.EmployeeTerminationVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="SharedStaticLOVAppModule_RefTerminationReasons1_1"
+    ViewObjectName="HrBCmodel.bc.staticLOV.RefTerminationReasons"
+    AMUsageName="SharedStaticLOVAppModule"
+    ViewInstanceName="RefTerminationReasons1"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_TerminationReason"
+    ListVOName="SharedStaticLOVAppModule_RefTerminationReasons1_1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TerminationReason"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Reason"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="EmployeeTermination"
     Entity="HrBCmodel.bc.entities.EmployeeTermination"/>
@@ -32,6 +55,49 @@
     EntityAttrName="EmployeeTerminationId"
     EntityUsage="EmployeeTermination"
     AliasName="EMPLOYEE_TERMINATION_ID"/>
+  <ViewAttribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="EmployeeTermination"
+    AliasName="EMPLOYEE_ID"/>
+  <ViewAttribute
+    Name="TerminationDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TerminationDate"
+    EntityUsage="EmployeeTermination"
+    AliasName="TERMINATION_DATE"/>
+  <ViewAttribute
+    Name="TerminationReason"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TerminationReason"
+    EntityUsage="EmployeeTermination"
+    AliasName="TERMINATION_REASON"
+    LOVName="LOV_TerminationReason">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TerminationReasonDetails"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TerminationReasonDetails"
+    EntityUsage="EmployeeTermination"
+    AliasName="TERMINATION_REASON_DETAILS"/>
+  <ViewAttribute
+    Name="TerminationDocument"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="TerminationDocument"
+    EntityUsage="EmployeeTermination"
+    AliasName="TERMINATION_DOCUMENT"/>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"
@@ -47,13 +113,6 @@
     EntityUsage="EmployeeTermination"
     AliasName="CREATED_ON"/>
   <ViewAttribute
-    Name="EmployeeId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="EmployeeId"
-    EntityUsage="EmployeeTermination"
-    AliasName="EMPLOYEE_ID"/>
-  <ViewAttribute
     Name="ModifiedBy"
     IsUpdateable="false"
     PrecisionRule="true"
@@ -67,34 +126,6 @@
     EntityAttrName="ModifiedOn"
     EntityUsage="EmployeeTermination"
     AliasName="MODIFIED_ON"/>
-  <ViewAttribute
-    Name="TerminationDate"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="TerminationDate"
-    EntityUsage="EmployeeTermination"
-    AliasName="TERMINATION_DATE"/>
-  <ViewAttribute
-    Name="TerminationDocument"
-    IsQueriable="false"
-    PrecisionRule="true"
-    EntityAttrName="TerminationDocument"
-    EntityUsage="EmployeeTermination"
-    AliasName="TERMINATION_DOCUMENT"/>
-  <ViewAttribute
-    Name="TerminationReason"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="TerminationReason"
-    EntityUsage="EmployeeTermination"
-    AliasName="TERMINATION_REASON"/>
-  <ViewAttribute
-    Name="TerminationReasonDetails"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="TerminationReasonDetails"
-    EntityUsage="EmployeeTermination"
-    AliasName="TERMINATION_REASON_DETAILS"/>
   <ViewAttribute
     Name="Version"
     PrecisionRule="true"

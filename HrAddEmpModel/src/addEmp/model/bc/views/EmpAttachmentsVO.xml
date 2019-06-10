@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="EmpAttachments"
+  Name="EmpAttachmentsVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -19,12 +19,42 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="addEmp.model.bc.views.EmpAttachments_LABEL"/>
+        ResId="addEmp.model.bc.views.EmpAttachmentsVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="SharedStaticLOVAppModule_RefAttachmentType1_1"
+    ViewObjectName="HrBCmodel.bc.staticLOV.RefAttachmentType"
+    AMUsageName="SharedStaticLOVAppModule"
+    ViewInstanceName="RefAttachmentType1"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AttachmentType"
+    ListVOName="SharedStaticLOVAppModule_RefAttachmentType1_1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AttachmentType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Attachment"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="EmployeeAttachments"
     Entity="HrBCmodel.bc.entities.EmployeeAttachments"/>
+  <ViewAttribute
+    Name="EmpAttachmentId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmpAttachmentId"
+    EntityUsage="EmployeeAttachments"
+    AliasName="EMP_ATTACHMENT_ID"/>
   <ViewAttribute
     Name="EmployeeId"
     IsNotNull="true"
@@ -33,6 +63,21 @@
     EntityUsage="EmployeeAttachments"
     AliasName="EMPLOYEE_ID"/>
   <ViewAttribute
+    Name="AttachmentType"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AttachmentType"
+    EntityUsage="EmployeeAttachments"
+    AliasName="ATTACHMENT_TYPE"
+    LOVName="LOV_AttachmentType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
     Name="AttachedFile"
     IsQueriable="false"
     IsNotNull="true"
@@ -40,13 +85,6 @@
     EntityAttrName="AttachedFile"
     EntityUsage="EmployeeAttachments"
     AliasName="ATTACHED_FILE"/>
-  <ViewAttribute
-    Name="AttachmentType"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="AttachmentType"
-    EntityUsage="EmployeeAttachments"
-    AliasName="ATTACHMENT_TYPE"/>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"
@@ -61,13 +99,6 @@
     EntityAttrName="CreatedOn"
     EntityUsage="EmployeeAttachments"
     AliasName="CREATED_ON"/>
-  <ViewAttribute
-    Name="EmpAttachmentId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="EmpAttachmentId"
-    EntityUsage="EmployeeAttachments"
-    AliasName="EMP_ATTACHMENT_ID"/>
   <ViewAttribute
     Name="ModifiedBy"
     IsUpdateable="false"

@@ -22,6 +22,14 @@
     </DesignTime>
   </Containee>
   <Containee
+    Name="viewLinks"
+    PackageName="addEmp.model.bc.viewLinks"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="views"
     PackageName="addEmp.model.bc.views"
     ObjectType="JboPackage">

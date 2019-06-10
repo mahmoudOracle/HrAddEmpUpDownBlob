@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="EmpEducation"
+  Name="EmpEducationVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -19,9 +19,32 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="addEmp.model.bc.views.EmpEducation_LABEL"/>
+        ResId="addEmp.model.bc.views.EmpEducationVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="SharedStaticLOVAppModule_RefEducation1_1"
+    ViewObjectName="HrBCmodel.bc.staticLOV.RefEducation"
+    AMUsageName="SharedStaticLOVAppModule"
+    ViewInstanceName="RefEducation1"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_EducationType"
+    ListVOName="SharedStaticLOVAppModule_RefEducation1_1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EducationType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EducationType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="EmployeeEducation"
     Entity="HrBCmodel.bc.entities.EmployeeEducation"/>
@@ -32,6 +55,72 @@
     EntityAttrName="EmployeeEducationId"
     EntityUsage="EmployeeEducation"
     AliasName="EMPLOYEE_EDUCATION_ID"/>
+  <ViewAttribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="EmployeeEducation"
+    AliasName="EMPLOYEE_ID"/>
+  <ViewAttribute
+    Name="EducationType"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EducationType"
+    EntityUsage="EmployeeEducation"
+    AliasName="EDUCATION_TYPE"
+    LOVName="LOV_EducationType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="InstitutionName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="InstitutionName"
+    EntityUsage="EmployeeEducation"
+    AliasName="INSTITUTION_NAME"/>
+  <ViewAttribute
+    Name="StartDate"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="EmployeeEducation"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="GraduationDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GraduationDate"
+    EntityUsage="EmployeeEducation"
+    AliasName="GRADUATION_DATE"/>
+  <ViewAttribute
+    Name="GradutaionDegree"
+    PrecisionRule="true"
+    EntityAttrName="GradutaionDegree"
+    EntityUsage="EmployeeEducation"
+    AliasName="GRADUTAION_DEGREE"/>
+  <ViewAttribute
+    Name="Degree"
+    PrecisionRule="true"
+    EntityAttrName="Degree"
+    EntityUsage="EmployeeEducation"
+    AliasName="DEGREE"/>
+  <ViewAttribute
+    Name="Major"
+    PrecisionRule="true"
+    EntityAttrName="Major"
+    EntityUsage="EmployeeEducation"
+    AliasName="MAJOR"/>
+  <ViewAttribute
+    Name="Score"
+    PrecisionRule="true"
+    EntityAttrName="Score"
+    EntityUsage="EmployeeEducation"
+    AliasName="SCORE"/>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"
@@ -47,52 +136,6 @@
     EntityUsage="EmployeeEducation"
     AliasName="CREATED_ON"/>
   <ViewAttribute
-    Name="Degree"
-    PrecisionRule="true"
-    EntityAttrName="Degree"
-    EntityUsage="EmployeeEducation"
-    AliasName="DEGREE"/>
-  <ViewAttribute
-    Name="EducationType"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="EducationType"
-    EntityUsage="EmployeeEducation"
-    AliasName="EDUCATION_TYPE"/>
-  <ViewAttribute
-    Name="EmployeeId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="EmployeeId"
-    EntityUsage="EmployeeEducation"
-    AliasName="EMPLOYEE_ID"/>
-  <ViewAttribute
-    Name="GraduationDate"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="GraduationDate"
-    EntityUsage="EmployeeEducation"
-    AliasName="GRADUATION_DATE"/>
-  <ViewAttribute
-    Name="GradutaionDegree"
-    PrecisionRule="true"
-    EntityAttrName="GradutaionDegree"
-    EntityUsage="EmployeeEducation"
-    AliasName="GRADUTAION_DEGREE"/>
-  <ViewAttribute
-    Name="InstitutionName"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="InstitutionName"
-    EntityUsage="EmployeeEducation"
-    AliasName="INSTITUTION_NAME"/>
-  <ViewAttribute
-    Name="Major"
-    PrecisionRule="true"
-    EntityAttrName="Major"
-    EntityUsage="EmployeeEducation"
-    AliasName="MAJOR"/>
-  <ViewAttribute
     Name="ModifiedBy"
     IsUpdateable="false"
     PrecisionRule="true"
@@ -106,18 +149,6 @@
     EntityAttrName="ModifiedOn"
     EntityUsage="EmployeeEducation"
     AliasName="MODIFIED_ON"/>
-  <ViewAttribute
-    Name="Score"
-    PrecisionRule="true"
-    EntityAttrName="Score"
-    EntityUsage="EmployeeEducation"
-    AliasName="SCORE"/>
-  <ViewAttribute
-    Name="StartDate"
-    PrecisionRule="true"
-    EntityAttrName="StartDate"
-    EntityUsage="EmployeeEducation"
-    AliasName="START_DATE"/>
   <ViewAttribute
     Name="Version"
     PrecisionRule="true"

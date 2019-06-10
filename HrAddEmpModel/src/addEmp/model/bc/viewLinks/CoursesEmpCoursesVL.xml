@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CoursesEmpCoursesVL"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="addEmp.model.bc.viewLinks.CoursesEmpCoursesVL_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="CoursesVO"
+    Cardinality="1"
+    Source="true"
+    Owner="addEmp.model.bc.views.CoursesVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="CoursesVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="addEmp.model.bc.views.CoursesVO.CourseId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EmployeeCoursesVO"
+    Cardinality="-1"
+    Owner="addEmp.model.bc.views.EmployeeCoursesVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="EmployeeCoursesVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="addEmp.model.bc.views.EmployeeCoursesVO.CourseId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

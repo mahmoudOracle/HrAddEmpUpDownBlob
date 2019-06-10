@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DrivingLicenseVO"
+  Version="12.2.1.9.14"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  RowClass="model.shared.extensions.ExtViewRowImpl"
+  ComponentClass="model.shared.extensions.ExtViewObjectImpl"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="addEmp.model.bc.views.DrivingLicenseVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="SharedStaticLOVAppModule_RefDrivingLicenseType1_1"
+    ViewObjectName="HrBCmodel.bc.staticLOV.RefDrivingLicenseType"
+    AMUsageName="SharedStaticLOVAppModule"
+    ViewInstanceName="RefDrivingLicenseType1"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_DrivingLicenseType"
+    ListVOName="SharedStaticLOVAppModule_RefDrivingLicenseType1_1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DrivingLicenseType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Type"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="DrivingLicense"
+    Entity="HrBCmodel.bc.entities.DrivingLicense"/>
+  <ViewAttribute
+    Name="DrivingLicenseId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DrivingLicenseId"
+    EntityUsage="DrivingLicense"
+    AliasName="DRIVING_LICENSE_ID"/>
+  <ViewAttribute
+    Name="EmployeeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="DrivingLicense"
+    AliasName="EMPLOYEE_ID"/>
+  <ViewAttribute
+    Name="DrivingLicenseType"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DrivingLicenseType"
+    EntityUsage="DrivingLicense"
+    AliasName="DRIVING_LICENSE_TYPE"
+    LOVName="LOV_DrivingLicenseType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IssueDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IssueDate"
+    EntityUsage="DrivingLicense"
+    AliasName="ISSUE_DATE"/>
+  <ViewAttribute
+    Name="ExpirationDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ExpirationDate"
+    EntityUsage="DrivingLicense"
+    AliasName="EXPIRATION_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="DrivingLicense"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedOn"
+    PrecisionRule="true"
+    EntityAttrName="CreatedOn"
+    EntityUsage="DrivingLicense"
+    AliasName="CREATED_ON"/>
+  <ViewAttribute
+    Name="ModifiedBy"
+    PrecisionRule="true"
+    EntityAttrName="ModifiedBy"
+    EntityUsage="DrivingLicense"
+    AliasName="MODIFIED_BY"/>
+  <ViewAttribute
+    Name="ModifiedOn"
+    PrecisionRule="true"
+    EntityAttrName="ModifiedOn"
+    EntityUsage="DrivingLicense"
+    AliasName="MODIFIED_ON"/>
+  <ViewAttribute
+    Name="Version"
+    PrecisionRule="true"
+    EntityAttrName="Version"
+    EntityUsage="DrivingLicense"
+    AliasName="VERSION"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

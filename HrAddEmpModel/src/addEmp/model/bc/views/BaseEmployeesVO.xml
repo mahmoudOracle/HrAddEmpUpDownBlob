@@ -540,6 +540,16 @@
     ViewLink="addEmp.model.bc.viewLinks.EmpDrivingLicenseVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="IdInfoVO"
+    ViewLink="addEmp.model.bc.viewLinks.EmpIdInfoVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="DepeendentsVO"
+    ViewLink="addEmp.model.bc.viewLinks.EmployeeDependentVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

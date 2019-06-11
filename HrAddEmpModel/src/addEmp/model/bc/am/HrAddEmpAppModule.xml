@@ -47,41 +47,11 @@
     Name="PassportInfo1"
     ViewObjectName="addEmp.model.bc.views.PassportInfoVO"/>
   <ViewUsage
-    Name="Skills1"
-    ViewObjectName="addEmp.model.bc.views.SkillsVO"/>
-  <ViewUsage
-    Name="EmpSkills2"
-    ViewObjectName="addEmp.model.bc.views.EmpSkillsVO"/>
-  <ViewUsage
     Name="Depeendents1"
     ViewObjectName="addEmp.model.bc.views.DepeendentsVO"/>
   <ViewUsage
-    Name="DependentFiles1"
-    ViewObjectName="addEmp.model.bc.views.DependentFilesVO"/>
-  <ViewUsage
-    Name="Courses1"
-    ViewObjectName="addEmp.model.bc.views.CoursesVO"/>
-  <ViewUsage
-    Name="EmployeeCourses2"
-    ViewObjectName="addEmp.model.bc.views.EmployeeCoursesVO"/>
-  <ViewUsage
-    Name="CourseInstitution1"
-    ViewObjectName="addEmp.model.bc.views.CourseInstitutionVO"/>
-  <ViewUsage
-    Name="Courses2"
-    ViewObjectName="addEmp.model.bc.views.CoursesVO"/>
-  <ViewUsage
-    Name="Contract2"
-    ViewObjectName="addEmp.model.bc.views.ContractVO"/>
-  <ViewUsage
-    Name="ContractExtend1"
-    ViewObjectName="addEmp.model.bc.views.ContractExtendVO"/>
-  <ViewUsage
-    Name="CourseInstitution2"
-    ViewObjectName="addEmp.model.bc.views.CourseInstitutionVO"/>
-  <ViewUsage
-    Name="Courses3"
-    ViewObjectName="addEmp.model.bc.views.CoursesVO"/>
+    Name="IdInfo1"
+    ViewObjectName="addEmp.model.bc.views.IdInfoVO"/>
   <ViewLinkUsage
     Name="EmployeeContractVL1"
     ViewLinkObjectName="addEmp.model.bc.viewLinks.EmployeeContractVL"
@@ -155,39 +125,15 @@
     DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.PassportInfo1"
     Reversed="false"/>
   <ViewLinkUsage
-    Name="SkillsEmpSkillsVL1"
-    ViewLinkObjectName="addEmp.model.bc.viewLinks.SkillsEmpSkillsVL"
-    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.Skills1"
-    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.EmpSkills2"
+    Name="EmployeeDependentVL1"
+    ViewLinkObjectName="addEmp.model.bc.viewLinks.EmployeeDependentVL"
+    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.BaseEmployees1"
+    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.Depeendents1"
     Reversed="false"/>
   <ViewLinkUsage
-    Name="DependentDependentFilesVL1"
-    ViewLinkObjectName="addEmp.model.bc.viewLinks.DependentDependentFilesVL"
-    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.Depeendents1"
-    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.DependentFiles1"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="CoursesEmpCoursesVL1"
-    ViewLinkObjectName="addEmp.model.bc.viewLinks.CoursesEmpCoursesVL"
-    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.Courses1"
-    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.EmployeeCourses2"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="CoursesInstitutionCourseVL1"
-    ViewLinkObjectName="addEmp.model.bc.viewLinks.CoursesInstitutionCourseVL"
-    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.CourseInstitution1"
-    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.Courses2"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="ContractContractExtendVL1"
-    ViewLinkObjectName="addEmp.model.bc.viewLinks.ContractContractExtendVL"
-    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.Contract2"
-    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.ContractExtend1"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="CoursesInstitutionCourseVL2"
-    ViewLinkObjectName="addEmp.model.bc.viewLinks.CoursesInstitutionCourseVL"
-    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.CourseInstitution1"
-    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.Courses3"
+    Name="EmpIdInfoVL1"
+    ViewLinkObjectName="addEmp.model.bc.viewLinks.EmpIdInfoVL"
+    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.BaseEmployees1"
+    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.IdInfo1"
     Reversed="false"/>
 </AppModule>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="EmployeeAddressPageDef"
+                Package="addEmp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeeAddress1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
+              id="EmployeeAddress1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmployeeAddress1Iterator" id="EmployeeAddressId">
+      <AttrNames>
+        <Item Value="EmployeeAddressId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAddress1Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="EmployeeAddress1Iterator" StaticList="false" Uses="LOV_AddressTypeId" id="AddressTypeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="EmployeeAddress1Iterator" id="AddressId">
+      <AttrNames>
+        <Item Value="AddressId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAddress1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAddress1Iterator" id="CreatedOn">
+      <AttrNames>
+        <Item Value="CreatedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAddress1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAddress1Iterator" id="ModifiedOn">
+      <AttrNames>
+        <Item Value="ModifiedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeAddress1Iterator" id="Version">
+      <AttrNames>
+        <Item Value="Version"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EmployeeAddress1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

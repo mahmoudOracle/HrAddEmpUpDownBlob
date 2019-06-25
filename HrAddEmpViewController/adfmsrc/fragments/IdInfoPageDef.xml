@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="IdInfoPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="IdInfo1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="IdInfo1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="IdInfo1Iterator" id="NationalidIqamaInfo">
+      <AttrNames>
+        <Item Value="NationalidIqamaInfo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IdInfo1Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IdInfo1Iterator" id="IdNo">
+      <AttrNames>
+        <Item Value="IdNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IdInfo1Iterator" id="IssueDate">
+      <AttrNames>
+        <Item Value="IssueDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IdInfo1Iterator" id="ExpirationDate">
+      <AttrNames>
+        <Item Value="ExpirationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IdInfo1Iterator" id="IssuePlace">
+      <AttrNames>
+        <Item Value="IssuePlace"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IdInfo1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IdInfo1Iterator" id="CreatedOn">
+      <AttrNames>
+        <Item Value="CreatedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IdInfo1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IdInfo1Iterator" id="ModifiedOn">
+      <AttrNames>
+        <Item Value="ModifiedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IdInfo1Iterator" id="Version">
+      <AttrNames>
+        <Item Value="Version"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="IdInfo1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

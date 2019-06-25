@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="CoursesPageDef"
+                Package="addEmp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeeCourses1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
+              id="EmployeeCourses1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmployeeCourses1Iterator" id="EmployeeCourseId">
+      <AttrNames>
+        <Item Value="EmployeeCourseId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCourses1Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="EmployeeCourses1Iterator" StaticList="false" Uses="LOV_CourseId" id="CourseId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="EmployeeCourses1Iterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCourses1Iterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCourses1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCourses1Iterator" id="CreatedOn">
+      <AttrNames>
+        <Item Value="CreatedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCourses1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCourses1Iterator" id="ModifiedOn">
+      <AttrNames>
+        <Item Value="ModifiedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeCourses1Iterator" id="Version">
+      <AttrNames>
+        <Item Value="Version"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EmployeeCourses1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

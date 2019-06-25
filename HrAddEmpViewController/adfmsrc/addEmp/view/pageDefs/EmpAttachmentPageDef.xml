@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="EmpAttachmentPageDef"
+                Package="addEmp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmpAttachments1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
+              id="EmpAttachments1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmpAttachments1Iterator" id="EmpAttachmentId">
+      <AttrNames>
+        <Item Value="EmpAttachmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpAttachments1Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="EmpAttachments1Iterator" StaticList="false" Uses="LOV_AttachmentType" id="AttachmentType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="EmpAttachments1Iterator" id="AttachedFile">
+      <AttrNames>
+        <Item Value="AttachedFile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpAttachments1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpAttachments1Iterator" id="CreatedOn">
+      <AttrNames>
+        <Item Value="CreatedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpAttachments1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpAttachments1Iterator" id="ModifiedOn">
+      <AttrNames>
+        <Item Value="ModifiedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpAttachments1Iterator" id="Version">
+      <AttrNames>
+        <Item Value="Version"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EmpAttachments1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="BasicInfoPageDef"
+                Package="addEmp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BaseEmployees1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
+              id="BaseEmployees2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="FirstName">
+      <AttrNames>
+        <Item Value="FirstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="MiddleName">
+      <AttrNames>
+        <Item Value="MiddleName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="LastName">
+      <AttrNames>
+        <Item Value="LastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="DateOfBirth">
+      <AttrNames>
+        <Item Value="DateOfBirth"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_GenderId" id="GenderId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_BloodGroupId" id="BloodGroupId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_EmpSmoker" id="EmpSmoker"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="Mobile">
+      <AttrNames>
+        <Item Value="Mobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="EmergencyPhone">
+      <AttrNames>
+        <Item Value="EmergencyPhone"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_EmploymentStatusId"
+          id="EmploymentStatusId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="HireDate">
+      <AttrNames>
+        <Item Value="HireDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_JobId" id="JobId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_JobCategoryId" id="JobCategoryId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_JobLevelTypeId" id="JobLevelTypeId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="JobPayTypeId">
+      <AttrNames>
+        <Item Value="JobPayTypeId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_MaritalStatus" id="MaritalStatus"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_Nationality" id="Nationality"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_ReligionId" id="ReligionId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="CreatedOn">
+      <AttrNames>
+        <Item Value="CreatedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="ModifiedOn">
+      <AttrNames>
+        <Item Value="ModifiedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BaseEmployees2Iterator" id="Version">
+      <AttrNames>
+        <Item Value="Version"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="HrAddEmpAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="HrAddEmpAppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

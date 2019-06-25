@@ -38,6 +38,14 @@
     </DesignTime>
   </Containee>
   <AppContainee
+    Name="SharedBC"
+    FullName="model.SharedBC"
+    ObjectType="JboProject">
+    <DesignTime>
+      <Attr Name="_SourceName" Value="adflibSharedLib.jar"/>
+    </DesignTime>
+  </AppContainee>
+  <AppContainee
     Name="HrBCModel"
     FullName="HrBCmodel.HrBCModel"
     ObjectType="JboProject">

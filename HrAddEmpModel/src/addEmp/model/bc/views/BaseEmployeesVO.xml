@@ -23,62 +23,52 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefGender1_1"
+    Name="RefGender1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefGender"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefGender1"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefBloodGroups1_1"
+    Name="RefBloodGroups1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefBloodGroups"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefBloodGroups1"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefYesNo1_1"
+    Name="RefYesNo1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefYesNo"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefYesNo1"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefEmploymentStatus1_1"
+    Name="RefEmploymentStatus1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefEmploymentStatus"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefEmploymentStatus1"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefJobCategory1_1"
+    Name="JobsView1"
+    ViewObjectName="HrBCmodel.bc.views.JobsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DepartmentsView1"
+    ViewObjectName="HrBCmodel.bc.views.DepartmentsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="RefJobCategory1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefJobCategory"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefJobCategory1"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefJobLevelType1_1"
+    Name="RefJobLevelType1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefJobLevelType"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefJobLevelType1"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefMaritalStatus1_1"
+    Name="RefMaritalStatus1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefMaritalStatus"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefMaritalStatus1"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefCountries1_1"
+    Name="RefCountries1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefCountries"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefCountries1"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefReligions1_1"
+    Name="RefReligions1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefReligions"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefReligions1"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_GenderId"
-    ListVOName="SharedStaticLOVAppModule_RefGender1_1"
+    ListVOName="RefGender1"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -96,7 +86,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_BloodGroupId"
-    ListVOName="SharedStaticLOVAppModule_RefBloodGroups1_1"
+    ListVOName="RefBloodGroups1"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -114,7 +104,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_EmpSmoker"
-    ListVOName="SharedStaticLOVAppModule_RefYesNo1_1"
+    ListVOName="RefYesNo1"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -132,7 +122,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_EmploymentStatusId"
-    ListVOName="SharedStaticLOVAppModule_RefEmploymentStatus1_1"
+    ListVOName="RefEmploymentStatus1"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -150,7 +140,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_JobCategoryId"
-    ListVOName="SharedStaticLOVAppModule_RefJobCategory1_1"
+    ListVOName="RefJobCategory1"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -168,7 +158,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_JobLevelTypeId"
-    ListVOName="SharedStaticLOVAppModule_RefJobLevelType1_1"
+    ListVOName="RefJobLevelType1"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -186,7 +176,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_MaritalStatus"
-    ListVOName="SharedStaticLOVAppModule_RefMaritalStatus1_1"
+    ListVOName="RefMaritalStatus1"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -204,7 +194,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_Nationality"
-    ListVOName="SharedStaticLOVAppModule_RefCountries1_1"
+    ListVOName="RefCountries1"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -222,7 +212,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_ReligionId"
-    ListVOName="SharedStaticLOVAppModule_RefReligions1_1"
+    ListVOName="RefReligions1"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -235,6 +225,42 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Religion"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobId"
+    ListVOName="JobsView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobTitle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentId"
+    ListVOName="DepartmentsView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -363,13 +389,29 @@
     PrecisionRule="true"
     EntityAttrName="JobId"
     EntityUsage="Employees"
-    AliasName="JOB_ID"/>
+    AliasName="JOB_ID"
+    LOVName="LOV_JobId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DepartmentId"
     PrecisionRule="true"
     EntityAttrName="DepartmentId"
     EntityUsage="Employees"
-    AliasName="DEPARTMENT_ID"/>
+    AliasName="DEPARTMENT_ID"
+    LOVName="LOV_DepartmentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="JobCategoryId"
     PrecisionRule="true"
@@ -548,6 +590,11 @@
   <ViewLinkAccessor
     Name="DepeendentsVO"
     ViewLink="addEmp.model.bc.viewLinks.EmployeeDependentVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="EmpAttachmentsVO2"
+    ViewLink="addEmp.model.bc.viewLinks.EmpVLEmpAttachment"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>

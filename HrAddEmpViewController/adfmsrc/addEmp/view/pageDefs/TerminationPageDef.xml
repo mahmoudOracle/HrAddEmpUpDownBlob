@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="TerminationPageDef"
+                Package="addEmp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmployeeTermination1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
+              id="EmployeeTermination1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmployeeTermination1Iterator" id="EmployeeTerminationId">
+      <AttrNames>
+        <Item Value="EmployeeTerminationId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeTermination1Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeTermination1Iterator" id="TerminationDate">
+      <AttrNames>
+        <Item Value="TerminationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="EmployeeTermination1Iterator" StaticList="false" Uses="LOV_TerminationReason"
+          id="TerminationReason" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="EmployeeTermination1Iterator" id="TerminationReasonDetails">
+      <AttrNames>
+        <Item Value="TerminationReasonDetails"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeTermination1Iterator" id="TerminationDocument">
+      <AttrNames>
+        <Item Value="TerminationDocument"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeTermination1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeTermination1Iterator" id="CreatedOn">
+      <AttrNames>
+        <Item Value="CreatedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeTermination1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeTermination1Iterator" id="ModifiedOn">
+      <AttrNames>
+        <Item Value="ModifiedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeTermination1Iterator" id="Version">
+      <AttrNames>
+        <Item Value="Version"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EmployeeTermination1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

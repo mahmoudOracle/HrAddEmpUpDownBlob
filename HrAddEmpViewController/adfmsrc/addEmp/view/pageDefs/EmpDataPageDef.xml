@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="EmpDataPageDef"
+                Package="addEmp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BaseEmployees1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
+              id="BaseEmployees1Iterator"/>
+    <searchRegion Binds="BaseEmployees1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="BaseEmployees1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="BaseEmployees1Iterator" id="BaseEmployees1">
+      <nodeDefinition DefName="addEmp.model.bc.views.BaseEmployeesVO" Name="BaseEmployees10">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="MiddleName"/>
+          <Item Value="LastName"/>
+          <Item Value="DateOfBirth"/>
+          <Item Value="GenderId"/>
+          <Item Value="BloodGroupId"/>
+          <Item Value="EmpSmoker"/>
+          <Item Value="MaritalStatus"/>
+          <Item Value="Nationality"/>
+          <Item Value="ReligionId"/>
+          <Item Value="Email"/>
+          <Item Value="Phone"/>
+          <Item Value="Mobile"/>
+          <Item Value="EmergencyPhone"/>
+          <Item Value="EmploymentStatusId"/>
+          <Item Value="HireDate"/>
+          <Item Value="JobId"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="JobCategoryId"/>
+          <Item Value="JobLevelTypeId"/>
+          <Item Value="JobPayTypeId"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedOn"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="ModifiedOn"/>
+          <Item Value="Version"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

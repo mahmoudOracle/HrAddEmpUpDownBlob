@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="add-update-emp-data-tf">
+    <default-activity>IdInfo</default-activity>
+    <transaction>
+      <requires-existing-transaction/>
+    </transaction>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="IdInfo">
+      <display-name>Identification Information </display-name>
+      <page>/fragments/IdInfo.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="PassportDetails">
+      <display-name>Passport Infromation</display-name>
+      <page>/fragments/PassportDetails.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="DrivingLicense">
+      <page>/fragments/DrivingLicense.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="ContractInfo">
+      <display-name>Contract Details</display-name>
+      <page>/fragments/ContractInfo.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="EmergencyContacts">
+      <page>/fragments/EmergencyContacts.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="HomeCountryContacts">
+      <page>/fragments/HomeCountryContacts.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="EmployeeAddress">
+      <page>/fragments/EmployeeAddress.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="Dependents">
+      <page>/fragments/Dependents.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="EmpEducationInfo">
+      <page>/fragments/EmpEducationInfo.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="Skills">
+      <page>/fragments/Skills.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="Experiences">
+      <page>/fragments/Experiences.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="Courses">
+      <page>/fragments/Courses.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="EmpAttachment">
+      <page>/fragments/EmpAttachment.jsff</page>
+      <train-stop/>
+    </view>
+    <view id="Termination">
+      <page>/fragments/Termination.jsff</page>
+      <train-stop/>
+    </view>
+    <task-flow-return id="cancel">
+      <outcome>
+        <name>cancel</name>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="save">
+      <outcome>
+        <name>save</name>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__1">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>save</from-outcome>
+        <to-activity-id>save</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>cancel</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

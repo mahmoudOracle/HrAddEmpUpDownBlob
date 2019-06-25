@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="SkillsPageDef"
+                Package="addEmp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmpSkills1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="EmpSkills1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmpSkills1Iterator" id="EmployeeSkillId">
+      <AttrNames>
+        <Item Value="EmployeeSkillId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpSkills1Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="EmpSkills1Iterator" StaticList="false" Uses="LOV_SkillId" id="SkillId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="EmpSkills1Iterator" id="SkillYears">
+      <AttrNames>
+        <Item Value="SkillYears"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpSkills1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpSkills1Iterator" id="CreatedOn">
+      <AttrNames>
+        <Item Value="CreatedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpSkills1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpSkills1Iterator" id="ModifiedOn">
+      <AttrNames>
+        <Item Value="ModifiedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpSkills1Iterator" id="Version">
+      <AttrNames>
+        <Item Value="Version"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EmpSkills1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

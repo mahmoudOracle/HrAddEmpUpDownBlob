@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1">
+        <af:gridRow height="100%" id="gr1">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                <!-- Content -->
+                <af:panelBox text="PanelBox1" id="pb1">
+                    <f:facet name="toolbar">
+                        <af:toolbar id="t1">
+                            <af:button actionListener="#{bindings.CreateInsert.execute}" text="Attach The File"
+                                       disabled="#{!bindings.CreateInsert.enabled}" id="b1" icon="/images/add.png"/>
+                            <af:button text="Save and Go Back" id="b2" icon="/images/SAVE.png" action="save"/>
+                            <af:button text="Rollback" immediate="true" id="b3" icon="/images/UNDO.png" action="cancel">
+                                <af:resetActionListener/>
+                            </af:button>
+                        </af:toolbar>
+                    </f:facet>
+                    <af:panelFormLayout id="pfl1">
+                        <af:panelLabelAndMessage label="#{bindings.EmpAttachmentId.hints.label}" id="plam1">
+                            <af:outputText value="#{bindings.EmpAttachmentId.inputValue}"
+                                           shortDesc="#{bindings.EmpAttachmentId.hints.tooltip}" id="ot1">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmpAttachmentId.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.EmployeeId.hints.label}" id="plam2">
+                            <af:outputText value="#{bindings.EmployeeId.inputValue}"
+                                           shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="ot2">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:group id="Group">
+                            <af:selectOneChoice value="#{bindings.AttachmentType.inputValue}"
+                                                label="#{bindings.AttachmentType.label}"
+                                                required="#{bindings.AttachmentType.hints.mandatory}"
+                                                shortDesc="#{bindings.AttachmentType.hints.tooltip}" id="soc1">
+                                <f:selectItems value="#{bindings.AttachmentType.items}" id="si1"/>
+                                <f:validator binding="#{bindings.AttachmentType.validator}"/>
+                            </af:selectOneChoice>
+                            <af:inputText value="#{bindings.AttachedFile.inputValue}"
+                                          label="#{bindings.AttachedFile.hints.label}"
+                                          required="#{bindings.AttachedFile.hints.mandatory}"
+                                          columns="#{bindings.AttachedFile.hints.displayWidth}"
+                                          maximumLength="#{bindings.AttachedFile.hints.precision}"
+                                          shortDesc="#{bindings.AttachedFile.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.AttachedFile.validator}"/>
+                            </af:inputText>
+                        </af:group>
+                        <af:group id="Group1">
+                            <af:inputText value="#{bindings.CreatedBy.inputValue}"
+                                          label="#{bindings.CreatedBy.hints.label}"
+                                          required="#{bindings.CreatedBy.hints.mandatory}"
+                                          columns="#{bindings.CreatedBy.hints.displayWidth}"
+                                          maximumLength="#{bindings.CreatedBy.hints.precision}"
+                                          shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it2">
+                                <f:validator binding="#{bindings.CreatedBy.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.CreatedOn.inputValue}"
+                                          label="#{bindings.CreatedOn.hints.label}"
+                                          required="#{bindings.CreatedOn.hints.mandatory}"
+                                          columns="#{bindings.CreatedOn.hints.displayWidth}"
+                                          shortDesc="#{bindings.CreatedOn.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.CreatedOn.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.CreatedOn.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.ModifiedBy.inputValue}"
+                                          label="#{bindings.ModifiedBy.hints.label}"
+                                          required="#{bindings.ModifiedBy.hints.mandatory}"
+                                          columns="#{bindings.ModifiedBy.hints.displayWidth}"
+                                          maximumLength="#{bindings.ModifiedBy.hints.precision}"
+                                          shortDesc="#{bindings.ModifiedBy.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.ModifiedBy.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.ModifiedOn.inputValue}"
+                                          label="#{bindings.ModifiedOn.hints.label}"
+                                          required="#{bindings.ModifiedOn.hints.mandatory}"
+                                          columns="#{bindings.ModifiedOn.hints.displayWidth}"
+                                          shortDesc="#{bindings.ModifiedOn.hints.tooltip}" id="id2">
+                                <f:validator binding="#{bindings.ModifiedOn.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.ModifiedOn.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.Version.inputValue}" label="#{bindings.Version.hints.label}"
+                                          required="#{bindings.Version.hints.mandatory}"
+                                          columns="#{bindings.Version.hints.displayWidth}"
+                                          maximumLength="#{bindings.Version.hints.precision}"
+                                          shortDesc="#{bindings.Version.hints.tooltip}" id="it4">
+                                <f:validator binding="#{bindings.Version.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Version.format}"/>
+                            </af:inputText>
+                        </af:group>
+                    </af:panelFormLayout>
+                </af:panelBox>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="50px" id="gr2">
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                <!-- Footer -->
+                <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="tbb1"/>
+                <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="t2"/>
+                <af:breadCrumbs id="bc1" value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}">
+                    <af:commandNavigationItem text="commandNavigationItem 1" id="cni1"/>
+                </af:breadCrumbs>
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</ui:composition>

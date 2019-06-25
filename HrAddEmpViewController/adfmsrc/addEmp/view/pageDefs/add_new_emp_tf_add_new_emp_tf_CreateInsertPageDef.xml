@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="add_new_emp_tf_add_new_emp_tf_CreateInsertPageDef" Package="addEmp.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="BaseEmployees1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
+              id="BaseEmployees1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="BaseEmployees1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

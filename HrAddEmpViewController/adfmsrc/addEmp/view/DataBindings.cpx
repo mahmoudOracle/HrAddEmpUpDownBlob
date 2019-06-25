@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="addEmp.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/fragments/BasicInfo.jsff" usageId="addEmp_view_BasicInfoPageDef"/>
+    <page path="/fragments/PassportDetails.jsff" usageId="addEmp_view_PassportDetailsPageDef"/>
+    <page path="/fragments/IdInfo.jsff" usageId="addEmp_view_IdInfoPageDef"/>
+    <page path="/fragments/ContractInfo.jsff" usageId="addEmp_view_ContractInfoPageDef"/>
+    <page path="/testTrain.jsf" usageId="addEmp_view_testTrainPageDef"/>
+    <page path="/fragments/EmergencyContacts.jsff" usageId="addEmp_view_EmergencyContactsPageDef"/>
+    <page path="/fragments/HomeCountryContacts.jsff" usageId="addEmp_view_HomeCountryContactsPageDef"/>
+    <page path="/fragments/Dependents.jsff" usageId="addEmp_view_DependentsPageDef"/>
+    <page path="/fragments/EmpEducationInfo.jsff" usageId="addEmp_view_EmpEducationInfoPageDef"/>
+    <page path="/fragments/EmployeeAddress.jsff" usageId="addEmp_view_EmployeeAddressPageDef"/>
+    <page path="/fragments/Courses.jsff" usageId="addEmp_view_CoursesPageDef"/>
+    <page path="/fragments/Experiences.jsff" usageId="addEmp_view_ExperiencesPageDef"/>
+    <page path="/fragments/Skills.jsff" usageId="addEmp_view_SkillsPageDef"/>
+    <page path="/fragments/Termination.jsff" usageId="addEmp_view_TerminationPageDef"/>
+    <page path="/fragments/EmpData.jsff" usageId="addEmp_view_EmpDataPageDef"/>
+    <page path="/WEB-INF/add-emp-basic-data-tf.xml#add-emp-basic-data-tf@Commit"
+          usageId="addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_CommitPageDef"/>
+    <page path="/WEB-INF/add-emp-basic-data-tf.xml#add-emp-basic-data-tf@Rollback"
+          usageId="addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_RollbackPageDef"/>
+    <page path="/fragments/AddNewEmpData.jsff" usageId="addEmp_view_AddNewEmpDataPageDef"/>
+    <page path="/WEB-INF/add-new-emp-tf.xml#add-new-emp-tf@CreateInsert"
+          usageId="addEmp_view_add_new_emp_tf_add_new_emp_tf_CreateInsertPageDef"/>
+    <page path="/fragments/DrivingLicense.jsff" usageId="addEmp_view_DrivingLicensePageDef1"/>
+    <page path="/fragments/EmpAttachment.jsff" usageId="addEmp_view_EmpAttachmentPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="addEmp_view_BasicInfoPageDef" path="addEmp.view.pageDefs.BasicInfoPageDef"/>
+    <page id="addEmp_view_PassportDetailsPageDef" path="fragments.PassportDetailsPageDef"/>
+    <page id="addEmp_view_DrivingLicensePageDef" path="addEmp.view.pageDefs.DrivingLicensePageDef"/>
+    <page id="addEmp_view_IdInfoPageDef" path="fragments.IdInfoPageDef"/>
+    <page id="addEmp_view_ContractInfoPageDef" path="addEmp.view.pageDefs.ContractInfoPageDef"/>
+    <page id="addEmp_view_testTrainPageDef" path="addEmp.view.pageDefs.testTrainPageDef"/>
+    <page id="addEmp_view_EmergencyContactsPageDef" path="addEmp.view.pageDefs.EmergencyContactsPageDef"/>
+    <page id="addEmp_view_HomeCountryContactsPageDef" path="addEmp.view.pageDefs.HomeCountryContactsPageDef"/>
+    <page id="addEmp_view_DependentsPageDef" path="addEmp.view.pageDefs.DependentsPageDef"/>
+    <page id="addEmp_view_EmpEducationInfoPageDef" path="addEmp.view.pageDefs.EmpEducationInfoPageDef"/>
+    <page id="addEmp_view_EmployeeAddressPageDef" path="addEmp.view.pageDefs.EmployeeAddressPageDef"/>
+    <page id="addEmp_view_CoursesPageDef" path="addEmp.view.pageDefs.CoursesPageDef"/>
+    <page id="addEmp_view_ExperiencesPageDef" path="addEmp.view.pageDefs.ExperiencesPageDef"/>
+    <page id="addEmp_view_SkillsPageDef" path="addEmp.view.pageDefs.SkillsPageDef"/>
+    <page id="addEmp_view_TerminationPageDef" path="addEmp.view.pageDefs.TerminationPageDef"/>
+    <page id="addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_CreateInsertPageDef"
+          path="addEmp.view.pageDefs.add_emp_basic_data_tf_add_emp_basic_data_tf_CreateInsertPageDef"/>
+    <page id="addEmp_view_EmpDataPageDef" path="addEmp.view.pageDefs.EmpDataPageDef"/>
+    <page id="addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_CommitPageDef"
+          path="addEmp.view.pageDefs.add_emp_basic_data_tf_add_emp_basic_data_tf_CommitPageDef"/>
+    <page id="addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_RollbackPageDef"
+          path="addEmp.view.pageDefs.add_emp_basic_data_tf_add_emp_basic_data_tf_RollbackPageDef"/>
+    <page id="addEmp_view_AddNewEmpDataPageDef" path="addEmp.view.pageDefs.AddNewEmpDataPageDef"/>
+    <page id="addEmp_view_add_new_emp_tf_add_new_emp_tf_CreateInsertPageDef"
+          path="addEmp.view.pageDefs.add_new_emp_tf_add_new_emp_tf_CreateInsertPageDef"/>
+    <page id="addEmp_view_DrivingLicensePageDef1" path="fragments.DrivingLicensePageDef"/>
+    <page id="addEmp_view_EmpAttachmentPageDef" path="addEmp.view.pageDefs.EmpAttachmentPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HrAddEmpAppModuleDataControl" Package="addEmp.model.bc.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HrAddEmpAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="EmpEducationInfoPageDef"
+                Package="addEmp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EmpEducation1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
+              id="EmpEducation1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="EmployeeEducationId">
+      <AttrNames>
+        <Item Value="EmployeeEducationId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="EmpEducation1Iterator" StaticList="false" Uses="LOV_EducationType" id="EducationType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="InstitutionName">
+      <AttrNames>
+        <Item Value="InstitutionName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="GraduationDate">
+      <AttrNames>
+        <Item Value="GraduationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="GradutaionDegree">
+      <AttrNames>
+        <Item Value="GradutaionDegree"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="Degree">
+      <AttrNames>
+        <Item Value="Degree"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="Major">
+      <AttrNames>
+        <Item Value="Major"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="Score">
+      <AttrNames>
+        <Item Value="Score"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="CreatedOn">
+      <AttrNames>
+        <Item Value="CreatedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="ModifiedBy">
+      <AttrNames>
+        <Item Value="ModifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="ModifiedOn">
+      <AttrNames>
+        <Item Value="ModifiedOn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmpEducation1Iterator" id="Version">
+      <AttrNames>
+        <Item Value="Version"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EmpEducation1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

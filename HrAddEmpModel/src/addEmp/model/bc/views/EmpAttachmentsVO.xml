@@ -23,14 +23,12 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefAttachmentType1_1"
+    Name="RefAttachmentType1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefAttachmentType"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefAttachmentType1"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_AttachmentType"
-    ListVOName="SharedStaticLOVAppModule_RefAttachmentType1_1"
+    ListVOName="RefAttachmentType1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">

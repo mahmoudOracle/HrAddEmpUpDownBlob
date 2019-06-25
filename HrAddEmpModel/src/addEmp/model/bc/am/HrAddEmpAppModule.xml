@@ -6,7 +6,8 @@
   Name="HrAddEmpAppModule"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
-  ClearCacheOnRollback="true">
+  ClearCacheOnRollback="true"
+  ComponentClass="model.shared.extensions.ExtApplicationModuleImpl">
   <ViewUsage
     Name="BaseEmployees1"
     ViewObjectName="addEmp.model.bc.views.BaseEmployeesVO"/>
@@ -19,9 +20,6 @@
   <ViewUsage
     Name="EmergencyContactPerson1"
     ViewObjectName="addEmp.model.bc.views.EmergencyContactPersonVO"/>
-  <ViewUsage
-    Name="EmpAttachments1"
-    ViewObjectName="addEmp.model.bc.views.EmpAttachmentsVO"/>
   <ViewUsage
     Name="EmpContactHomeCountry1"
     ViewObjectName="addEmp.model.bc.views.EmpContactHomeCountryVO"/>
@@ -52,6 +50,9 @@
   <ViewUsage
     Name="IdInfo1"
     ViewObjectName="addEmp.model.bc.views.IdInfoVO"/>
+  <ViewUsage
+    Name="EmpAttachments1"
+    ViewObjectName="addEmp.model.bc.views.EmpAttachmentsVO"/>
   <ViewLinkUsage
     Name="EmployeeContractVL1"
     ViewLinkObjectName="addEmp.model.bc.viewLinks.EmployeeContractVL"
@@ -69,12 +70,6 @@
     ViewLinkObjectName="addEmp.model.bc.viewLinks.EmployeeEmergencyContactPersonsVL"
     SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.BaseEmployees1"
     DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.EmergencyContactPerson1"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="EmployeeEmpAttachmentVL1"
-    ViewLinkObjectName="addEmp.model.bc.viewLinks.EmployeeEmpAttachmentVL"
-    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.BaseEmployees1"
-    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.EmpAttachments1"
     Reversed="false"/>
   <ViewLinkUsage
     Name="EmployeeEmpContactHomeCountryVL1"
@@ -135,5 +130,11 @@
     ViewLinkObjectName="addEmp.model.bc.viewLinks.EmpIdInfoVL"
     SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.BaseEmployees1"
     DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.IdInfo1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="EmpEmpAttachmentVL1"
+    ViewLinkObjectName="addEmp.model.bc.viewLinks.EmpVLEmpAttachment"
+    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.BaseEmployees1"
+    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.EmpAttachments1"
     Reversed="false"/>
 </AppModule>

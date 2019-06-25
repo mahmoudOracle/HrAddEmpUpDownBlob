@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="add-emp-basic-data-tf">
+    <default-activity>ShowAllEmpData</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
+    <data-control-scope>
+      <isolated/>
+    </data-control-scope>
+    <input-parameter-definition id="__17">
+      <name>AddNewEmp</name>
+      <value>#{pageFlowScope.AddNewEmp}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__18">
+      <name>EditEmp</name>
+      <value>#{pageFlowScope.EditEmp}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <view id="BasicInfo">
+      <display-name>Employee Basic Information</display-name>
+      <page>/fragments/BasicInfo.jsff</page>
+    </view>
+    <view id="ShowAllEmpData">
+      <page>/fragments/EmpData.jsff</page>
+    </view>
+    <task-flow-call id="add-update-emp-data-tf">
+      <task-flow-reference>
+        <document>/WEB-INF/add-update-emp-data-tf.xml</document>
+        <id>add-update-emp-data-tf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <method-call id="Commit">
+      <method>#{bindings.Commit.execute}</method>
+      <outcome>
+        <fixed-outcome>Commit</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="Rollback">
+      <method>#{bindings.Rollback.execute}</method>
+      <outcome>
+        <fixed-outcome>Rollback</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-call id="add-new-emp-tf">
+      <task-flow-reference>
+        <document>/WEB-INF/add-new-emp-tf.xml</document>
+        <id>add-new-emp-tf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__8">
+      <from-activity-id>BasicInfo</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome>showAllEmployees</from-outcome>
+        <to-activity-id>ShowAllEmpData</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__16">
+        <from-outcome>AddUpdateData</from-outcome>
+        <to-activity-id>add-update-emp-data-tf</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__22">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>Rollback</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__23">
+        <from-outcome>save</from-outcome>
+        <to-activity-id>Commit</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__19">
+      <from-activity-id>ShowAllEmpData</from-activity-id>
+      <control-flow-case id="__20">
+        <from-outcome>AddNew</from-outcome>
+        <to-activity-id>CreateInsert</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__21">
+        <from-outcome>EditCurrentEmployee</from-outcome>
+        <to-activity-id>BasicInfo</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__1">
+        <from-outcome>addNewEmployee</from-outcome>
+        <to-activity-id>add-new-emp-tf</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__28">
+      <from-activity-id>Commit</from-activity-id>
+      <control-flow-case id="__29">
+        <from-outcome>Commit</from-outcome>
+        <to-activity-id>ShowAllEmpData</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__30">
+      <from-activity-id>Rollback</from-activity-id>
+      <control-flow-case id="__31">
+        <from-outcome>Rollback</from-outcome>
+        <to-activity-id>ShowAllEmpData</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__32">
+      <from-activity-id>CreateInsert</from-activity-id>
+      <control-flow-case id="__33">
+        <from-outcome>CreateInsert</from-outcome>
+        <to-activity-id>AddNewEmpData</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__34">
+      <from-activity-id>AddNewEmpData</from-activity-id>
+      <control-flow-case id="__35">
+        <from-outcome>AddEmpFullData</from-outcome>
+        <to-activity-id>add-update-emp-data-tf</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

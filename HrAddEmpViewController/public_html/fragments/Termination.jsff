@@ -10,10 +10,23 @@
                         <af:toolbar id="t1">
                             <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add Termination Info"
                                        disabled="#{!bindings.CreateInsert.enabled}" id="b1" icon="/images/add.png"/>
-                            <af:button text="Save and Go Back" id="b2" icon="/images/SAVE.png" action="save"/>
-                            <af:button text="Rollback" immediate="true" id="b3" icon="/images/UNDO.png" action="cancel">
-                                <af:resetActionListener/>
-                            </af:button>
+                            <af:spacer width="10" height="10" id="s1"/>
+                            <af:group id="g2">
+                                <af:button text="Save and Go To Next Page" id="b2" icon="/images/SAVE.png"
+                                           action="#{customTrainNavigationHandler.navigateNextStop}"
+                                           actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_CommitPageDef.Commit.execute}"
+                                           partialSubmit="true"/>
+                                <af:button text="Save &amp; Go to Main Page" id="b5" action="save"
+                                           icon="/images/SAVE.png"/>
+                            </af:group>
+                            <af:spacer width="10" height="10" id="s2"/>
+                            <af:group id="g3">
+                                <af:button text="Remove the Nwely Created Row &amp; Staty on the page" id="b4"
+                                           immediate="true" icon="/images/UNDO.png"
+                                           actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_RollbackPageDef.Rollback.execute}"/>
+                                <af:button text="Rollback Go Back to Main Page" immediate="true" id="b3"
+                                           icon="/images/UNDO.png" action="cancel"/>
+                            </af:group>
                         </af:toolbar>
                     </f:facet>
                     <af:panelFormLayout id="pfl1">

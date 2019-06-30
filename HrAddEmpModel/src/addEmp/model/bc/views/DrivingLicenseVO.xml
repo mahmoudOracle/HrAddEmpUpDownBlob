@@ -23,14 +23,16 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefDrivingLicenseType1_1"
+    Name="RefDrivingLicenseType1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefDrivingLicenseType"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefDrivingLicenseType1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="RefDrivingLicenseType2"
+    ViewObjectName="HrBCmodel.bc.staticLOV.RefDrivingLicenseType"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_DrivingLicenseType"
-    ListVOName="SharedStaticLOVAppModule_RefDrivingLicenseType1_1"
+    ListVOName="RefDrivingLicenseType1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
@@ -38,7 +40,7 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
+      <Item Value="Type"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Type"/>

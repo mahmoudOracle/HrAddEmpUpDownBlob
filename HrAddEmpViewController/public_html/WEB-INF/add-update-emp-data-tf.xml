@@ -8,64 +8,131 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__4">
+      <managed-bean-name>customTrainNavigationHandler</managed-bean-name>
+      <managed-bean-class>view.beans.CustomTrainNavigationHandler</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__5">
+      <managed-bean-name>trainStopSequenceHelper</managed-bean-name>
+      <managed-bean-class>view.beans.TrainStopSequenceHelper</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__6">
+      <managed-bean-name>customBindingValidator</managed-bean-name>
+      <managed-bean-class>view.adf.validator.CustomBindingValidator</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__7">
+      <managed-bean-name>trainStopSkipHelper</managed-bean-name>
+      <managed-bean-class>view.beans.TrainStopSkipHelper</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__8">
+      <managed-bean-name>trainStopHelper</managed-bean-name>
+      <managed-bean-class>view.beans.TrainStopHelper</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
     <view id="IdInfo">
       <display-name>Identification Information </display-name>
       <page>/fragments/IdInfo.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['IdInfo']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['IdInfo']}</skip>
+      </train-stop>
     </view>
     <view id="PassportDetails">
       <display-name>Passport Infromation</display-name>
       <page>/fragments/PassportDetails.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['PassportDetails']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['PassportDetails']}</skip>
+      </train-stop>
     </view>
     <view id="DrivingLicense">
       <page>/fragments/DrivingLicense.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['DrivingLicense']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['DrivingLicense']}</skip>
+      </train-stop>
     </view>
     <view id="ContractInfo">
       <display-name>Contract Details</display-name>
       <page>/fragments/ContractInfo.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['ContractInfo']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['ContractInfo']}</skip>
+      </train-stop>
     </view>
     <view id="EmergencyContacts">
       <page>/fragments/EmergencyContacts.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['EmergencyContacts']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['EmergencyContacts']}</skip>
+      </train-stop>
     </view>
     <view id="HomeCountryContacts">
       <page>/fragments/HomeCountryContacts.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['HomeCountryContacts']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['HomeCountryContacts']}</skip>
+      </train-stop>
     </view>
     <view id="EmployeeAddress">
       <page>/fragments/EmployeeAddress.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['EmployeeAddress']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['EmployeeAddress']}</skip>
+      </train-stop>
     </view>
     <view id="Dependents">
       <page>/fragments/Dependents.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['Dependents']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['Dependents']}</skip>
+      </train-stop>
     </view>
     <view id="EmpEducationInfo">
       <page>/fragments/EmpEducationInfo.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['EmpEducationInfo']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['EmpEducationInfo']}</skip>
+      </train-stop>
     </view>
     <view id="Skills">
       <page>/fragments/Skills.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['Skills']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['Skills']}</skip>
+      </train-stop>
     </view>
     <view id="Experiences">
       <page>/fragments/Experiences.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['Experiences']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['Experiences']}</skip>
+      </train-stop>
     </view>
     <view id="Courses">
       <page>/fragments/Courses.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['Courses']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['Courses']}</skip>
+      </train-stop>
     </view>
     <view id="EmpAttachment">
       <page>/fragments/EmpAttachment.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['EmpAttachment']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['EmpAttachment']}</skip>
+      </train-stop>
     </view>
     <view id="Termination">
       <page>/fragments/Termination.jsff</page>
-      <train-stop/>
+      <train-stop>
+        <sequential>#{pageFlowScope.trainStopSequenceHelper['Termination']}</sequential>
+        <skip>#{pageFlowScope.trainStopSkipHelper['Termination']}</skip>
+      </train-stop>
     </view>
     <task-flow-return id="cancel">
       <outcome>

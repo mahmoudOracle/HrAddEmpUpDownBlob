@@ -18,9 +18,9 @@
       <property
          name="start">false</property>
       <property
-         name="x">913.8146</property>
+         name="x">948.1293</property>
       <property
-         name="y">-133.11911</property>
+         name="y">-171.32697</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Passport Infromation&lt;/b>&lt;/p>&lt;p>Activity ID:  PassportDetails&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
@@ -39,9 +39,9 @@
       <property
          name="start">true</property>
       <property
-         name="x">742.4145</property>
+         name="x">765.5569</property>
       <property
-         name="y">-135.27432</property>
+         name="y">-170.29016</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Identification Information &lt;/b> (Default Activity)&lt;/p>&lt;p>Activity ID:  IdInfo&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
@@ -50,6 +50,8 @@
          name="trainStop">true</property>
       <property
          name="exceptionHandler">false</property>
+      <property
+         name="thumbnailExpanded">false</property>
    </View>
    <View
       id="View9">
@@ -58,11 +60,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">1254.0146</property>
+         name="x">1293.9153</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Contract Details&lt;/b>&lt;/p>&lt;p>Activity ID:  ContractInfo&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">-127.220245</property>
+         name="y">-167.02412</property>
       <property
          name="page">/fragments/ContractInfo.jsff</property>
       <property
@@ -77,11 +79,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">1428.614</property>
+         name="x">1445.3729</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>EmergencyContacts&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">-165.71907</property>
+         name="y">-167.21825</property>
       <property
          name="page">/fragments/EmergencyContacts.jsff</property>
       <property
@@ -96,9 +98,9 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">1599.2146</property>
+         name="x">1603.2046</property>
       <property
-         name="y">-168.82022</property>
+         name="y">-168.72337</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>HomeCountryContacts&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
@@ -117,9 +119,9 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">1602.5944</property>
+         name="x">1603.3925</property>
       <property
-         name="y">110.62724</property>
+         name="y">131.66608</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Dependents&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
@@ -138,11 +140,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">1384.3481</property>
+         name="x">1451.3815</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>EmpEducationInfo&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">111.37862</property>
+         name="y">129.92665</property>
       <property
          name="page">/fragments/EmpEducationInfo.jsff</property>
       <property
@@ -157,11 +159,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">1604.6594</property>
+         name="x">1602.2654</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>EmployeeAddress&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">-37.47544</property>
+         name="y">-18.032585</property>
       <property
          name="page">/fragments/EmployeeAddress.jsff</property>
       <property
@@ -176,11 +178,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">798.59656</property>
+         name="x">943.8352</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Courses&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">48.21333</property>
+         name="y">125.01642</property>
       <property
          name="page">/fragments/Courses.jsff</property>
       <property
@@ -195,11 +197,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">981.4664</property>
+         name="x">1124.311</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Experiences&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">39.033154</property>
+         name="y">127.80646</property>
       <property
          name="page">/fragments/Experiences.jsff</property>
       <property
@@ -214,11 +216,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">1162.557</property>
+         name="x">1296.6234</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Skills&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">46.845654</property>
+         name="y">129.23482</property>
       <property
          name="page">/fragments/Skills.jsff</property>
       <property
@@ -233,11 +235,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">1010.7068</property>
+         name="x">765.71625</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Termination&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">235.34033</property>
+         name="y">267.80518</property>
       <property
          name="page">/fragments/Termination.jsff</property>
       <property
@@ -250,11 +252,11 @@
       <property
          name="activityId">cancel</property>
       <property
-         name="x">274.5</property>
+         name="x">568.1693</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>cancel&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  cancel&lt;/p></property>
       <property
-         name="y">286.79883</property>
+         name="y">98.116806</property>
       <property
          name="finish">true</property>
       <property
@@ -265,11 +267,11 @@
       <property
          name="activityId">save</property>
       <property
-         name="x">274.5</property>
+         name="x">564.1791</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>save&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  save&lt;/p></property>
       <property
-         name="y">98.79883</property>
+         name="y">-90.233795</property>
       <property
          name="finish">true</property>
       <property
@@ -280,9 +282,9 @@
       <property
          name="activityId">*</property>
       <property
-         name="x">91.50004</property>
+         name="x">725.12354</property>
       <property
-         name="y">192.49998</property>
+         name="y">6.21282</property>
    </WildcardControlFlowRule>
    <ControlFlowCase
       islink="true"
@@ -292,7 +294,7 @@
       <property
          name="fromOutcome">save</property>
       <property
-         name="sdm:polyPoints">R40,130.13068,186.51875,230.86937,98.44827,L50</property>
+         name="sdm:polyPoints">L45,689.12354,2.8622265,605.1791,-90.58438,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -302,7 +304,7 @@
       <property
          name="fromOutcome">cancel</property>
       <property
-         name="sdm:polyPoints">R60,130.13068,198.78003,230.86937,286.44824,L50</property>
+         name="sdm:polyPoints">L55,689.12354,9.8622265,609.1693,97.766235,R50</property>
    </ControlFlowCase>
    <View
       id="View40">
@@ -311,11 +313,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">1093.2599</property>
+         name="x">1123.5844</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>DrivingLicense&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">-131.77023</property>
+         name="y">-169.18004</property>
       <property
          name="page">/fragments/DrivingLicense.jsff</property>
       <property
@@ -330,11 +332,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">794.7091</property>
+         name="x">766.7785</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>EmpAttachment&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">243.09357</property>
+         name="y">125.18103</property>
       <property
          name="page">/fragments/EmpAttachment.jsff</property>
       <property
@@ -348,7 +350,7 @@
       from="View13"
       to="View15">
       <property
-         name="sdm:polyPoints">R50,1472.2446,-166.06967,1555.584,-169.1708,L50</property>
+         name="sdm:polyPoints">R50,1486.3729,-167.56885,1562.2046,-169.07396,L50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -356,7 +358,7 @@
       from="View9"
       to="View13">
       <property
-         name="sdm:polyPoints">R50,1297.6453,-127.57083,1384.9834,-166.06967,L50</property>
+         name="sdm:polyPoints">R50,1334.9153,-167.3747,1404.3729,-167.56885,L50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -364,7 +366,7 @@
       from="View27"
       to="View35">
       <property
-         name="sdm:polyPoints">R50,838.3397,242.74298,967.0761,234.98975,L50</property>
+         name="sdm:polyPoints">B50,766.7785,178.83043,765.71625,213.80519,T50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -372,7 +374,7 @@
       from="View33"
       to="View31">
       <property
-         name="sdm:polyPoints">L50,1118.9264,46.495052,1025.097,38.682545,R50</property>
+         name="sdm:polyPoints">L50,1255.6234,128.88425,1165.311,127.45587,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -380,7 +382,7 @@
       from="View31"
       to="View29">
       <property
-         name="sdm:polyPoints">L50,937.83575,38.682545,842.2272,47.86275,R50</property>
+         name="sdm:polyPoints">L50,1083.311,127.45587,984.8352,124.66583,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -388,7 +390,7 @@
       from="View29"
       to="View27">
       <property
-         name="sdm:polyPoints">B50,798.59656,104.493385,794.7091,186.11234,T50</property>
+         name="sdm:polyPoints">L50,902.8352,124.66583,807.7785,124.83043,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -396,7 +398,7 @@
       from="View19"
       to="View33">
       <property
-         name="sdm:polyPoints">L50,1340.7175,111.028046,1206.1876,46.495052,R50</property>
+         name="sdm:polyPoints">L50,1410.3815,129.57608,1337.6234,128.88425,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -404,7 +406,7 @@
       from="View15"
       to="View23">
       <property
-         name="sdm:polyPoints">B50,1599.2146,-112.52672,1604.6594,-94.47012,T50</property>
+         name="sdm:polyPoints">B50,1603.2046,-115.07396,1602.2654,-72.38316,T50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -412,7 +414,7 @@
       from="View23"
       to="View17">
       <property
-         name="sdm:polyPoints">B50,1604.6594,18.804613,1602.5944,53.645996,T50</property>
+         name="sdm:polyPoints">B50,1602.2654,35.616837,1603.3925,77.31549,T50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -420,7 +422,7 @@
       from="View17"
       to="View19">
       <property
-         name="sdm:polyPoints">L50,1558.9637,110.27664,1427.9788,111.028046,R50</property>
+         name="sdm:polyPoints">L50,1562.3925,131.31549,1492.3815,129.57608,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -428,7 +430,7 @@
       from="View3"
       to="View40">
       <property
-         name="sdm:polyPoints">R50,957.4452,-133.46968,1049.6293,-132.12082,L50</property>
+         name="sdm:polyPoints">R50,989.1293,-171.67757,1082.5844,-169.53061,L50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -436,7 +438,7 @@
       from="View5"
       to="View3">
       <property
-         name="sdm:polyPoints">R50,786.8451,-135.27434,870.18396,-133.46968,L50</property>
+         name="sdm:polyPoints">R50,806.5569,-170.64075,907.1293,-171.67757,L50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -444,6 +446,6 @@
       from="View40"
       to="View9">
       <property
-         name="sdm:polyPoints">R50,1136.8905,-132.12082,1210.384,-127.57083,L50</property>
+         name="sdm:polyPoints">R50,1164.5844,-169.53061,1252.9153,-167.3747,L50</property>
    </TrainFlow>
 </SDM>

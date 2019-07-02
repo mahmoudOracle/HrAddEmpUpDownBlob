@@ -261,10 +261,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF Library"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="ADF DVT Core Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -294,6 +290,10 @@
          </hash>
          <hash>
             <value n="id" v="Commons Logging 1.0.4"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Library"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -348,10 +348,6 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="ADF Library"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="ADF DVT Core Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -381,6 +377,10 @@
          </hash>
          <hash>
             <value n="id" v="Commons Logging 1.0.4"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Library"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

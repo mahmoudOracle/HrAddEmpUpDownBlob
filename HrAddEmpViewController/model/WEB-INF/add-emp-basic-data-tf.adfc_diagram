@@ -199,17 +199,6 @@
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase26"
-      to="TaskFlowCall18">
-      <property
-         name="tosrcid">__35</property>
-      <property
-         name="fromOutcome">AddEmpFullData</property>
-      <property
-         name="fromsrcid">__34</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase27"
       from="View11">
       <property
          name="tosrcid">__20</property>
@@ -217,6 +206,17 @@
          name="fromOutcome">AddNew</property>
       <property
          name="fromsrcid">__19</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase27"
+      to="TaskFlowCall18">
+      <property
+         name="tosrcid">__35</property>
+      <property
+         name="fromOutcome">AddEmpFullData</property>
+      <property
+         name="fromsrcid">__34</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"

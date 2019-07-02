@@ -3,7 +3,9 @@
                 Package="addEmp.view.pageDefs">
   <parameters/>
   <executables>
-    <variableIterator id="variables"/>
+    <variableIterator id="variables">
+      <variable Name="TemporaryFile" Type="java.lang.String"/>
+    </variableIterator>
     <iterator Binds="EmpAttachments1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
               id="EmpAttachments1Iterator"/>
   </executables>

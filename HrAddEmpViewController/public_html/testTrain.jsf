@@ -4,14 +4,8 @@
     <af:document title="testTrain.jsf" id="d1">
         <af:form id="f1">
             <af:panelGridLayout id="pgl1">
-                <af:gridRow height="50px" id="gr1">
-                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
-                        <!-- Header -->
-                    </af:gridCell>
-                </af:gridRow>
                 <af:gridRow height="100%" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-                        <!-- Content -->
                         <af:region value="#{bindings.addempbasicdatatf1.regionModel}" id="r1"/>
                     </af:gridCell>
                 </af:gridRow>

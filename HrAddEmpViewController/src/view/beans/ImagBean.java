@@ -245,7 +245,7 @@ public class ImagBean {
         BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
 
         // get an ADF attributevalue from the ADF page definitions
-        AttributeBinding attr = (AttributeBinding) bindings.getControlBinding("ImageData");
+        AttributeBinding attr = (AttributeBinding) bindings.getControlBinding("AttachedFile");
         if (attr == null) {
             return;
         }

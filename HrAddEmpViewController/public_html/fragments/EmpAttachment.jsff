@@ -45,14 +45,14 @@
                                 <f:selectItems value="#{bindings.AttachmentType.items}" id="si1"/>
                                 <f:validator binding="#{bindings.AttachmentType.validator}"/>
                             </af:selectOneChoice>
-                            <af:inputText value="#{bindings.AttachedFile.inputValue}"
+                            <af:inputFile value="#{bindings.AttachedFile.inputValue}"
                                           label="#{bindings.AttachedFile.hints.label}"
-                                          required="#{bindings.AttachedFile.hints.mandatory}"
                                           columns="#{bindings.AttachedFile.hints.displayWidth}"
-                                          maximumLength="#{bindings.AttachedFile.hints.precision}"
-                                          shortDesc="#{bindings.AttachedFile.hints.tooltip}" id="it1">
+                                          shortDesc="#{bindings.AttachedFile.hints.tooltip}" id="it1"
+                                          valueChangeListener="#{imageBean.uploadFileValueChangeEvent}"
+                                          autoSubmit="true">
                                 <f:validator binding="#{bindings.AttachedFile.validator}"/>
-                            </af:inputText>
+                            </af:inputFile>
                             <af:button text="Download Data" id="cb3" binding="#{imageBean.downloadButton}">
                                 <af:fileDownloadActionListener contentType="#{bindings.AttachmentType.inputValue}"
                                                                filename="#{bindings.EmployeeId.inputValue}"

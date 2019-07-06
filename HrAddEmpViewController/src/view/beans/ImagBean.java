@@ -96,6 +96,7 @@ public class ImagBean {
      */
     public void uploadFileValueChangeEvent(ValueChangeEvent valueChangeEvent) {
         // The event give access to an Uploade dFile which contains data about the file and its content
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Inside Action Event !");
         UploadedFile file = (UploadedFile) valueChangeEvent.getNewValue();
         // Get the original file name
         String fileName = file.getFilename();
@@ -110,11 +111,13 @@ public class ImagBean {
         //newRow.setAttribute("ImageName", fileName);
         // create the BlobDomain and set it into the row
         UploadBlob blob = createBlobDomain(file, Boolean.TRUE);
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  Befroe Setting the Attribute!");
         newRow.setAttribute("AttachedFile", blob.getDataBlob());
         // set the mime type
         //newRow.setAttribute("ContentType", contentType);
-        String tmp = (blob.getTempFileAvailabe() ? blob.getTempFile() : null);
-        setTemporaryFileVar(tmp);
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  After Setting the Attribute!");
+        //String tmp = (blob.getTempFileAvailabe() ? blob.getTempFile() : null);
+        //setTemporaryFileVar(tmp);
         UIComponent ui = (UIComponent) valueChangeEvent.getSource();
         // PPR refresh a jsf component
         ui = ui.getParent();

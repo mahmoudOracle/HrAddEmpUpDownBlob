@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="testTrain.jsf" id="d1">
-        <af:form id="f1">
+        <af:form id="f1" usesUpload="true">
             <af:panelGridLayout id="pgl1">
                 <af:gridRow height="100%" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">

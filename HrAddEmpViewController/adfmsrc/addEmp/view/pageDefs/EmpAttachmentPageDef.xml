@@ -22,11 +22,6 @@
     </attributeValues>
     <list IterBinding="EmpAttachments1Iterator" StaticList="false" Uses="LOV_AttachmentType" id="AttachmentType"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="EmpAttachments1Iterator" id="AttachedFile">
-      <AttrNames>
-        <Item Value="AttachedFile"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="EmpAttachments1Iterator" id="CreatedBy">
       <AttrNames>
         <Item Value="CreatedBy"/>

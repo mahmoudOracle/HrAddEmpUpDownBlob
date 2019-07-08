@@ -1,10 +1,11 @@
 package view.beans;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
+import java.sql.SQLException;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.logging.ADFLogger;
+import oracle.adf.view.rich.component.rich.input.RichInputFile;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.context.AdfFacesContext;
 
@@ -36,11 +38,11 @@ import org.apache.myfaces.trinidad.util.ComponentReference;
 import view.adf.type.UploadBlob;
 import view.adf.util.ContentTypes;
 
-
 public class ImagBean {
     private static ADFLogger logger = ADFLogger.createADFLogger(ImagBean.class);
     private ComponentReference downloadButton;
     private Integer randomVal = 0;
+    private RichInputFile secondInputFile;
 
     public ImagBean() {
     }
@@ -314,5 +316,79 @@ public class ImagBean {
         // Add event code here...
         deleteTemporaryFile();
         return "save";
+    }
+
+    private RichInputFile myInputFileComponent;
+
+
+    public void uploadEmpImage(ValueChangeEvent valueChangeEvent) {
+        try {
+            UploadedFile file = (UploadedFile) valueChangeEvent.getNewValue();
+            BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+            DCIteratorBinding iter = (DCIteratorBinding) bindings.get("EmpAttachments1Iterator");
+            iter.getCurrentRow().setAttribute("AttachedFile", newBlobDomainForInputStream(file.getInputStream()));
+
+            FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null,
+                               new FacesMessage(FacesMessage.SEVERITY_INFO, "Image Uploaded Successfully..", null));
+            getMyInputFileComponent().resetValue();
+
+        } catch (Exception e) {
+            // TODO: Add catch code
+            e.printStackTrace();
+        }
+
+    }
+
+    public void uploadEmpImage1(ValueChangeEvent valueChangeEvent) {
+        try {
+            UploadedFile file = (UploadedFile) valueChangeEvent.getNewValue();
+            BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+            DCIteratorBinding iter = (DCIteratorBinding) bindings.get("EmpAttachments1Iterator");
+            iter.getCurrentRow().setAttribute("AttachedFile", newBlobDomainForInputStream(file.getInputStream()));
+
+            FacesContext context = FacesContext.getCurrentInstance();
+            context.addMessage(null,
+                               new FacesMessage(FacesMessage.SEVERITY_INFO, "Image Uploaded Successfully..", null));
+            getSecondInputFile().resetValue();
+
+        } catch (Exception e) {
+            // TODO: Add catch code
+            e.printStackTrace();
+        }
+
+    }
+
+    private BlobDomain newBlobDomainForInputStream(InputStream in) throws SQLException, IOException {
+        BlobDomain b = new BlobDomain();
+        OutputStream out = b.getBinaryOutputStream();
+        writeInputStreamToOutputStream(in, out);
+        in.close();
+        out.close();
+        return b;
+    }
+
+    private void writeInputStreamToOutputStream(InputStream in, OutputStream out) throws IOException {
+        byte[] buffer = new byte[8192];
+        int bytesRead = 0;
+        while ((bytesRead = in.read(buffer, 0, 8192)) != -1) {
+            out.write(buffer, 0, bytesRead);
+        }
+    }
+
+    public void setMyInputFileComponent(RichInputFile myInputFileComponent) {
+        this.myInputFileComponent = myInputFileComponent;
+    }
+
+    public RichInputFile getMyInputFileComponent() {
+        return myInputFileComponent;
+    }
+
+    public void setSecondInputFile(RichInputFile secondInputFile) {
+        this.secondInputFile = secondInputFile;
+    }
+
+    public RichInputFile getSecondInputFile() {
+        return secondInputFile;
     }
 }

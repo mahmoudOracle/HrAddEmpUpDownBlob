@@ -8,6 +8,8 @@
     </variableIterator>
     <iterator Binds="EmpAttachments1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
               id="EmpAttachments1Iterator"/>
+    <searchRegion Binds="EmpAttachments1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EmpAttachments1Query"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EmpAttachments1Iterator" id="EmpAttachmentId">
@@ -49,5 +51,12 @@
     </attributeValues>
     <action IterBinding="EmpAttachments1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
+    <tree IterBinding="EmpAttachments1Iterator" id="EmpAttachments1">
+      <nodeDefinition DefName="addEmp.model.bc.views.EmpAttachmentsVO" Name="EmpAttachments10">
+        <AttrNames>
+          <Item Value="AttachmentType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

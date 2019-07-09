@@ -1,4 +1,6 @@
 package view.beans;
+
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -27,6 +29,7 @@ import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 
 import oracle.jbo.Row;
+import oracle.jbo.ViewObject;
 import oracle.jbo.domain.BlobDomain;
 
 import org.apache.commons.io.FileUtils;
@@ -38,11 +41,12 @@ import org.apache.myfaces.trinidad.util.ComponentReference;
 import view.adf.type.UploadBlob;
 import view.adf.util.ContentTypes;
 
+
 public class ImagBean {
+    
     private static ADFLogger logger = ADFLogger.createADFLogger(ImagBean.class);
     private ComponentReference downloadButton;
     private Integer randomVal = 0;
-    private RichInputFile secondInputFile;
 
     public ImagBean() {
     }
@@ -98,12 +102,15 @@ public class ImagBean {
      */
     public void uploadFileValueChangeEvent(ValueChangeEvent valueChangeEvent) {
         // The event give access to an Uploade dFile which contains data about the file and its content
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Inside Action Event !");
         UploadedFile file = (UploadedFile) valueChangeEvent.getNewValue();
         // Get the original file name
         String fileName = file.getFilename();
+        System.out.println("XXXXXXXXXXXXXXXXXX  File Name is " + fileName);
         // get the mime type
         String contentType = ContentTypes.get(fileName);
+        
+        System.out.println("XXXXXXXXXXXXXXXXXX  File Name is " + contentType);
+
         // get the current roew from the ImagesView2Iterator via the binding
         DCBindingContainer lBindingContainer =
             (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
@@ -113,18 +120,16 @@ public class ImagBean {
         //newRow.setAttribute("ImageName", fileName);
         // create the BlobDomain and set it into the row
         UploadBlob blob = createBlobDomain(file, Boolean.TRUE);
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  Befroe Setting the Attribute!");
         newRow.setAttribute("AttachedFile", blob.getDataBlob());
         // set the mime type
         //newRow.setAttribute("ContentType", contentType);
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  After Setting the Attribute!");
-        //String tmp = (blob.getTempFileAvailabe() ? blob.getTempFile() : null);
-        //setTemporaryFileVar(tmp);
-        UIComponent ui = (UIComponent) valueChangeEvent.getSource();
+        String tmp = (blob.getTempFileAvailabe() ? blob.getTempFile() : null);
+        setTemporaryFileVar(tmp);
+        //UIComponent ui = (UIComponent) valueChangeEvent.getSource();
         // PPR refresh a jsf component
-        ui = ui.getParent();
-        AdfFacesContext.getCurrentInstance().addPartialTarget(ui);
-
+        //ui = ui.getParent();
+        System.out.println("KKKKKKKKKKKKKKKKKKKKKKKKKKKK Code End");
+        //AdfFacesContext.getCurrentInstance().addPartialTarget(ui);
     }
 
     /**
@@ -250,7 +255,7 @@ public class ImagBean {
         BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
 
         // get an ADF attributevalue from the ADF page definitions
-        AttributeBinding attr = (AttributeBinding) bindings.getControlBinding("AttachedFile");
+        AttributeBinding attr = (AttributeBinding) bindings.getControlBinding("UploadedFile");
         if (attr == null) {
             return;
         }
@@ -317,7 +322,7 @@ public class ImagBean {
         deleteTemporaryFile();
         return "save";
     }
-
+    
     private RichInputFile myInputFileComponent;
 
 
@@ -331,7 +336,7 @@ public class ImagBean {
             FacesContext context = FacesContext.getCurrentInstance();
             context.addMessage(null,
                                new FacesMessage(FacesMessage.SEVERITY_INFO, "Image Uploaded Successfully..", null));
-            getMyInputFileComponent().resetValue();
+            getMyInputFileComponent().resetValue();// To Empty the input File
 
         } catch (Exception e) {
             // TODO: Add catch code
@@ -340,24 +345,6 @@ public class ImagBean {
 
     }
 
-    public void uploadEmpImage1(ValueChangeEvent valueChangeEvent) {
-        try {
-            UploadedFile file = (UploadedFile) valueChangeEvent.getNewValue();
-            BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
-            DCIteratorBinding iter = (DCIteratorBinding) bindings.get("EmpAttachments1Iterator");
-            iter.getCurrentRow().setAttribute("AttachedFile", newBlobDomainForInputStream(file.getInputStream()));
-
-            FacesContext context = FacesContext.getCurrentInstance();
-            context.addMessage(null,
-                               new FacesMessage(FacesMessage.SEVERITY_INFO, "Image Uploaded Successfully..", null));
-            getSecondInputFile().resetValue();
-
-        } catch (Exception e) {
-            // TODO: Add catch code
-            e.printStackTrace();
-        }
-
-    }
 
     private BlobDomain newBlobDomainForInputStream(InputStream in) throws SQLException, IOException {
         BlobDomain b = new BlobDomain();
@@ -384,11 +371,45 @@ public class ImagBean {
         return myInputFileComponent;
     }
 
-    public void setSecondInputFile(RichInputFile secondInputFile) {
-        this.secondInputFile = secondInputFile;
+    /**Method to download file from actual path
+     * @param facesContext
+     * @param outputStream
+     */
+    public void downloadFileListener(FacesContext facesContext, OutputStream outputStream) throws IOException {
+        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+        AttributeBinding attr = (AttributeBinding) bindings.getControlBinding("AttachedFile");
+        BlobDomain blob = (BlobDomain) attr.getInputValue();
+
+        BufferedInputStream in = null;
+
+        in = new BufferedInputStream(blob.getBinaryStream());
+
+        int b;
+        byte[] buffer = new byte[10240];
+        while ((b = in.read(buffer, 0, 10240)) != -1) {
+            outputStream.write(buffer, 0, b);
+        }
+        outputStream.close();
     }
 
-    public RichInputFile getSecondInputFile() {
-        return secondInputFile;
+   
+
+    public void downloadBlobFile(FacesContext facesContext, OutputStream outputStream) {
+        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+        AttributeBinding attr = (AttributeBinding) bindings.getControlBinding("AttachedFile");
+        if (attr != null) {
+            BlobDomain blob = (BlobDomain) attr.getInputValue();
+            try { // copy the data from the blobDomain to the output stream
+                IOUtils.copy(blob.getInputStream(), outputStream);
+                blob.closeInputStream();
+                outputStream.flush();
+            } catch (IOException e) {
+                // handle errors
+                e.printStackTrace();
+                FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), "");
+                FacesContext.getCurrentInstance().addMessage(null, msg);
+            }
+        }
     }
+    
 }

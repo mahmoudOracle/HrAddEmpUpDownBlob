@@ -60,6 +60,7 @@
           path="addEmp.view.pageDefs.add_new_emp_tf_add_new_emp_tf_CreateInsertPageDef"/>
     <page id="addEmp_view_DrivingLicensePageDef1" path="fragments.DrivingLicensePageDef"/>
     <page id="addEmp_view_EmpAttachmentPageDef" path="addEmp.view.pageDefs.EmpAttachmentPageDef"/>
+    <page id="empAttachment_dummyPageDef" path="addEmp.view.pageDefs.xyz_dummyPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="HrAddEmpAppModuleDataControl" Package="addEmp.model.bc.am"

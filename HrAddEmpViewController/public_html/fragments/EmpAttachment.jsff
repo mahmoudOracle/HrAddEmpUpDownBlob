@@ -5,7 +5,7 @@
         <af:gridRow height="100%" id="gr1">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
                 <!-- Content -->
-                <af:panelBox text="PanelBox1" id="pb1">
+                <af:panelBox text="Attachments " id="pb1">
                     <f:facet name="toolbar">
                         <af:toolbar id="t1">
                             <af:button actionListener="#{bindings.CreateInsert.execute}" text="Attach The File"
@@ -24,7 +24,7 @@
                             </af:button>
                         </af:toolbar>
                     </f:facet>
-                    <af:panelFormLayout id="pfl1">
+                    <af:panelFormLayout id="pfl1" maxColumns="2" rows="7">
                         <af:panelLabelAndMessage label="#{bindings.EmpAttachmentId.hints.label}" id="plam1">
                             <af:outputText value="#{bindings.EmpAttachmentId.inputValue}"
                                            shortDesc="#{bindings.EmpAttachmentId.hints.tooltip}" id="ot1">
@@ -45,14 +45,25 @@
                                 <f:selectItems value="#{bindings.AttachmentType.items}" id="si1"/>
                                 <f:validator binding="#{bindings.AttachmentType.validator}"/>
                             </af:selectOneChoice>
-                            <af:button text="Download Data" id="cb3" binding="#{imageBean.downloadButton}">
-                                <af:fileDownloadActionListener contentType="#{bindings.AttachmentType.inputValue}"
-                                                               filename="#{bindings.EmployeeId.inputValue}"
+                            <af:button text="Download Data Running" id="cb3">
+                                <af:fileDownloadActionListener filename="#{bindings.EmployeeId.inputValue}"
                                                                method="#{imageBean.downloadImage}"/>
                             </af:button>
-                            <af:inputFile label="Label 1" id="if1" binding="#{imageBean.secondInputFile}"
-                                          valueChangeListener="#{imageBean.uploadEmpImage1}" autoSubmit="true"
-                                          disabled="#{bindings.EmpAttachmentId.inputValue eq null}"/>
+                            <af:button text="Download Data 2" id="cb4">
+                                <af:fileDownloadActionListener filename="#{bindings.EmployeeId.inputValue}"
+                                                               method="#{imageBean.downloadFileListener}"/>
+                            </af:button>
+                            <af:panelLabelAndMessage label="Attach File " id="plam4">
+                                <af:inputFile id="if1" binding="#{imageBean.myInputFileComponent}"
+                                              valueChangeListener="#{imageBean.uploadEmpImage}" autoSubmit="true"
+                                              disabled="#{bindings.EmpAttachmentId.inputValue eq null}" simple="true"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Attach Or Replace File Timo" id="plam3">
+                                <af:inputFile id="if2"
+                                              valueChangeListener="#{imageBean.uploadFileValueChangeEvent}"
+                                              autoSubmit="true"
+                                              disabled="#{bindings.EmpAttachmentId.inputValue eq null}" simple="true"/>
+                            </af:panelLabelAndMessage>
                         </af:group>
                         <af:group id="Group1">
                             <af:inputText value="#{bindings.CreatedBy.inputValue}"
@@ -97,6 +108,45 @@
                             </af:inputText>
                         </af:group>
                     </af:panelFormLayout>
+                    <af:panelCollection id="pc1">
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar"/>
+                        <f:facet name="statusbar"/>
+                        <af:table value="#{bindings.EmpAttachments1.collectionModel}" var="row"
+                                  rows="#{bindings.EmpAttachments1.rangeSize}"
+                                  emptyText="#{bindings.EmpAttachments1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.EmpAttachments1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.EmpAttachments1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.EmpAttachments1.rangeSize}"
+                                  filterModel="#{bindings.EmpAttachments1Query.queryDescriptor}" filterVisible="true"
+                                  queryListener="#{bindings.EmpAttachments1Query.processQuery}" varStatus="vs" id="t3"
+                                  partialTriggers="::b1 :::b1">
+                            <af:column sortProperty="#{bindings.EmpAttachments1.hints.AttachmentType.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.EmpAttachments1.hints.AttachmentType.label}" id="c1">
+                                <af:outputText value="#{row.AttachmentType}"
+                                               shortDesc="#{bindings.EmpAttachments1.hints.AttachmentType.tooltip}"
+                                               id="ot3">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.EmpAttachments1.hints.AttachmentType.format}"/>
+                                </af:outputText>
+                            </af:column>
+                        </af:table>
+                    </af:panelCollection>
+                    <af:panelGroupLayout id="pgl2">
+                        <af:image id="i1" source="/imagservlet?id=#{bindings.EmpAttachmentId.inputValue}"
+                                  shortDesc="."/>
+                    </af:panelGroupLayout>
+                     <af:panelGroupLayout id="pgl13">
+                        <af:image id="i2" source="/render_imageRP?id=#{bindings.EmpAttachmentId.inputValue}"
+                                  shortDesc="."/>
+                    </af:panelGroupLayout>
+                     <af:panelGroupLayout id="pgl4">
+                        <af:image id="i3" source="/render_image?id=#{bindings.EmpAttachmentId.inputValue}"
+                                  shortDesc="."/>
+                    </af:panelGroupLayout>
+                    
                 </af:panelBox>
             </af:gridCell>
         </af:gridRow>

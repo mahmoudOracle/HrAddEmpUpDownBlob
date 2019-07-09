@@ -6,22 +6,32 @@
   Name="EmpAttachmentsVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  RowClass="addEmp.model.bc.views.EmpAttachmentsVORowImpl"
+  ComponentClass="addEmp.model.bc.views.EmpAttachmentsVOImpl"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
   SelectListFlags="1"
   FromListFlags="1"
   WhereFlags="1"
-  BindingStyle="OracleName"
-  CustomQuery="false"
   SelectAllAttributes="false"
-  RowClass="model.shared.extensions.ExtViewRowImpl"
-  ComponentClass="model.shared.extensions.ExtViewObjectImpl"
-  FetchMode="FETCH_AS_NEEDED"
-  PageIterMode="Full">
+  ComponentInterface="addEmp.model.bc.views.common.EmpAttachmentsVO"
+  RowInterface="addEmp.model.bc.views.common.EmpAttachmentsVORow">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="addEmp.model.bc.views.EmpAttachmentsVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="bindEmpAttachID"
+    Kind="where"
+    Type="oracle.jbo.domain.Number"/>
   <ViewAccessor
     Name="RefAttachmentType1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefAttachmentType"
@@ -117,8 +127,60 @@
     EntityAttrName="Version"
     EntityUsage="EmployeeAttachments"
     AliasName="VERSION"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="getAttachmentById"
+      MethodName="getAttachmentById">
+      <Return
+        Name="_return_type_"
+        Type="oracle.jbo.Row"/>
+      <Parameter
+        Name="aId"
+        Type="oracle.jbo.domain.Number"/>
+    </Method>
+    <Method
+      Name="getbindEmpAttachID"
+      MethodName="getbindEmpAttachID">
+      <Return
+        Name="_return_type_"
+        Type="oracle.jbo.domain.Number"/>
+    </Method>
+    <Method
+      Name="setbindEmpAttachID"
+      MethodName="setbindEmpAttachID">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="value"
+        Type="oracle.jbo.domain.Number"/>
+    </Method>
+  </ClientInterface>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>
   </ResourceBundle>
+  <DeclarativeWhereClause
+    Name="DeclarativeWhereClause">
+    <ViewCriteria
+      Name="EmpAttachmentsVOWhereCriteria"
+      ViewObjectName="addEmp.model.bc.views.EmpAttachmentsVO"
+      Conjunction="AND"
+      Mode="3">
+      <ViewCriteriaRow
+        Name="EmpAttachmentsVOWhereCriteria_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="EmpAttachmentId"
+          ViewAttribute="EmpAttachmentId"
+          Operator="="
+          Conjunction="AND"
+          Value=":bindEmpAttachID"
+          GenerateIsNullClauseForBindVars="false"
+          IsBindVarValue="true"
+          Required="Optional"/>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </DeclarativeWhereClause>
 </ViewObject>

@@ -274,7 +274,7 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Commons-io-2.4.jar"/>
+            <value n="id" v="Commons-io-2.6.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
@@ -310,11 +310,11 @@
          <list n="libraryDefinitions">
             <hash>
                <list n="classPath">
-                  <url path="../../../../Oracle/Middleware/Oracle_Home/wlserver/server/lib/consoleapp/APP-INF/lib/commons-io-2.4.jar" jar-entry=""/>
+                  <url path="../../../commons-io-2.6/commons-io-2.6.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Commons-io-2.4.jar"/>
-               <value n="id" v="Commons-io-2.4.jar"/>
+               <value n="description" v="Commons-io-2.6.jar"/>
+               <value n="id" v="Commons-io-2.6.jar"/>
                <value n="locked" v="true"/>
             </hash>
          </list>
@@ -401,7 +401,7 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Commons-io-2.4.jar"/>
+            <value n="id" v="Commons-io-2.6.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>

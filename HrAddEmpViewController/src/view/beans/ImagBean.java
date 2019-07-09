@@ -47,6 +47,7 @@ public class ImagBean {
     private static ADFLogger logger = ADFLogger.createADFLogger(ImagBean.class);
     private ComponentReference downloadButton;
     private Integer randomVal = 0;
+    private RichInputFile timoInputFile;
 
     public ImagBean() {
     }
@@ -125,6 +126,7 @@ public class ImagBean {
         //newRow.setAttribute("ContentType", contentType);
         String tmp = (blob.getTempFileAvailabe() ? blob.getTempFile() : null);
         setTemporaryFileVar(tmp);
+        getTimoInputFile().resetValue();// To Empty the input File
         //UIComponent ui = (UIComponent) valueChangeEvent.getSource();
         // PPR refresh a jsf component
         //ui = ui.getParent();
@@ -411,5 +413,12 @@ public class ImagBean {
             }
         }
     }
-    
+
+    public void setTimoInputFile(RichInputFile timoInputFile) {
+        this.timoInputFile = timoInputFile;
+    }
+
+    public RichInputFile getTimoInputFile() {
+        return timoInputFile;
+    }
 }

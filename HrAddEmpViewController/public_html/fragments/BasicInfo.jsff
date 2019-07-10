@@ -5,7 +5,8 @@
         <af:gridRow height="100%" id="gr2">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                 <!-- Content -->
-                <af:panelBox text="PanelBox1" id="pb1">
+                <af:panelHeader text="Update Employee Basic Info" id="ph1">
+                    <f:facet name="context"/>
                     <f:facet name="toolbar">
                         <af:toolbar id="t1">
                             <af:group id="g1">
@@ -24,6 +25,9 @@
                             </af:group>
                         </af:toolbar>
                     </f:facet>
+                    <f:facet name="menuBar"/>
+                    <f:facet name="legend"/>
+                    <f:facet name="info"/>
                     <af:panelFormLayout id="pfl1" maxColumns="5" rows="5">
                         <af:panelLabelAndMessage label="#{bindings.EmployeeId.hints.label}" id="plam1">
                             <af:outputText value="#{bindings.EmployeeId.inputValue}"
@@ -236,7 +240,7 @@
                             </af:inputText>
                         </af:group>
                     </af:panelFormLayout>
-                </af:panelBox>
+                </af:panelHeader>
             </af:gridCell>
         </af:gridRow>
         <af:gridRow height="50px" id="gr1">

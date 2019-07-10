@@ -6,10 +6,8 @@
     <variableIterator id="variables">
       <variable Name="TemporaryFile" Type="java.lang.String"/>
     </variableIterator>
-    <iterator Binds="EmpAttachments1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
-              id="EmpAttachments1Iterator"/>
-    <searchRegion Binds="EmpAttachments1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EmpAttachments1Query"/>
+    <iterator Binds="EmpAttachmentsData1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
+              id="EmpAttachments1Iterator" ChangeEventPolicy="ppr" Refresh="ifNeeded"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EmpAttachments1Iterator" id="EmpAttachmentId">
@@ -51,9 +49,16 @@
     </attributeValues>
     <action IterBinding="EmpAttachments1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <tree IterBinding="EmpAttachments1Iterator" id="EmpAttachments1">
-      <nodeDefinition DefName="addEmp.model.bc.views.EmpAttachmentsVO" Name="EmpAttachments10">
+    <attributeValues IterBinding="variables" id="TemporaryFile1" ChangeEventPolicy="none">
+      <AttrNames>
+        <Item Value="TemporaryFile"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="EmpAttachments1Iterator" id="EmpAttachmentsData1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="addEmp.model.bc.views.EmpAttachmentsData" Name="EmpAttachmentsData10"
+                      TargetIterator="${bindings.EmpAttachments1Iterator}">
         <AttrNames>
+          <Item Value="EmpAttachmentId"/>
           <Item Value="AttachmentType"/>
         </AttrNames>
       </nodeDefinition>

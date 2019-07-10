@@ -597,6 +597,11 @@
     ViewLink="addEmp.model.bc.viewLinks.EmpVLEmpAttachment"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="EmpAttachmentsData"
+    ViewLink="addEmp.model.bc.viewLinks.EmpEmpAttVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

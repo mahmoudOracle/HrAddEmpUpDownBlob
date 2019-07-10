@@ -127,11 +127,11 @@ public class ImagBean {
         String tmp = (blob.getTempFileAvailabe() ? blob.getTempFile() : null);
         setTemporaryFileVar(tmp);
         getTimoInputFile().resetValue();// To Empty the input File
-        //UIComponent ui = (UIComponent) valueChangeEvent.getSource();
+        UIComponent ui = (UIComponent) valueChangeEvent.getSource();
         // PPR refresh a jsf component
-        //ui = ui.getParent();
+        ui = ui.getParent();
         System.out.println("KKKKKKKKKKKKKKKKKKKKKKKKKKKK Code End");
-        //AdfFacesContext.getCurrentInstance().addPartialTarget(ui);
+        AdfFacesContext.getCurrentInstance().addPartialTarget(ui);
     }
 
     /**
@@ -257,7 +257,7 @@ public class ImagBean {
         BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
 
         // get an ADF attributevalue from the ADF page definitions
-        AttributeBinding attr = (AttributeBinding) bindings.getControlBinding("UploadedFile");
+        AttributeBinding attr = (AttributeBinding) bindings.getControlBinding("AttachedFile");
         if (attr == null) {
             return;
         }

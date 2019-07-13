@@ -15,6 +15,7 @@ import java.util.logging.Level;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,10 +32,11 @@ import org.apache.commons.io.IOUtils;
 
 import view.adf.util.ContentTypes;
 
-
+@WebServlet(name = "ImageServlet", urlPatterns = { "/render_image" })
 public class ImageServlet extends HttpServlet {
-    @SuppressWarnings("compatibility:-1452118953754413705")
-    private static final long serialVersionUID = 1L;
+    @SuppressWarnings("compatibility:-7152837766072020735")
+    private static final long serialVersionUID = 921064300797099404L;
+
     protected transient ADFLogger mLogger = ADFLogger.createADFLogger(ImageServlet.class);
 
     public void init(ServletConfig config) throws ServletException {
@@ -51,10 +53,11 @@ public class ImageServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         StringBuilder sb = new StringBuilder(100);
         String appModuleName = "addEmp.model.bc.am.HrAddEmpAppModule";
-System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX              XXXXXXXXXXXXXXXXXXXXXXXXX   SAMEH NASSAR SERVLET");
         sb.append("ImageServlet ").append(appModuleName);
 
         try {
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX              XXXXXXXXXXXXXXXXXXXXXXXXX   TIMO IMAGE SERVLET");
+
             // get parameter from request
             Map paramMap = request.getParameterMap();
             oracle.jbo.domain.Number id = null;

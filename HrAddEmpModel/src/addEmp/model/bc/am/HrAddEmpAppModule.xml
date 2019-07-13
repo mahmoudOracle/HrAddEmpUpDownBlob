@@ -57,7 +57,7 @@
     Name="EmpAttachments1"
     ViewObjectName="addEmp.model.bc.views.EmpAttachmentsVO"/>
   <ViewUsage
-    Name="EmpAttachmentsData1"
+    Name="AllEmpAttachmentsData"
     ViewObjectName="addEmp.model.bc.views.EmpAttachmentsData"/>
   <ViewLinkUsage
     Name="EmployeeContractVL1"
@@ -147,6 +147,6 @@
     Name="EmpEmpAttVL1"
     ViewLinkObjectName="addEmp.model.bc.viewLinks.EmpEmpAttVL"
     SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.BaseEmployees1"
-    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.EmpAttachmentsData1"
+    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.AllEmpAttachmentsData"
     Reversed="false"/>
 </AppModule>

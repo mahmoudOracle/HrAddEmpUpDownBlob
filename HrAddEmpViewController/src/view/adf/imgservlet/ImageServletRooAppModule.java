@@ -1,10 +1,5 @@
 package view.adf.imgservlet;
 
-
-import addEmp.model.bc.views.EmpAttachmentsVOImpl;
-
-import addEmp.model.bc.views.EmpAttachmentsVORowImpl;
-
 import addEmp.model.bc.views.common.EmpAttachmentsVO;
 
 import addEmp.model.bc.views.common.EmpAttachmentsVORow;
@@ -16,6 +11,7 @@ import java.util.Map;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,10 +25,11 @@ import oracle.jbo.domain.BlobDomain;
 
 import org.apache.commons.io.IOUtils;
 
-
+@WebServlet(name = "ImageServlet", urlPatterns = { "/render_imageRP" })
 public class ImageServletRooAppModule extends HttpServlet {
-    @SuppressWarnings("compatibility:-628571030755457470")
-    private static final long serialVersionUID = 1L;
+    @SuppressWarnings("compatibility:6221128858694334494")
+    private static final long serialVersionUID = 5523570536218862468L;
+
     protected transient ADFLogger mLogger = ADFLogger.createADFLogger(ImageServletRooAppModule.class);
 
     public void init(ServletConfig config) throws ServletException {
@@ -43,7 +40,6 @@ public class ImageServletRooAppModule extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         synchronized (this) {
 
-            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX              XXXXXXXXXXXXXXXXXXXXXXXXX   TIMO FROM APP MODULE");
 
             StringBuilder sb = new StringBuilder(100);
             String appModuleName = "addEmp.model.bc.am.HrAddEmpAppModule";
@@ -51,6 +47,8 @@ public class ImageServletRooAppModule extends HttpServlet {
             ApplicationModule am = null;
             ViewObject vo = null;
             try {
+                System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX              XXXXXXXXXXXXXXXXXXXXXXXXX   TIMO FROM APP MODULE");
+
                 am = Configuration.createRootApplicationModule(appModuleName, appModuleConfig);
                 sb.append("ImageServletRooAppModule ").append(appModuleName);
                 vo = am.findViewObject("EmpAttachments1");

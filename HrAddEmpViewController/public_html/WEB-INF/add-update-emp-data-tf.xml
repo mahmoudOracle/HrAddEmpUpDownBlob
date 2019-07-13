@@ -38,6 +38,11 @@
       <managed-bean-class>view.beans.ImagBean</managed-bean-class>
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__10">
+      <managed-bean-name>treeNavigationBean</managed-bean-name>
+      <managed-bean-class>view.beans.TreeNavigationBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
     <view id="IdInfo">
       <display-name>Identification Information </display-name>
       <page>/fragments/IdInfo.jsff</page>

@@ -121,7 +121,8 @@
                                 <af:listView value="#{bindings.EmpAttachmentsData1.collectionModel}" var="item"
                                              emptyText="#{bindings.EmpAttachmentsData1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                              fetchSize="#{bindings.EmpAttachmentsData1.rangeSize}" id="lv1"
-                                             selection="single">
+                                             selection="single"
+                                             selectionListener="#{bindings.EmpAttachmentsData1.treeModel.makeCurrent}">
                                     <af:listItem id="li1">
                                         <af:panelGroupLayout layout="horizontal" id="pgl3">
                                             <f:facet name="separator">
@@ -137,24 +138,12 @@
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.EmpAttachmentsData1.hints.AttachmentType.format}"/>
                                             </af:outputFormatted>
+                                           
                                             <af:image id="i1"
                                                       source="/imagservlet?id=#{item.bindings.EmpAttachmentId.inputValue}"
-                                                      shortDesc="."
+                                                      shortDesc="Sameh"
                                                       inlineStyle="border-style:solid; height:300px; width:300px;"/>
-                                            <af:image id="i2"
-                                                      source="/render_imageRP?id=#{item.bindings.EmpAttachmentId.inputValue}"
-                                                      shortDesc="."
-                                                      inlineStyle="border-style:solid; height:300px; width:300px;"/>
-                                            <af:image id="i3"
-                                                      source="/render_image?id=#{item.bindings.EmpAttachmentId.inputValue}&amp;tmp=#{bindings.TemporaryFile1.inputValue}"
-                                                      shortDesc="."
-                                                      inlineStyle="border-style:solid; height:300px; width:300px;"/>
-                                            <af:image id="i5"
-                                                      source="/render_image?id=#{item.bindings.EmpAttachmentId.inputValue}"
-                                                      shortDesc="."
-                                                      inlineStyle="border-style:solid; height:300px; width:300px;"/>
-                                                      
-                                        </af:panelGroupLayout>
+                                           </af:panelGroupLayout>
                                     </af:listItem>
                                 </af:listView>
                             </af:panelGroupLayout>

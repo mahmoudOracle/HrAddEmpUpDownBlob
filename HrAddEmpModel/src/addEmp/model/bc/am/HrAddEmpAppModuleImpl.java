@@ -256,8 +256,8 @@ public class HrAddEmpAppModuleImpl extends ExtApplicationModuleImpl {
      * Container's getter for EmpAttachmentsData1.
      * @return EmpAttachmentsData1
      */
-    public ExtViewObjectImpl getEmpAttachmentsData1() {
-        return (ExtViewObjectImpl) findViewObject("EmpAttachmentsData1");
+    public ExtViewObjectImpl getAllEmpAttachmentsData() {
+        return (ExtViewObjectImpl) findViewObject("AllEmpAttachmentsData");
     }
 
     /**

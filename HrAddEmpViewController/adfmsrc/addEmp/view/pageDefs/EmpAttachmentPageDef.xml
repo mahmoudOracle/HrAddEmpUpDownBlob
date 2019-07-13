@@ -6,8 +6,10 @@
     <variableIterator id="variables">
       <variable Name="TemporaryFile" Type="java.lang.String"/>
     </variableIterator>
-    <iterator Binds="EmpAttachmentsData1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
-              id="EmpAttachments1Iterator" ChangeEventPolicy="ppr" Refresh="ifNeeded"/>
+    <iterator Binds="AllEmpAttachmentsData" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
+              id="EmpAttachments1Iterator" ChangeEventPolicy="ppr"/>
+    <iterator id="AllEmpAttachmentsDataIterator" Binds="AllEmpAttachmentsData"
+              DataControl="HrAddEmpAppModuleDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EmpAttachments1Iterator" id="EmpAttachmentId">
@@ -54,9 +56,9 @@
         <Item Value="TemporaryFile"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="EmpAttachments1Iterator" id="EmpAttachmentsData1" ChangeEventPolicy="ppr">
+    <tree IterBinding="AllEmpAttachmentsDataIterator" id="EmpAttachmentsData1" ChangeEventPolicy="ppr">
       <nodeDefinition DefName="addEmp.model.bc.views.EmpAttachmentsData" Name="EmpAttachmentsData10"
-                      TargetIterator="${bindings.EmpAttachments1Iterator}">
+                      TargetIterator="${bindings.AllEmpAttachmentsDataIterator}">
         <AttrNames>
           <Item Value="EmpAttachmentId"/>
           <Item Value="AttachmentType"/>

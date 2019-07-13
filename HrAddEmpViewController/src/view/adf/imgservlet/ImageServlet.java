@@ -51,7 +51,7 @@ public class ImageServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         StringBuilder sb = new StringBuilder(100);
         String appModuleName = "addEmp.model.bc.am.HrAddEmpAppModule";
-
+System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX              XXXXXXXXXXXXXXXXXXXXXXXXX   SAMEH NASSAR SERVLET");
         sb.append("ImageServlet ").append(appModuleName);
 
         try {

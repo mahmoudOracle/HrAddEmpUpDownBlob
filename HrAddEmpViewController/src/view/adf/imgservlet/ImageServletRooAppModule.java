@@ -42,6 +42,9 @@ public class ImageServletRooAppModule extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         synchronized (this) {
+
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX              XXXXXXXXXXXXXXXXXXXXXXXXX   TIMO FROM APP MODULE");
+
             StringBuilder sb = new StringBuilder(100);
             String appModuleName = "addEmp.model.bc.am.HrAddEmpAppModule";
             String appModuleConfig = "HrAddEmpAppModuleLocal";

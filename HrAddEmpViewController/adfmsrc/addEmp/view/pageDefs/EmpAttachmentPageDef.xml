@@ -63,5 +63,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="EmpAttachments1Iterator" id="AttachedFile">
+      <AttrNames>
+        <Item Value="AttachedFile"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

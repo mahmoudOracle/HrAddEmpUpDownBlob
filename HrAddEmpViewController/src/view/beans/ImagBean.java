@@ -14,6 +14,7 @@ import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 
 import oracle.adf.model.BindingContext;
@@ -43,7 +44,7 @@ import view.adf.util.ContentTypes;
 
 
 public class ImagBean {
-    
+
     private static ADFLogger logger = ADFLogger.createADFLogger(ImagBean.class);
     private ComponentReference downloadButton;
     private Integer randomVal = 0;
@@ -109,8 +110,8 @@ public class ImagBean {
         System.out.println("XXXXXXXXXXXXXXXXXX  File Name is " + fileName);
         // get the mime type
         String contentType = ContentTypes.get(fileName);
-        
-        System.out.println("XXXXXXXXXXXXXXXXXX  File Name is " + contentType);
+
+        System.out.println("XXXXXXXXXXXXXXXXXX  File Type is " + contentType);
 
         // get the current roew from the ImagesView2Iterator via the binding
         DCBindingContainer lBindingContainer =
@@ -126,7 +127,7 @@ public class ImagBean {
         //newRow.setAttribute("ContentType", contentType);
         String tmp = (blob.getTempFileAvailabe() ? blob.getTempFile() : null);
         setTemporaryFileVar(tmp);
-        getTimoInputFile().resetValue();// To Empty the input File
+        getTimoInputFile().resetValue(); // To Empty the input File
         UIComponent ui = (UIComponent) valueChangeEvent.getSource();
         // PPR refresh a jsf component
         ui = ui.getParent();
@@ -253,17 +254,23 @@ public class ImagBean {
      * @param facesContext
      * @param outputStream
      */
-    public void downloadImage(FacesContext facesContext, OutputStream outputStream) {
+    public void downloadImageTIMO(FacesContext facesContext, OutputStream outputStream) {
+      
+      System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX>>>> Inside Timo Download Method");
         BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
 
         // get an ADF attributevalue from the ADF page definitions
         AttributeBinding attr = (AttributeBinding) bindings.getControlBinding("AttachedFile");
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX>>>> After Getting the attached file");
+
+
         if (attr == null) {
             return;
         }
 
         // the value is a BlobDomain data type
         BlobDomain blob = (BlobDomain) attr.getInputValue();
+        System.out.println("XXXXXXXXXXXXXX File Size is " + blob.getSize());
 
         try { // copy hte data from the BlobDomain to the output stream
             IOUtils.copy(blob.getInputStream(), outputStream);
@@ -324,7 +331,7 @@ public class ImagBean {
         deleteTemporaryFile();
         return "save";
     }
-    
+
     private RichInputFile myInputFileComponent;
 
 
@@ -338,7 +345,7 @@ public class ImagBean {
             FacesContext context = FacesContext.getCurrentInstance();
             context.addMessage(null,
                                new FacesMessage(FacesMessage.SEVERITY_INFO, "Image Uploaded Successfully..", null));
-            getMyInputFileComponent().resetValue();// To Empty the input File
+            getMyInputFileComponent().resetValue(); // To Empty the input File
 
         } catch (Exception e) {
             // TODO: Add catch code
@@ -394,7 +401,6 @@ public class ImagBean {
         outputStream.close();
     }
 
-   
 
     public void downloadBlobFile(FacesContext facesContext, OutputStream outputStream) {
         BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
@@ -404,6 +410,7 @@ public class ImagBean {
             try { // copy the data from the blobDomain to the output stream
                 IOUtils.copy(blob.getInputStream(), outputStream);
                 blob.closeInputStream();
+
                 outputStream.flush();
             } catch (IOException e) {
                 // handle errors
@@ -420,5 +427,9 @@ public class ImagBean {
 
     public RichInputFile getTimoInputFile() {
         return timoInputFile;
+    }
+
+    public void testDownload(ActionEvent actionEvent) {
+        // Add event code here...
     }
 }

@@ -39,7 +39,9 @@ public class ImagServlet
   public void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException
   {
-    response.setContentType(CONTENT_TYPE);
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX              XXXXXXXXXXXXXXXXXXXXXXXXX   TIMO Normal ONE");
+
+        response.setContentType(CONTENT_TYPE);
     String id = request.getParameter("id");
     OutputStream os = response.getOutputStream();
     Connection conn = null;

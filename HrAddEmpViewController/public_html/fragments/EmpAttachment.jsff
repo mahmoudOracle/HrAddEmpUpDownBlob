@@ -24,7 +24,7 @@
                             </af:button>
                         </af:toolbar>
                     </f:facet>
-                    <af:panelFormLayout id="pfl1" maxColumns="2" rows="7">
+                    <af:panelFormLayout id="pfl1" maxColumns="2" rows="7" partialTriggers="lv1">
                         <af:panelLabelAndMessage label="#{bindings.EmpAttachmentId.hints.label}" id="plam1">
                             <af:outputText value="#{bindings.EmpAttachmentId.inputValue}"
                                            shortDesc="#{bindings.EmpAttachmentId.hints.tooltip}" id="ot1">
@@ -45,17 +45,17 @@
                                 <f:selectItems value="#{bindings.AttachmentType.items}" id="si1"/>
                                 <f:validator binding="#{bindings.AttachmentType.validator}"/>
                             </af:selectOneChoice>
-                            <af:button text="Download Data Running" id="cb3">
-                                <af:fileDownloadActionListener filename="#{bindings.EmployeeId.inputValue}"
-                                                               method="#{imageBean.downloadImage}"/>
+                            <af:button text="Download Data Running" id="cb3"
+                                       actionListener="#{imageBean.testDownload}">
+                                <af:fileDownloadActionListener method="#{imageBean.downloadBlobFile}"
+                                                               filename="downloadBlobFile.jpg"/>
                             </af:button>
-                            <af:button text="Download Data 2" id="cb4">
-                                <af:fileDownloadActionListener filename="#{bindings.EmployeeId.inputValue}"
-                                                               method="#{imageBean.downloadFileListener}"/>
+                            <af:button text="Download Data TIMO" id="cb4">
+                                <af:fileDownloadActionListener method="#{imageBean.downloadImageTIMO}"/>
                             </af:button>
                             <af:button text="Download Data 2" id="cb5">
-                                <af:fileDownloadActionListener filename="#{bindings.EmployeeId.inputValue}"
-                                                               method="#{imageBean.downloadBlobFile}"/>
+                                <af:fileDownloadActionListener filename="downloadFileListener.jpg"
+                                                               method="#{imageBean.downloadFileListener}"/>
                             </af:button>
                             <af:panelLabelAndMessage label="Attach File " id="plam4">
                                 <af:inputFile id="if1" binding="#{imageBean.myInputFileComponent}"
@@ -120,7 +120,8 @@
                             <af:panelGroupLayout id="pgl5">
                                 <af:listView value="#{bindings.EmpAttachmentsData1.collectionModel}" var="item"
                                              emptyText="#{bindings.EmpAttachmentsData1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                             fetchSize="#{bindings.EmpAttachmentsData1.rangeSize}" id="lv1">
+                                             fetchSize="#{bindings.EmpAttachmentsData1.rangeSize}" id="lv1"
+                                             selection="single">
                                     <af:listItem id="li1">
                                         <af:panelGroupLayout layout="horizontal" id="pgl3">
                                             <f:facet name="separator">
@@ -148,6 +149,11 @@
                                                       source="/render_image?id=#{item.bindings.EmpAttachmentId.inputValue}&amp;tmp=#{bindings.TemporaryFile1.inputValue}"
                                                       shortDesc="."
                                                       inlineStyle="border-style:solid; height:300px; width:300px;"/>
+                                            <af:image id="i5"
+                                                      source="/render_image?id=#{item.bindings.EmpAttachmentId.inputValue}"
+                                                      shortDesc="."
+                                                      inlineStyle="border-style:solid; height:300px; width:300px;"/>
+                                                      
                                         </af:panelGroupLayout>
                                     </af:listItem>
                                 </af:listView>

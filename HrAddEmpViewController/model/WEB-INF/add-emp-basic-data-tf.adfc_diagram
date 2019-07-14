@@ -198,14 +198,13 @@
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase26"
-      from="View11">
+      id="ControlFlowCase26">
       <property
-         name="tosrcid">__20</property>
+         name="tosrcid">__33</property>
       <property
-         name="fromOutcome">AddNew</property>
+         name="fromOutcome">CreateInsert</property>
       <property
-         name="fromsrcid">__19</property>
+         name="fromsrcid">__32</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -220,12 +219,13 @@
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase30">
+      id="ControlFlowCase30"
+      from="View11">
       <property
-         name="tosrcid">__33</property>
+         name="tosrcid">__20</property>
       <property
-         name="fromOutcome">CreateInsert</property>
+         name="fromOutcome">AddNew</property>
       <property
-         name="fromsrcid">__32</property>
+         name="fromsrcid">__19</property>
    </ControlFlowCase>
 </SDM>

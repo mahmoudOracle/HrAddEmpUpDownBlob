@@ -27,6 +27,9 @@
                               rowSelection="single" fetchSize="#{bindings.BaseEmployees1.rangeSize}"
                               filterModel="#{bindings.BaseEmployees1Query.queryDescriptor}" filterVisible="true"
                               queryListener="#{bindings.BaseEmployees1Query.processQuery}" varStatus="vs" id="t1">
+                        <af:column id="c33" rowHeader="true" width="14">
+                            <af:outputText value="#{vs.index+1}" id="ot2"/>
+                        </af:column>
                         <af:column sortProperty="#{bindings.BaseEmployees1.hints.EmployeeId.name}" filterable="true"
                                    sortable="true" headerText="#{bindings.BaseEmployees1.hints.EmployeeId.label}"
                                    id="c1">
@@ -403,4 +406,5 @@
             </af:gridCell>
         </af:gridRow>
     </af:panelGridLayout>
+    <af:resource type="css" source="https://use.fontawesome.com/releases/v5.5.0/css/all.css"/>
 </ui:composition>

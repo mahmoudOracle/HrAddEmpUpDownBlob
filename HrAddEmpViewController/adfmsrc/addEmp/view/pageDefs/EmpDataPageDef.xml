@@ -8,6 +8,8 @@
               id="BaseEmployees1Iterator"/>
     <searchRegion Binds="BaseEmployees1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="BaseEmployees1Query"/>
+    <iterator Binds="EmpAttachments1" RangeSize="10" DataControl="HrAddEmpAppModuleDataControl"
+              id="EmpAttachments1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="BaseEmployees1Iterator" id="BaseEmployees1">
@@ -43,5 +45,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="EmpAttachments1Iterator" id="AttachedFile">
+      <AttrNames>
+        <Item Value="AttachedFile"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

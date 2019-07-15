@@ -9,12 +9,11 @@
         </af:gridRow>
         <af:gridRow height="100%" id="gr1">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-                <!-- Content -->
                 <af:panelCollection id="pc1">
                     <f:facet name="menus"/>
                     <f:facet name="toolbar">
                         <af:toolbar id="t2">
-                            <af:button text="Add New Employee" id="b1" action="addNewEmployee"></af:button>
+                            <af:button text="Add New Employee" id="b1" action="addNewEmployee"/>
                         </af:toolbar>
                     </f:facet>
                     <f:facet name="statusbar"/>
@@ -169,72 +168,11 @@
                                 </af:selectOneChoice>
                             </af:column>
                         </af:column>
-                        <af:column headerText="Contact Info" sortable="true" filterable="true" id="c13" align="center">
-                            <af:column sortProperty="#{bindings.BaseEmployees1.hints.Email.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.BaseEmployees1.hints.Email.label}"
-                                       id="c14">
-                                <af:inputText value="#{row.bindings.Email.inputValue}"
-                                              label="#{bindings.BaseEmployees1.hints.Email.label}"
-                                              required="#{bindings.BaseEmployees1.hints.Email.mandatory}"
-                                              columns="#{bindings.BaseEmployees1.hints.Email.displayWidth}"
-                                              maximumLength="#{bindings.BaseEmployees1.hints.Email.precision}"
-                                              shortDesc="#{bindings.BaseEmployees1.hints.Email.tooltip}" id="it4">
-                                    <f:validator binding="#{row.bindings.Email.validator}"/>
-                                    <af:convertNumber groupingUsed="false"
-                                                      pattern="#{bindings.BaseEmployees1.hints.Email.format}"/>
-                                </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.BaseEmployees1.hints.Phone.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.BaseEmployees1.hints.Phone.label}"
-                                       id="c15">
-                                <af:inputText value="#{row.bindings.Phone.inputValue}"
-                                              label="#{bindings.BaseEmployees1.hints.Phone.label}"
-                                              required="#{bindings.BaseEmployees1.hints.Phone.mandatory}"
-                                              columns="#{bindings.BaseEmployees1.hints.Phone.displayWidth}"
-                                              maximumLength="#{bindings.BaseEmployees1.hints.Phone.precision}"
-                                              shortDesc="#{bindings.BaseEmployees1.hints.Phone.tooltip}" id="it5">
-                                    <f:validator binding="#{row.bindings.Phone.validator}"/>
-                                    <af:convertNumber groupingUsed="false"
-                                                      pattern="#{bindings.BaseEmployees1.hints.Phone.format}"/>
-                                </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.BaseEmployees1.hints.Mobile.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.BaseEmployees1.hints.Mobile.label}"
-                                       id="c16">
-                                <af:inputText value="#{row.bindings.Mobile.inputValue}"
-                                              label="#{bindings.BaseEmployees1.hints.Mobile.label}"
-                                              required="#{bindings.BaseEmployees1.hints.Mobile.mandatory}"
-                                              columns="#{bindings.BaseEmployees1.hints.Mobile.displayWidth}"
-                                              maximumLength="#{bindings.BaseEmployees1.hints.Mobile.precision}"
-                                              shortDesc="#{bindings.BaseEmployees1.hints.Mobile.tooltip}" id="it6">
-                                    <f:validator binding="#{row.bindings.Mobile.validator}"/>
-                                    <af:convertNumber groupingUsed="false"
-                                                      pattern="#{bindings.BaseEmployees1.hints.Mobile.format}"/>
-                                </af:inputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.BaseEmployees1.hints.EmergencyPhone.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="#{bindings.BaseEmployees1.hints.EmergencyPhone.label}" id="c17"
-                                       width="120">
-                                <af:inputText value="#{row.bindings.EmergencyPhone.inputValue}"
-                                              label="#{bindings.BaseEmployees1.hints.EmergencyPhone.label}"
-                                              required="#{bindings.BaseEmployees1.hints.EmergencyPhone.mandatory}"
-                                              columns="#{bindings.BaseEmployees1.hints.EmergencyPhone.displayWidth}"
-                                              maximumLength="#{bindings.BaseEmployees1.hints.EmergencyPhone.precision}"
-                                              shortDesc="#{bindings.BaseEmployees1.hints.EmergencyPhone.tooltip}"
-                                              id="it7">
-                                    <f:validator binding="#{row.bindings.EmergencyPhone.validator}"/>
-                                    <af:convertNumber groupingUsed="false"
-                                                      pattern="#{bindings.BaseEmployees1.hints.EmergencyPhone.format}"/>
-                                </af:inputText>
-                            </af:column>
-                        </af:column>
                         <af:column id="c32" headerText="Update Data">
-                            <af:button text="Modify" id="b2" action="EditCurrentEmployee">
-                            </af:button>
+                            <af:button text="Modify" id="b2" action="EditCurrentEmployee"/>
                         </af:column>
                         <f:facet name="detailStamp">
-                            <af:panelFormLayout id="pfl1" labelAlignment="start" rows="5" maxColumns="2">
+                            <af:panelFormLayout id="pfl1" labelAlignment="start" rows="5" maxColumns="3">
                                 <af:group id="Group" title="Job Info" startBoundary="show" endBoundary="show">
                                     <af:selectOneChoice value="#{row.bindings.EmploymentStatusId.inputValue}"
                                                         label="#{row.bindings.EmploymentStatusId.label}"
@@ -348,6 +286,53 @@
                                         <f:validator binding="#{row.bindings.Version.validator}"/>
                                         <af:convertNumber groupingUsed="false"
                                                           pattern="#{bindings.BaseEmployees1.hints.Version.format}"/>
+                                    </af:inputText>
+                                </af:group>
+                                <af:group id="g1" title="Contact Info">
+                                    <af:inputText value="#{row.bindings.Email.inputValue}"
+                                                  label="#{bindings.BaseEmployees1.hints.Email.label}"
+                                                  required="#{bindings.BaseEmployees1.hints.Email.mandatory}"
+                                                  readOnly="true"
+                                                  columns="#{bindings.BaseEmployees1.hints.Email.displayWidth}"
+                                                  maximumLength="#{bindings.BaseEmployees1.hints.Email.precision}"
+                                                  shortDesc="#{bindings.BaseEmployees1.hints.Email.tooltip}" id="it8">
+                                        <f:validator binding="#{row.bindings.Email.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.BaseEmployees1.hints.Email.format}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{row.bindings.Phone.inputValue}"
+                                                  label="#{bindings.BaseEmployees1.hints.Phone.label}"
+                                                  required="#{bindings.BaseEmployees1.hints.Phone.mandatory}"
+                                                  readOnly="true"
+                                                  columns="#{bindings.BaseEmployees1.hints.Phone.displayWidth}"
+                                                  maximumLength="#{bindings.BaseEmployees1.hints.Phone.precision}"
+                                                  shortDesc="#{bindings.BaseEmployees1.hints.Phone.tooltip}" id="it9">
+                                        <f:validator binding="#{row.bindings.Phone.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.BaseEmployees1.hints.Phone.format}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{row.bindings.Mobile.inputValue}"
+                                                  label="#{bindings.BaseEmployees1.hints.Mobile.label}"
+                                                  required="#{bindings.BaseEmployees1.hints.Mobile.mandatory}"
+                                                  readOnly="true"
+                                                  columns="#{bindings.BaseEmployees1.hints.Mobile.displayWidth}"
+                                                  maximumLength="#{bindings.BaseEmployees1.hints.Mobile.precision}"
+                                                  shortDesc="#{bindings.BaseEmployees1.hints.Mobile.tooltip}" id="it10">
+                                        <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.BaseEmployees1.hints.Mobile.format}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{row.bindings.EmergencyPhone.inputValue}"
+                                                  label="#{bindings.BaseEmployees1.hints.EmergencyPhone.label}"
+                                                  required="#{bindings.BaseEmployees1.hints.EmergencyPhone.mandatory}"
+                                                  readOnly="true"
+                                                  columns="#{bindings.BaseEmployees1.hints.EmergencyPhone.displayWidth}"
+                                                  maximumLength="#{bindings.BaseEmployees1.hints.EmergencyPhone.precision}"
+                                                  shortDesc="#{bindings.BaseEmployees1.hints.EmergencyPhone.tooltip}"
+                                                  id="it11">
+                                        <f:validator binding="#{row.bindings.EmergencyPhone.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.BaseEmployees1.hints.EmergencyPhone.format}"/>
                                     </af:inputText>
                                 </af:group>
                             </af:panelFormLayout>

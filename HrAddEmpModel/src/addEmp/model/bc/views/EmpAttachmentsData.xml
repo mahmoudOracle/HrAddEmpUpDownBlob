@@ -117,6 +117,41 @@
     EntityAttrName="Version"
     EntityUsage="EmployeeAttachments"
     AliasName="VERSION"/>
+  <ViewCriteria
+    Name="EmpAttachmentsDataCriteria"
+    ViewObjectName="addEmp.model.bc.views.EmpAttachmentsData"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="EmpAttachmentsDataCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="AttachmentType"
+        ViewAttribute="AttachmentType"
+        Operator="="
+        Conjunction="AND"
+        Value="1"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

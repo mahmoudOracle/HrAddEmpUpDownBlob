@@ -70,7 +70,8 @@
                             </af:panelLabelAndMessage>
                             <af:image id="i4"
                                       source="/render_image?id=#{bindings.EmpAttachmentId.inputValue}&amp;tmp=#{bindings.TemporaryFile1.inputValue}"
-                                      shortDesc="." inlineStyle="border-style:solid; height:300px; width:300px;"/>
+                                      shortDesc="Timo" inlineStyle="border-style:solid; height:300px; width:300px;"
+                                      partialTriggers="if2"/>
                         </af:group>
                         <af:group id="Group1">
                             <af:inputText value="#{bindings.CreatedBy.inputValue}"

@@ -43,6 +43,7 @@ public class ImagServlet
 
         response.setContentType(CONTENT_TYPE);
     String id = request.getParameter("id");
+    System.out.println("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ id Is " + id);
     OutputStream os = response.getOutputStream();
     Connection conn = null;
     try

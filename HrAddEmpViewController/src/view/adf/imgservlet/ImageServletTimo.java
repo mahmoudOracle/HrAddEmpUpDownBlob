@@ -1,24 +1,22 @@
 package view.adf.imgservlet;
 
-import addEmp.model.bc.am.HrAddEmpAppModuleImpl;
-
-import addEmp.model.bc.views.common.EmpAttachmentsVORow;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 
 import java.util.Map;
 import java.util.logging.Level;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
+
+import addEmp.model.bc.am.HrAddEmpAppModuleImpl;
+
+import addEmp.model.bc.views.common.EmpAttachmentsVORow;
 
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
@@ -32,12 +30,11 @@ import org.apache.commons.io.IOUtils;
 
 import view.adf.util.ContentTypes;
 
-@WebServlet(name = "ImageServlet", urlPatterns = { "/render_image" })
-public class ImageServlet extends HttpServlet {
-    @SuppressWarnings("compatibility:-7152837766072020735")
-    private static final long serialVersionUID = 921064300797099404L;
 
-    protected transient ADFLogger mLogger = ADFLogger.createADFLogger(ImageServlet.class);
+@WebServlet(name = "ImageServletTimo", urlPatterns = { "/imageservlettimo" })
+public class ImageServletTimo extends HttpServlet {
+
+    protected transient ADFLogger mLogger = ADFLogger.createADFLogger(ImageServletTimo.class);
 
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
@@ -53,7 +50,7 @@ public class ImageServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         StringBuilder sb = new StringBuilder(100);
         String appModuleName = "addEmp.model.bc.am.HrAddEmpAppModule";
-        sb.append("ImageServlet ").append(appModuleName);
+        sb.append("ImageServletTimo ").append(appModuleName);
 
         try {
             System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX              XXXXXXXXXXXXXXXXXXXXXXXXX   TIMO IMAGE SERVLET");
@@ -62,8 +59,11 @@ public class ImageServlet extends HttpServlet {
             Map paramMap = request.getParameterMap();
             oracle.jbo.domain.Number id = null;
             String tmporaryFilePath = "";
+
             if (paramMap.containsKey("id")) {
                 String[] pVal = (String[]) paramMap.get("id");
+                System.out.println("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF" + pVal[0] +
+                                   "VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV");
                 id = new oracle.jbo.domain.Number(pVal[0]);
                 System.out.println("ZWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW id Is " + id);
                 sb.append(" id=").append(pVal[0]);
@@ -79,6 +79,7 @@ public class ImageServlet extends HttpServlet {
             InputStream inputStream = null;
             BlobDomain image = null;
             String mimeType = null;
+
             // no temporary file path given, read everything from DB
             if (tmporaryFilePath.isEmpty()) {
                 // get method action from pagedef
@@ -108,7 +109,9 @@ public class ImageServlet extends HttpServlet {
                     mLogger.warning("No row found to get image from !!! (id = " + id + ")");
                     return;
                 }
-                sb.append(" ").append(mimeType).append(" ...");
+                sb.append(" ")
+                  .append(mimeType)
+                  .append(" ...");
                 mLogger.info(sb.toString());
             } else {
                 // read everything from temporary file path

@@ -17,7 +17,8 @@
   WhereFlags="1"
   SelectAllAttributes="false"
   ComponentInterface="addEmp.model.bc.views.common.EmpAttachmentsVO"
-  RowInterface="addEmp.model.bc.views.common.EmpAttachmentsVORow">
+  RowInterface="addEmp.model.bc.views.common.EmpAttachmentsVORow"
+  MaxFetchSize="1">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -127,6 +128,43 @@
     EntityAttrName="Version"
     EntityUsage="EmployeeAttachments"
     AliasName="VERSION"/>
+  <ViewCriteria
+    Name="EmpAttachmentsVOCriteria"
+    ViewObjectName="addEmp.model.bc.views.EmpAttachmentsVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="EmpAttachmentsVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="EmpAttachmentId"
+        ViewAttribute="EmpAttachmentId"
+        Operator="="
+        Conjunction="AND"
+        Value=":bindEmpAttachID"
+        GenerateIsNullClauseForBindVars="false"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ClientInterface
     Name="__clientInterface">
     <Method

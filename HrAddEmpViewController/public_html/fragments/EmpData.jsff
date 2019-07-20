@@ -2,9 +2,17 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:panelGridLayout id="pgl1">
-        <af:gridRow height="50px" id="gr2">
+        <af:gridRow height="200px" id="gr2">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
-                <!-- Header -->
+                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                    <af:outputText value="#{bindings.EmpAttachmentId.inputValue}"
+                                   shortDesc="#{bindings.EmpAttachmentId.hints.tooltip}" id="ot3"
+                                   inlineStyle="font-size:xx-large;"/>
+                </af:panelGroupLayout>
+                <af:image id="i2" source="/imageservlethandlerdavidmason?id=#{bindings.EmpAttachmentId.inputValue}"
+                          shortDesc="imageservlettimo" partialTriggers="ot3"/>
+                          <af:image id="i4" source="/imageservlettimoam?id=#{bindings.EmpAttachmentId.inputValue}"
+                          shortDesc="imageservlettimo" partialTriggers="ot3"/>
             </af:gridCell>
         </af:gridRow>
         <af:gridRow height="100%" id="gr1">
@@ -28,9 +36,6 @@
                               queryListener="#{bindings.BaseEmployees1Query.processQuery}" varStatus="vs" id="t1"
                               summary="Employee Table Holds All Info" editingMode="clickToEdit"
                               styleClass="AFStretchWidth" columnStretching="last" scrollPolicy="page">
-                        <af:column id="c33" rowHeader="true" width="14" headerText="SN">
-                            <af:outputText value="#{vs.index+1}" id="ot2"/>
-                        </af:column>
                         <af:column sortProperty="#{bindings.BaseEmployees1.hints.EmployeeId.name}" filterable="true"
                                    sortable="true" headerText="#{bindings.BaseEmployees1.hints.EmployeeId.label}"
                                    id="c1">
@@ -170,6 +175,9 @@
                         </af:column>
                         <af:column id="c32" headerText="Update Data">
                             <af:button text="Modify" id="b2" action="EditCurrentEmployee"/>
+                        </af:column>
+                        <af:column id="c33" rowHeader="true" width="14" headerText="SN">
+                            <af:outputText value="#{vs.index+1}" id="ot2"/>
                         </af:column>
                         <f:facet name="detailStamp">
                             <af:panelFormLayout id="pfl1" labelAlignment="start" rows="5" maxColumns="3">
@@ -342,5 +350,5 @@
             </af:gridCell>
         </af:gridRow>
     </af:panelGridLayout>
-    <af:resource type="css" source="https://use.fontawesome.com/releases/v5.5.0/css/all.css"/>
+    <af:resource type="css" source="body {  background: orange;  background: rgba(255, 165, 0, 0.5);  }"/>
 </ui:composition>

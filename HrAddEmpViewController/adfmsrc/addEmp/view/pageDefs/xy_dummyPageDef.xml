@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.60.81"
+                id="xy_dummyPageDef" Package="addEmp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator id="EmpAttachments1Iterator" Binds="EmpAttachments1" DataControl="HrAddEmpAppModuleDataControl"
+              RangeSize="25"/>
+  </executables>
+  <bindings>
+    <methodAction id="getAttachmentById" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getAttachmentById"
+                  IsViewObjectMethod="true" DataControl="HrAddEmpAppModuleDataControl" IterBinding="EmpAttachments1Iterator"
+                  InstanceName="HrAddEmpAppModuleDataControl.EmpAttachments1"
+                  ReturnName="data.HrAddEmpAppModuleDataControl.methodResults.getAttachmentById_getAttachmentById_dataControl_EmpAttachments1_getAttachmentById_result">
+      <NamedData NDName="aId" NDType="oracle.jbo.domain.Number"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

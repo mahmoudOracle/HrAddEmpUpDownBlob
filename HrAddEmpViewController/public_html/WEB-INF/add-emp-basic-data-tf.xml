@@ -25,12 +25,17 @@
     </managed-bean>
     <managed-bean id="__6">
       <managed-bean-name>trainStopHelper</managed-bean-name>
-      <managed-bean-class>view.beans.TrainStopHelper</managed-bean-class>
-      <managed-bean-scope>backingBean</managed-bean-scope>
+      <managed-bean-class>view.beans.ImagBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean id="__7">
       <managed-bean-name>createFlagResetHelperBean</managed-bean-name>
       <managed-bean-class>view.adf.region.CreateFlagResetHelperBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__4">
+      <managed-bean-name>imagBean</managed-bean-name>
+      <managed-bean-class></managed-bean-class>
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <view id="BasicInfo">

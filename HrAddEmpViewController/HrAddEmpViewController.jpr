@@ -285,6 +285,10 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="Servlet Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="Oracle XML Parser v2"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -409,6 +413,10 @@
          </hash>
          <hash>
             <value n="id" v="Commons-io-2.6.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Servlet Runtime"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>

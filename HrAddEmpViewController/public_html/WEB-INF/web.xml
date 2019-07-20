@@ -129,6 +129,10 @@
     <param-name>javax.faces.FACELETS_VIEW_MAPPINGS</param-name>
     <param-value>*.jsf;*.xhtml</param-value>
   </context-param>
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.UPLOAD_TEMP_DIR</param-name>
+    <param-value></param-value>
+  </context-param>
   <mime-mapping>
     <extension>swf</extension>
     <mime-type>application/x-shockwave-flash</mime-type>

@@ -4,7 +4,6 @@
     <af:panelGridLayout id="pgl1">
         <af:gridRow height="100%" id="gr2">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-                <!-- Content -->
                 <af:panelBox text="PanelBox1" id="pb1">
                     <f:facet name="toolbar">
                         <af:toolbar id="t1">
@@ -24,7 +23,7 @@
                             </af:button>
                         </af:toolbar>
                     </f:facet>
-                    <af:panelFormLayout id="pfl1" maxColumns="2" rows="5">
+                    <af:panelFormLayout id="pfl1">
                         <af:panelLabelAndMessage label="#{bindings.ContractId.hints.label}" id="plam1">
                             <af:outputText value="#{bindings.ContractId.inputValue}"
                                            shortDesc="#{bindings.ContractId.hints.tooltip}" id="ot1">

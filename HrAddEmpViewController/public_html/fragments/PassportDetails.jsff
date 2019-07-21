@@ -4,128 +4,119 @@
     <af:panelGridLayout id="pgl1">
         <af:gridRow height="100%" id="gr1">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-                <af:panelHeader text="Passport Info For: #{data.addEmp_view_BasicInfoPageDef.FirstName.inputValue} #{data.addEmp_view_BasicInfoPageDef.LastName.inputValue}" id="ph1">
-                    <f:facet name="context"/>
-                    <f:facet name="toolbar"/>
-                    <f:facet name="menuBar"/>
-                    <f:facet name="legend"/>
-                    <f:facet name="info"/>
-                    <af:panelBox text="Details" id="pb1">
-                        <f:facet name="toolbar">
-                            <af:toolbar id="t1">
-                                <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add Passport Details"
-                                           disabled="#{!bindings.CreateInsert.enabled}" id="b1" icon="/images/add.png"/>
-                                <af:button text="Save and Go To Next Page" id="b2" icon="/images/SAVE.png"
-                                           action="#{customTrainNavigationHandler.navigateNextStop}"
-                                           actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_CommitPageDef.Commit.execute}"
-                                           partialSubmit="true"/>
-                                <af:button text="Save &amp; Go to Main Page" id="b5" action="save"
-                                           icon="/images/SAVE.png"/>
-                                <af:button text="Remove the Nwely Created Row &amp; Staty on the page" id="b4"
-                                           immediate="true" icon="/images/UNDO.png"
-                                           actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_RollbackPageDef.Rollback.execute}"/>
-                                <af:button text="Rollback Go Back to Main Page" immediate="true" id="b3"
-                                           icon="/images/UNDO.png" action="cancel">
-                                    <af:resetActionListener/>
-                                </af:button>
-                            </af:toolbar>
-                        </f:facet>
-                        <af:panelFormLayout id="pfl1" maxColumns="2" rows="5">
-                            <af:panelLabelAndMessage label="#{bindings.PassportId.hints.label}" id="plam1">
-                                <af:outputText value="#{bindings.PassportId.inputValue}"
-                                               shortDesc="#{bindings.PassportId.hints.tooltip}" id="ot1">
-                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.PassportId.format}"/>
-                                </af:outputText>
-                            </af:panelLabelAndMessage>
-                            <af:group id="Group">
-                                <af:inputText value="#{bindings.EmployeeId.inputValue}"
-                                              label="#{bindings.EmployeeId.hints.label}"
-                                              required="#{bindings.EmployeeId.hints.mandatory}"
-                                              columns="#{bindings.EmployeeId.hints.displayWidth}"
-                                              maximumLength="#{bindings.EmployeeId.hints.precision}"
-                                              shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it1">
-                                    <f:validator binding="#{bindings.EmployeeId.validator}"/>
-                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
-                                </af:inputText>
-                                <af:inputText value="#{bindings.PassportNumber.inputValue}"
-                                              label="#{bindings.PassportNumber.hints.label}"
-                                              required="#{bindings.PassportNumber.hints.mandatory}"
-                                              columns="#{bindings.PassportNumber.hints.displayWidth}"
-                                              maximumLength="#{bindings.PassportNumber.hints.precision}"
-                                              shortDesc="#{bindings.PassportNumber.hints.tooltip}" id="it2">
-                                    <f:validator binding="#{bindings.PassportNumber.validator}"/>
-                                </af:inputText>
-                                <af:inputDate value="#{bindings.IssueDate.inputValue}"
-                                              label="#{bindings.IssueDate.hints.label}"
-                                              required="#{bindings.IssueDate.hints.mandatory}"
-                                              columns="#{bindings.IssueDate.hints.displayWidth}"
-                                              shortDesc="#{bindings.IssueDate.hints.tooltip}" id="id1">
-                                    <f:validator binding="#{bindings.IssueDate.validator}"/>
-                                    <af:convertDateTime pattern="#{bindings.IssueDate.format}"/>
-                                </af:inputDate>
-                                <af:inputDate value="#{bindings.ExpirationDate.inputValue}"
-                                              label="#{bindings.ExpirationDate.hints.label}"
-                                              required="#{bindings.ExpirationDate.hints.mandatory}"
-                                              columns="#{bindings.ExpirationDate.hints.displayWidth}"
-                                              shortDesc="#{bindings.ExpirationDate.hints.tooltip}" id="id2">
-                                    <f:validator binding="#{bindings.ExpirationDate.validator}"/>
-                                    <af:convertDateTime pattern="#{bindings.ExpirationDate.format}"/>
-                                </af:inputDate>
-                                <af:inputText value="#{bindings.IssuingAuthority.inputValue}"
-                                              label="#{bindings.IssuingAuthority.hints.label}"
-                                              required="#{bindings.IssuingAuthority.hints.mandatory}"
-                                              columns="#{bindings.IssuingAuthority.hints.displayWidth}"
-                                              maximumLength="#{bindings.IssuingAuthority.hints.precision}"
-                                              shortDesc="#{bindings.IssuingAuthority.hints.tooltip}" id="it3">
-                                    <f:validator binding="#{bindings.IssuingAuthority.validator}"/>
-                                </af:inputText>
-                            </af:group>
-                            <af:group id="Group1">
-                                <af:inputText value="#{bindings.CreatedBy.inputValue}"
-                                              label="#{bindings.CreatedBy.hints.label}"
-                                              required="#{bindings.CreatedBy.hints.mandatory}"
-                                              columns="#{bindings.CreatedBy.hints.displayWidth}"
-                                              maximumLength="#{bindings.CreatedBy.hints.precision}"
-                                              shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it4">
-                                    <f:validator binding="#{bindings.CreatedBy.validator}"/>
-                                </af:inputText>
-                                <af:inputDate value="#{bindings.CreatedOn.inputValue}"
-                                              label="#{bindings.CreatedOn.hints.label}"
-                                              required="#{bindings.CreatedOn.hints.mandatory}"
-                                              columns="#{bindings.CreatedOn.hints.displayWidth}"
-                                              shortDesc="#{bindings.CreatedOn.hints.tooltip}" id="id3">
-                                    <f:validator binding="#{bindings.CreatedOn.validator}"/>
-                                    <af:convertDateTime pattern="#{bindings.CreatedOn.format}"/>
-                                </af:inputDate>
-                                <af:inputText value="#{bindings.ModifiedBy.inputValue}"
-                                              label="#{bindings.ModifiedBy.hints.label}"
-                                              required="#{bindings.ModifiedBy.hints.mandatory}"
-                                              columns="#{bindings.ModifiedBy.hints.displayWidth}"
-                                              maximumLength="#{bindings.ModifiedBy.hints.precision}"
-                                              shortDesc="#{bindings.ModifiedBy.hints.tooltip}" id="it5">
-                                    <f:validator binding="#{bindings.ModifiedBy.validator}"/>
-                                </af:inputText>
-                                <af:inputDate value="#{bindings.ModifiedOn.inputValue}"
-                                              label="#{bindings.ModifiedOn.hints.label}"
-                                              required="#{bindings.ModifiedOn.hints.mandatory}"
-                                              columns="#{bindings.ModifiedOn.hints.displayWidth}"
-                                              shortDesc="#{bindings.ModifiedOn.hints.tooltip}" id="id4">
-                                    <f:validator binding="#{bindings.ModifiedOn.validator}"/>
-                                    <af:convertDateTime pattern="#{bindings.ModifiedOn.format}"/>
-                                </af:inputDate>
-                                <af:inputText value="#{bindings.Version.inputValue}"
-                                              label="#{bindings.Version.hints.label}"
-                                              required="#{bindings.Version.hints.mandatory}"
-                                              columns="#{bindings.Version.hints.displayWidth}"
-                                              maximumLength="#{bindings.Version.hints.precision}"
-                                              shortDesc="#{bindings.Version.hints.tooltip}" id="it6">
-                                    <f:validator binding="#{bindings.Version.validator}"/>
-                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Version.format}"/>
-                                </af:inputText>
-                            </af:group>
-                        </af:panelFormLayout>
-                    </af:panelBox>
-                </af:panelHeader>
+                <af:panelBox text="Passport Info For: #{data.addEmp_view_BasicInfoPageDef.FirstName.inputValue} #{data.addEmp_view_BasicInfoPageDef.LastName.inputValue}" id="pb1">
+                    <f:facet name="toolbar">
+                        <af:toolbar id="t1">
+                            <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add Passport Details"
+                                       disabled="#{!bindings.CreateInsert.enabled}" id="b1" icon="/images/add.png"/>
+                            <af:button text="Save and Go To Next Page" id="b2" icon="/images/SAVE.png"
+                                       action="#{customTrainNavigationHandler.navigateNextStop}"
+                                       actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_CommitPageDef.Commit.execute}"
+                                       partialSubmit="true"/>
+                            <af:button text="Save &amp; Go to Main Page" id="b5" action="save" icon="/images/SAVE.png"/>
+                            <af:button text="Remove the Nwely Created Row &amp; Staty on the page" id="b4"
+                                       immediate="true" icon="/images/UNDO.png"
+                                       actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_RollbackPageDef.Rollback.execute}"/>
+                            <af:button text="Rollback Go Back to Main Page" immediate="true" id="b3"
+                                       icon="/images/UNDO.png" action="cancel">
+                                <af:resetActionListener/>
+                            </af:button>
+                        </af:toolbar>
+                    </f:facet>
+                    <af:panelFormLayout id="pfl1" maxColumns="2" rows="5">
+                        <af:panelLabelAndMessage label="#{bindings.PassportId.hints.label}" id="plam1">
+                            <af:outputText value="#{bindings.PassportId.inputValue}"
+                                           shortDesc="#{bindings.PassportId.hints.tooltip}" id="ot1">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.PassportId.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:group id="Group">
+                            <af:inputText value="#{bindings.EmployeeId.inputValue}"
+                                          label="#{bindings.EmployeeId.hints.label}"
+                                          required="#{bindings.EmployeeId.hints.mandatory}"
+                                          columns="#{bindings.EmployeeId.hints.displayWidth}"
+                                          maximumLength="#{bindings.EmployeeId.hints.precision}"
+                                          shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.EmployeeId.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.PassportNumber.inputValue}"
+                                          label="#{bindings.PassportNumber.hints.label}"
+                                          required="#{bindings.PassportNumber.hints.mandatory}"
+                                          columns="#{bindings.PassportNumber.hints.displayWidth}"
+                                          maximumLength="#{bindings.PassportNumber.hints.precision}"
+                                          shortDesc="#{bindings.PassportNumber.hints.tooltip}" id="it2">
+                                <f:validator binding="#{bindings.PassportNumber.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.IssueDate.inputValue}"
+                                          label="#{bindings.IssueDate.hints.label}"
+                                          required="#{bindings.IssueDate.hints.mandatory}"
+                                          columns="#{bindings.IssueDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.IssueDate.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.IssueDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.IssueDate.format}"/>
+                            </af:inputDate>
+                            <af:inputDate value="#{bindings.ExpirationDate.inputValue}"
+                                          label="#{bindings.ExpirationDate.hints.label}"
+                                          required="#{bindings.ExpirationDate.hints.mandatory}"
+                                          columns="#{bindings.ExpirationDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.ExpirationDate.hints.tooltip}" id="id2">
+                                <f:validator binding="#{bindings.ExpirationDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.ExpirationDate.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.IssuingAuthority.inputValue}"
+                                          label="#{bindings.IssuingAuthority.hints.label}"
+                                          required="#{bindings.IssuingAuthority.hints.mandatory}"
+                                          columns="#{bindings.IssuingAuthority.hints.displayWidth}"
+                                          maximumLength="#{bindings.IssuingAuthority.hints.precision}"
+                                          shortDesc="#{bindings.IssuingAuthority.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.IssuingAuthority.validator}"/>
+                            </af:inputText>
+                        </af:group>
+                        <af:group id="Group1">
+                            <af:inputText value="#{bindings.CreatedBy.inputValue}"
+                                          label="#{bindings.CreatedBy.hints.label}"
+                                          required="#{bindings.CreatedBy.hints.mandatory}"
+                                          columns="#{bindings.CreatedBy.hints.displayWidth}"
+                                          maximumLength="#{bindings.CreatedBy.hints.precision}"
+                                          shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it4">
+                                <f:validator binding="#{bindings.CreatedBy.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.CreatedOn.inputValue}"
+                                          label="#{bindings.CreatedOn.hints.label}"
+                                          required="#{bindings.CreatedOn.hints.mandatory}"
+                                          columns="#{bindings.CreatedOn.hints.displayWidth}"
+                                          shortDesc="#{bindings.CreatedOn.hints.tooltip}" id="id3">
+                                <f:validator binding="#{bindings.CreatedOn.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.CreatedOn.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.ModifiedBy.inputValue}"
+                                          label="#{bindings.ModifiedBy.hints.label}"
+                                          required="#{bindings.ModifiedBy.hints.mandatory}"
+                                          columns="#{bindings.ModifiedBy.hints.displayWidth}"
+                                          maximumLength="#{bindings.ModifiedBy.hints.precision}"
+                                          shortDesc="#{bindings.ModifiedBy.hints.tooltip}" id="it5">
+                                <f:validator binding="#{bindings.ModifiedBy.validator}"/>
+                            </af:inputText>
+                            <af:inputDate value="#{bindings.ModifiedOn.inputValue}"
+                                          label="#{bindings.ModifiedOn.hints.label}"
+                                          required="#{bindings.ModifiedOn.hints.mandatory}"
+                                          columns="#{bindings.ModifiedOn.hints.displayWidth}"
+                                          shortDesc="#{bindings.ModifiedOn.hints.tooltip}" id="id4">
+                                <f:validator binding="#{bindings.ModifiedOn.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.ModifiedOn.format}"/>
+                            </af:inputDate>
+                            <af:inputText value="#{bindings.Version.inputValue}" label="#{bindings.Version.hints.label}"
+                                          required="#{bindings.Version.hints.mandatory}"
+                                          columns="#{bindings.Version.hints.displayWidth}"
+                                          maximumLength="#{bindings.Version.hints.precision}"
+                                          shortDesc="#{bindings.Version.hints.tooltip}" id="it6">
+                                <f:validator binding="#{bindings.Version.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Version.format}"/>
+                            </af:inputText>
+                        </af:group>
+                    </af:panelFormLayout>
+                </af:panelBox>
             </af:gridCell>
         </af:gridRow>
         <af:gridRow height="50px" id="gr2">

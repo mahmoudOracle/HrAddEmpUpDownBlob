@@ -4,8 +4,7 @@
     <af:panelGridLayout id="pgl1">
         <af:gridRow height="100%" id="gr1">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-                <!-- Content -->
-                <af:panelBox text="Attachments " id="pb1">
+                <af:panelBox text="Attachments For: #{data.addEmp_view_BasicInfoPageDef.FirstName.inputValue} #{data.addEmp_view_BasicInfoPageDef.LastName.inputValue}" id="pb1">
                     <f:facet name="toolbar">
                         <af:toolbar id="t1">
                             <af:button actionListener="#{bindings.CreateInsert.execute}" text="Attach The File"
@@ -150,9 +149,6 @@
                             </af:panelGroupLayout>
                         </af:showDetailItem>
                     </af:panelAccordion>
-                    <af:panelGroupLayout id="pgl2"/>
-                    <af:panelGroupLayout id="pgl13"/>
-                    <af:panelGroupLayout id="pgl4"/>
                 </af:panelBox>
             </af:gridCell>
         </af:gridRow>

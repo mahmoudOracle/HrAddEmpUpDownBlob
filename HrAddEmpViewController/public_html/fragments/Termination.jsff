@@ -4,8 +4,7 @@
     <af:panelGridLayout id="pgl1">
         <af:gridRow height="100%" id="gr1">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-                <!-- Content -->
-                <af:panelBox text="PanelBox1" id="pb1">
+                <af:panelBox text="Termination Info For: #{data.addEmp_view_BasicInfoPageDef.FirstName.inputValue} #{data.addEmp_view_BasicInfoPageDef.LastName.inputValue}" id="pb1">
                     <f:facet name="toolbar">
                         <af:toolbar id="t1">
                             <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add Termination Info"

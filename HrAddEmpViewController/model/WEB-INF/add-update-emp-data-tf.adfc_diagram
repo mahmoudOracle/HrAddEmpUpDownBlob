@@ -144,7 +144,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>EmpEducationInfo&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">129.92665</property>
+         name="y">129.57605</property>
       <property
          name="page">/fragments/EmpEducationInfo.jsff</property>
       <property
@@ -163,7 +163,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>EmployeeAddress&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">-18.032585</property>
+         name="y">-18.383179</property>
       <property
          name="page">/fragments/EmployeeAddress.jsff</property>
       <property
@@ -220,7 +220,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>Skills&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">129.23482</property>
+         name="y">128.88422</property>
       <property
          name="page">/fragments/Skills.jsff</property>
       <property
@@ -374,7 +374,7 @@
       from="View33"
       to="View31">
       <property
-         name="sdm:polyPoints">L50,1255.6234,128.88425,1165.311,127.45587,R50</property>
+         name="sdm:polyPoints">L50,1255.6234,128.53363,1165.311,127.45587,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -398,7 +398,7 @@
       from="View19"
       to="View33">
       <property
-         name="sdm:polyPoints">L50,1410.3815,129.57607,1337.6234,128.88423,R50</property>
+         name="sdm:polyPoints">L50,1410.3815,129.22546,1337.6234,128.53363,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -406,7 +406,7 @@
       from="View15"
       to="View23">
       <property
-         name="sdm:polyPoints">B50,1603.2046,-115.07396,1602.2654,-72.38317,T50</property>
+         name="sdm:polyPoints">B50,1603.2046,-115.07396,1602.2654,-72.38318,T50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -414,7 +414,7 @@
       from="View23"
       to="View17">
       <property
-         name="sdm:polyPoints">B50,1602.2654,35.61683,1603.3925,77.31549,T50</property>
+         name="sdm:polyPoints">B50,1602.2654,35.61682,1603.3925,77.31549,T50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -422,7 +422,7 @@
       from="View17"
       to="View19">
       <property
-         name="sdm:polyPoints">L50,1562.3925,131.31549,1492.3815,129.57607,R50</property>
+         name="sdm:polyPoints">L50,1562.3925,131.31549,1492.3815,129.22546,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"

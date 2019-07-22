@@ -74,11 +74,6 @@
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_JobLevelTypeId" id="JobLevelTypeId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="BaseEmployees2Iterator" id="JobPayTypeId">
-      <AttrNames>
-        <Item Value="JobPayTypeId"/>
-      </AttrNames>
-    </attributeValues>
     <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_MaritalStatus" id="MaritalStatus"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_Nationality" id="Nationality"

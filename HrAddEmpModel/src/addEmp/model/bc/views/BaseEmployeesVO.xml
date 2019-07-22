@@ -6,16 +6,16 @@
   Name="BaseEmployeesVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
   RowClass="model.shared.extensions.ExtViewRowImpl"
   ComponentClass="model.shared.extensions.ExtViewObjectImpl"
   FetchMode="FETCH_AS_NEEDED"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  SelectAllAttributes="false">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -440,12 +440,6 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
-  <ViewAttribute
-    Name="JobPayTypeId"
-    PrecisionRule="true"
-    EntityAttrName="JobPayTypeId"
-    EntityUsage="Employees"
-    AliasName="JOB_PAY_TYPE_ID"/>
   <ViewAttribute
     Name="MaritalStatus"
     PrecisionRule="true"

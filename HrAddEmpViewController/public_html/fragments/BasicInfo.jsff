@@ -194,15 +194,6 @@
                                     <f:selectItems value="#{bindings.JobLevelTypeId.items}" id="si7"/>
                                     <f:validator binding="#{bindings.JobLevelTypeId.validator}"/>
                                 </af:selectOneChoice>
-                                <af:inputText value="#{bindings.JobPayTypeId.inputValue}"
-                                              label="#{bindings.JobPayTypeId.hints.label}"
-                                              required="#{bindings.JobPayTypeId.hints.mandatory}"
-                                              columns="#{bindings.JobPayTypeId.hints.displayWidth}"
-                                              maximumLength="#{bindings.JobPayTypeId.hints.precision}"
-                                              shortDesc="#{bindings.JobPayTypeId.hints.tooltip}" id="it8">
-                                    <f:validator binding="#{bindings.JobPayTypeId.validator}"/>
-                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.JobPayTypeId.format}"/>
-                                </af:inputText>
                             </af:group>
                             <af:group id="Group3">
                                 <af:inputText value="#{bindings.CreatedBy.inputValue}"

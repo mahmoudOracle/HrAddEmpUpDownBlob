@@ -36,7 +36,6 @@
           <Item Value="DepartmentId"/>
           <Item Value="JobCategoryId"/>
           <Item Value="JobLevelTypeId"/>
-          <Item Value="JobPayTypeId"/>
           <Item Value="CreatedBy"/>
           <Item Value="CreatedOn"/>
           <Item Value="ModifiedBy"/>

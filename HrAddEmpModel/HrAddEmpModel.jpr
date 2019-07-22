@@ -305,8 +305,8 @@
          <list n="libraryDefinitions">
             <hash>
                <list n="classPath">
-                  <url path="../../../FinalReUsableJars/deploy/adflibSharedHrBc.jar" jar-entry=""/>
                   <url path="../../../FinalReUsableJars/deploy/adflibSharedLib.jar" jar-entry=""/>
+                  <url path="../../../FinalReUsableJars/deploy/adflibSharedHrBc.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF Library"/>

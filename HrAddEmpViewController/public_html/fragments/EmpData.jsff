@@ -231,18 +231,6 @@
                                         <f:selectItems value="#{row.bindings.JobLevelTypeId.items}" id="si16"/>
                                         <f:validator binding="#{row.bindings.JobLevelTypeId.validator}"/>
                                     </af:selectOneChoice>
-                                    <af:inputText value="#{row.bindings.JobPayTypeId.inputValue}"
-                                                  label="#{bindings.BaseEmployees1.hints.JobPayTypeId.label}"
-                                                  required="#{bindings.BaseEmployees1.hints.JobPayTypeId.mandatory}"
-                                                  readOnly="true"
-                                                  columns="#{bindings.BaseEmployees1.hints.JobPayTypeId.displayWidth}"
-                                                  maximumLength="#{bindings.BaseEmployees1.hints.JobPayTypeId.precision}"
-                                                  shortDesc="#{bindings.BaseEmployees1.hints.JobPayTypeId.tooltip}"
-                                                  id="it12">
-                                        <f:validator binding="#{row.bindings.JobPayTypeId.validator}"/>
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.BaseEmployees1.hints.JobPayTypeId.format}"/>
-                                    </af:inputText>
                                 </af:group>
                                 <af:group title="Audit Info" id="g6" startBoundary="show" endBoundary="show">
                                     <af:inputText value="#{row.bindings.CreatedBy.inputValue}"

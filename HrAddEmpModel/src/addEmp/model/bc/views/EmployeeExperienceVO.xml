@@ -22,6 +22,30 @@
         ResId="addEmp.model.bc.views.EmployeeExperienceVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="AddressVO1"
+    ViewObjectName="addEmp.model.bc.views.AddressVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AddressId"
+    ListVOName="AddressVO1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AddressId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AddressId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AddressLine1"/>
+      <Item Value="CityId"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="AddressVOCriteria"/>
+  </ListBinding>
   <EntityUsage
     Name="EmployeeExperiences"
     Entity="HrBCmodel.bc.entities.EmployeeExperiences"/>
@@ -84,7 +108,15 @@
     PrecisionRule="true"
     EntityAttrName="AddressId"
     EntityUsage="EmployeeExperiences"
-    AliasName="ADDRESS_ID"/>
+    AliasName="ADDRESS_ID"
+    LOVName="LOV_AddressId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"

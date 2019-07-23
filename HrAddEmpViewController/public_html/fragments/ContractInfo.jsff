@@ -4,7 +4,7 @@
     <af:panelGridLayout id="pgl1">
         <af:gridRow height="100%" id="gr2">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-                <af:panelBox text="PanelBox1" id="pb1">
+                <af:panelBox text="Contract Details For: #{data.addEmp_view_BasicInfoPageDef.FirstName.inputValue} #{data.addEmp_view_BasicInfoPageDef.LastName.inputValue}" id="pb1">
                     <f:facet name="toolbar">
                         <af:toolbar id="t1">
                             <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add Contract Details"
@@ -124,6 +124,38 @@
                             </af:inputText>
                         </af:group>
                     </af:panelFormLayout>
+                    <af:panelAccordion discloseMany="false" id="pa1">
+                        <af:showDetailItem text="Old Contract Info For: #{data.addEmp_view_BasicInfoPageDef.FirstName.inputValue} #{data.addEmp_view_BasicInfoPageDef.LastName.inputValue}" id="sdi1">
+                            <af:panelGroupLayout id="pgl4">
+                                <af:listView value="#{bindings.Contract1.collectionModel}" var="item"
+                                             emptyText="#{bindings.Contract1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                             fetchSize="#{bindings.Contract1.rangeSize}" id="lv1">
+                                    <af:listItem id="li1">
+                                        <af:panelGroupLayout layout="horizontal" id="pgl3">
+                                            <f:facet name="separator">
+                                                <af:spacer width="10" id="s1"/>
+                                            </f:facet>
+                                            <af:outputFormatted value="#{item.bindings.ContractId.inputValue}" id="of1">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.Contract1.hints.ContractId.format}"/>
+                                            </af:outputFormatted>
+                                            <af:outputFormatted value="#{item.bindings.BasicSalary.inputValue}"
+                                                                id="of2">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.Contract1.hints.BasicSalary.format}"/>
+                                            </af:outputFormatted>
+                                            <af:outputFormatted value="#{item.bindings.StartDate.inputValue}" id="of3">
+                                                <af:convertDateTime pattern="#{bindings.Contract1.hints.StartDate.format}"/>
+                                            </af:outputFormatted>
+                                            <af:outputFormatted value="#{item.bindings.EndDate.inputValue}" id="of4">
+                                                <af:convertDateTime pattern="#{bindings.Contract1.hints.EndDate.format}"/>
+                                            </af:outputFormatted>
+                                        </af:panelGroupLayout>
+                                    </af:listItem>
+                                </af:listView>
+                            </af:panelGroupLayout>
+                        </af:showDetailItem>
+                    </af:panelAccordion>
                 </af:panelBox>
             </af:gridCell>
         </af:gridRow>

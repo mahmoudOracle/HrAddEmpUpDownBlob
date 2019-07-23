@@ -97,6 +97,29 @@
                             </af:inputText>
                         </af:group>
                     </af:panelFormLayout>
+                    <af:panelAccordion discloseMany="false" id="pa1">
+                        <af:showDetailItem text="Addresses Details For: #{data.addEmp_view_BasicInfoPageDef.FirstName.inputValue} #{data.addEmp_view_BasicInfoPageDef.LastName.inputValue}" id="sdi1">
+                            <af:listView value="#{bindings.EmployeeAddress1.collectionModel}" var="item"
+                                         emptyText="#{bindings.EmployeeAddress1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                         fetchSize="#{bindings.EmployeeAddress1.rangeSize}" id="lv1">
+                                <af:listItem id="li1">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl3">
+                                        <f:facet name="separator">
+                                            <af:spacer width="10" id="s1"/>
+                                        </f:facet>
+                                        <af:outputFormatted value="#{item.bindings.AddressTypeId.inputValue}" id="of1">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.EmployeeAddress1.hints.AddressTypeId.format}"/>
+                                        </af:outputFormatted>
+                                        <af:outputFormatted value="#{item.bindings.AddressId.inputValue}" id="of2">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.EmployeeAddress1.hints.AddressId.format}"/>
+                                        </af:outputFormatted>
+                                    </af:panelGroupLayout>
+                                </af:listItem>
+                            </af:listView>
+                        </af:showDetailItem>
+                    </af:panelAccordion>
                 </af:panelBox>
             </af:gridCell>
         </af:gridRow>

@@ -15,7 +15,8 @@
   SelectListFlags="1"
   FromListFlags="1"
   WhereFlags="1"
-  SelectAllAttributes="false">
+  SelectAllAttributes="false"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -357,7 +358,14 @@
     PrecisionRule="true"
     EntityAttrName="Mobile"
     EntityUsage="Employees"
-    AliasName="MOBILE"/>
+    AliasName="MOBILE">
+    <validation:RegExpValidationBean
+      Name="MobileRule0"
+      ResId="addEmp.model.bc.views.BaseEmployeesVO.Mobile_Rule_0"
+      OnAttribute="Mobile"
+      Pattern="/^(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/"
+      Inverse="false"/>
+  </ViewAttribute>
   <ViewAttribute
     Name="EmergencyPhone"
     PrecisionRule="true"

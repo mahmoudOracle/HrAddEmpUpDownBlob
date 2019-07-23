@@ -23,14 +23,12 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefEducation1_1"
+    Name="RefEducation1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefEducation"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefEducation1"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_EducationType"
-    ListVOName="SharedStaticLOVAppModule_RefEducation1_1"
+    ListVOName="RefEducation1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">

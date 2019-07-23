@@ -50,5 +50,13 @@
       </AttrNames>
     </attributeValues>
     <action IterBinding="EmpSkills1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="EmpSkills1Iterator" id="EmpSkills1">
+      <nodeDefinition DefName="addEmp.model.bc.views.EmpSkillsVO" Name="EmpSkills10">
+        <AttrNames>
+          <Item Value="SkillId"/>
+          <Item Value="SkillYears"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

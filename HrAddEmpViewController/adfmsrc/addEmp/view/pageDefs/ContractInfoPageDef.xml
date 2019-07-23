@@ -68,5 +68,15 @@
       </AttrNames>
     </attributeValues>
     <action IterBinding="Contract1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="Contract1Iterator" id="Contract1">
+      <nodeDefinition DefName="addEmp.model.bc.views.ContractVO" Name="Contract10">
+        <AttrNames>
+          <Item Value="ContractId"/>
+          <Item Value="BasicSalary"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

@@ -23,14 +23,12 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefTerminationReasons1_1"
+    Name="RefTerminationReasons1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefTerminationReasons"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefTerminationReasons1"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_TerminationReason"
-    ListVOName="SharedStaticLOVAppModule_RefTerminationReasons1_1"
+    ListVOName="RefTerminationReasons1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">

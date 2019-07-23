@@ -15,7 +15,8 @@
   RowClass="model.shared.extensions.ExtViewRowImpl"
   ComponentClass="model.shared.extensions.ExtViewObjectImpl"
   FetchMode="FETCH_AS_NEEDED"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -23,20 +24,16 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefRelationShips1_1"
+    Name="RefRelationShips1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefRelationShips"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefRelationShips1"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefGender1_1"
+    Name="RefGender1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefGender"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefGender1"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_RelationId"
-    ListVOName="SharedStaticLOVAppModule_RefRelationShips1_1"
+    ListVOName="RefRelationShips1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
@@ -53,7 +50,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_GenderId"
-    ListVOName="SharedStaticLOVAppModule_RefGender1_1"
+    ListVOName="RefGender1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">

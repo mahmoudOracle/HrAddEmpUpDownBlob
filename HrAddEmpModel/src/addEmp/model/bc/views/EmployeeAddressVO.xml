@@ -23,14 +23,16 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewAccessor
-    Name="SharedStaticLOVAppModule_RefAddressTypes1_1"
+    Name="RefAddressTypes1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefAddressTypes"
-    AMUsageName="SharedStaticLOVAppModule"
-    ViewInstanceName="RefAddressTypes1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AddressVO1"
+    ViewObjectName="addEmp.model.bc.views.AddressVO"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_AddressTypeId"
-    ListVOName="SharedStaticLOVAppModule_RefAddressTypes1_1"
+    ListVOName="RefAddressTypes1"
     NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
@@ -44,6 +46,27 @@
       <Item Value="AddressTypes"/>
     </AttrArray>
     <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AddressId"
+    ListVOName="AddressVO1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AddressId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AddressId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AddressLine1"/>
+      <Item Value="CityId"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="AddressVOCriteria"
+      Hint="showAndExecute"/>
   </ListBinding>
   <EntityUsage
     Name="EmployeeAddress"
@@ -83,7 +106,15 @@
     PrecisionRule="true"
     EntityAttrName="AddressId"
     EntityUsage="EmployeeAddress"
-    AliasName="ADDRESS_ID"/>
+    AliasName="ADDRESS_ID"
+    LOVName="LOV_AddressId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"

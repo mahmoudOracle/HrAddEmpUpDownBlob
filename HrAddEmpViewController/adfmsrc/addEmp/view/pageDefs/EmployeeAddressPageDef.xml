@@ -52,5 +52,13 @@
     </attributeValues>
     <action IterBinding="EmployeeAddress1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
+    <tree IterBinding="EmployeeAddress1Iterator" id="EmployeeAddress1">
+      <nodeDefinition DefName="addEmp.model.bc.views.EmployeeAddressVO" Name="EmployeeAddress10">
+        <AttrNames>
+          <Item Value="AddressTypeId"/>
+          <Item Value="AddressId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

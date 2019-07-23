@@ -4,6 +4,7 @@ import addEmp.model.bc.views.EmpAttachmentsVOImpl;
 
 import model.shared.extensions.ExtApplicationModuleImpl;
 
+
 import model.shared.extensions.ExtViewObjectImpl;
 
 import oracle.jbo.server.ViewLinkImpl;
@@ -266,6 +267,15 @@ public class HrAddEmpAppModuleImpl extends ExtApplicationModuleImpl {
      */
     public ViewLinkImpl getEmpEmpAttVL1() {
         return (ViewLinkImpl) findViewLink("EmpEmpAttVL1");
+    }
+
+
+    /**
+     * Container's getter for Skills1.
+     * @return Skills1
+     */
+    public ExtViewObjectImpl getSkills1() {
+        return (ExtViewObjectImpl) findViewObject("Skills1");
     }
 }
 

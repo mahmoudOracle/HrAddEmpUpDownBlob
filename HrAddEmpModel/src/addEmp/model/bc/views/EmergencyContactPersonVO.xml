@@ -108,14 +108,7 @@
     PrecisionRule="true"
     EntityAttrName="MobileNo"
     EntityUsage="EmerfgencyContactPersons"
-    AliasName="MOBILE_NO">
-    <validation:RegExpValidationBean
-      Name="MobileNoRule0"
-      ResId="addEmp.model.bc.views.EmergencyContactPersonVO.MobileNo_Rule_0"
-      OnAttribute="MobileNo"
-      Pattern="/^(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/"
-      Inverse="false"/>
-  </ViewAttribute>
+    AliasName="MOBILE_NO"/>
   <ViewAttribute
     Name="PhoneNo"
     PrecisionRule="true"

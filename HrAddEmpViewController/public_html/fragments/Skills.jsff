@@ -97,8 +97,7 @@
                         </af:group>
                     </af:panelFormLayout>
                     <af:panelAccordion discloseMany="false" id="pa1">
-                        <af:showDetailItem id="pane1" text="Skill Details"/>
-                        <af:showDetailItem text="showDetailItem 1" id="sdi1">
+                        <af:showDetailItem text="Skill Details" id="sdi1">
                             <af:listView value="#{bindings.EmpSkills1.collectionModel}" var="item"
                                          emptyText="#{bindings.EmpSkills1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                          fetchSize="#{bindings.EmpSkills1.rangeSize}" id="lv1">

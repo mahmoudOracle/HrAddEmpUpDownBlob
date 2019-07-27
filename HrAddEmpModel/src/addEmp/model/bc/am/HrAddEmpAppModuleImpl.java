@@ -277,5 +277,29 @@ public class HrAddEmpAppModuleImpl extends ExtApplicationModuleImpl {
     public ExtViewObjectImpl getSkills1() {
         return (ExtViewObjectImpl) findViewObject("Skills1");
     }
+
+    /**
+     * Container's getter for Jobs1.
+     * @return Jobs1
+     */
+    public ExtViewObjectImpl getJobs1() {
+        return (ExtViewObjectImpl) findViewObject("Jobs1");
+    }
+
+    /**
+     * Container's getter for Department1.
+     * @return Department1
+     */
+    public ExtViewObjectImpl getDepartment1() {
+        return (ExtViewObjectImpl) findViewObject("Department1");
+    }
+
+    /**
+     * Container's getter for Address1.
+     * @return Address1
+     */
+    public ExtViewObjectImpl getAddress1() {
+        return (ExtViewObjectImpl) findViewObject("Address1");
+    }
 }
 

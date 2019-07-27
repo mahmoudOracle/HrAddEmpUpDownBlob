@@ -6,6 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="BaseEmployees1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
               id="BaseEmployees2Iterator"/>
+    <iterator Binds="Department1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="Department1Iterator"/>
+    <iterator Binds="Jobs1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="Jobs1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="BaseEmployees2Iterator" id="EmployeeId">
@@ -66,10 +68,6 @@
         <Item Value="HireDate"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_JobId" id="JobId" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
-    <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_JobCategoryId" id="JobCategoryId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_JobLevelTypeId" id="JobLevelTypeId"
@@ -109,5 +107,51 @@
             DataControl="HrAddEmpAppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
             DataControl="HrAddEmpAppModuleDataControl"/>
+    <listOfValues IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_JobId" id="JobId1"/>
+    <listOfValues IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId1"/>
+    <attributeValues IterBinding="Department1Iterator" id="DepartmentId">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Department1Iterator" id="DepartmentName">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Department1Iterator" id="ManagerId">
+      <AttrNames>
+        <Item Value="ManagerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Department1Iterator" id="BracnhId">
+      <AttrNames>
+        <Item Value="BracnhId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Jobs1Iterator" id="JobId">
+      <AttrNames>
+        <Item Value="JobId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Jobs1Iterator" id="JobTitle">
+      <AttrNames>
+        <Item Value="JobTitle"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Jobs1Iterator" id="JobRoles">
+      <AttrNames>
+        <Item Value="JobRoles"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Jobs1Iterator" id="JobDescription">
+      <AttrNames>
+        <Item Value="JobDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="Department1Iterator" id="CreateInsert" InstanceName="HrAddEmpAppModuleDataControl.Department1"
+            DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="Jobs1Iterator" id="CreateInsert1" InstanceName="HrAddEmpAppModuleDataControl.Jobs1"
+            DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
   </bindings>
 </pageDefinition>

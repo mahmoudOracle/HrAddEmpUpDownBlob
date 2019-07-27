@@ -232,8 +232,7 @@
   <ListBinding
     Name="LOV_JobId"
     ListVOName="JobsView1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="JobId"/>
@@ -245,13 +244,13 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="JobTitle"/>
     </AttrArray>
-    <DisplayCriteria/>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
   </ListBinding>
   <ListBinding
     Name="LOV_DepartmentId"
     ListVOName="DepartmentsView1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueFlag="none"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="DepartmentId"/>
@@ -263,7 +262,8 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="DepartmentName"/>
     </AttrArray>
-    <DisplayCriteria/>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
   </ListBinding>
   <EntityUsage
     Name="Employees"
@@ -358,14 +358,7 @@
     PrecisionRule="true"
     EntityAttrName="Mobile"
     EntityUsage="Employees"
-    AliasName="MOBILE">
-    <validation:RegExpValidationBean
-      Name="MobileRule0"
-      ResId="addEmp.model.bc.views.BaseEmployeesVO.Mobile_Rule_0"
-      OnAttribute="Mobile"
-      Pattern="/^(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$/"
-      Inverse="false"/>
-  </ViewAttribute>
+    AliasName="MOBILE"/>
   <ViewAttribute
     Name="EmergencyPhone"
     PrecisionRule="true"
@@ -402,7 +395,7 @@
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="choice"/>
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -416,7 +409,7 @@
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="choice"/>
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

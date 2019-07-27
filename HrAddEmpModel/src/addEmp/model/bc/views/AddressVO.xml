@@ -30,6 +30,48 @@
     Name="CityParam"
     Kind="viewcriteria"
     Type="oracle.jbo.domain.Number"/>
+  <ViewAccessor
+    Name="RefCountries1"
+    ViewObjectName="HrBCmodel.bc.staticLOV.RefCountries"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="CityVO1"
+    ViewObjectName="addEmp.model.bc.views.CityVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CountryId"
+    ListVOName="RefCountries1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CountryId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Country"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CityId"
+    ListVOName="CityVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CityId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CityId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CityName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Address"
     Entity="HrBCmodel.bc.entities.Address"/>
@@ -77,14 +119,30 @@
     PrecisionRule="true"
     EntityAttrName="CityId"
     EntityUsage="Address"
-    AliasName="CITY_ID"/>
+    AliasName="CITY_ID"
+    LOVName="LOV_CityId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CountryId"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="CountryId"
     EntityUsage="Address"
-    AliasName="COUNTRY_ID"/>
+    AliasName="COUNTRY_ID"
+    LOVName="LOV_CountryId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"

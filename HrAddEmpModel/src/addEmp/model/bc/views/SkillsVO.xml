@@ -13,9 +13,12 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   RowClass="model.shared.extensions.ExtViewRowImpl"
-  ComponentClass="model.shared.extensions.ExtViewObjectImpl"
+  ComponentClass="addEmp.model.bc.views.SkillsVOImpl"
   FetchMode="FETCH_AS_NEEDED"
   PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+  </DesignTime>
   <Properties>
     <SchemaBasedProperties>
       <LABEL

@@ -17,6 +17,7 @@ import oracle.jbo.domain.Number;
 // ---------------------------------------------------------------------
 public class EmpAttachmentsVORowImpl extends ExtViewRowImpl implements EmpAttachmentsVORow {
 
+
     public static final int ENTITY_EMPLOYEEATTACHMENTS = 0;
 
     /**
@@ -26,6 +27,7 @@ public class EmpAttachmentsVORowImpl extends ExtViewRowImpl implements EmpAttach
         EmpAttachmentId,
         EmployeeId,
         AttachmentType,
+        AttachmentExtension,
         AttachedFile,
         CreatedBy,
         CreatedOn,
@@ -57,9 +59,11 @@ public class EmpAttachmentsVORowImpl extends ExtViewRowImpl implements EmpAttach
         }
     }
 
+
     public static final int EMPATTACHMENTID = AttributesEnum.EmpAttachmentId.index();
     public static final int EMPLOYEEID = AttributesEnum.EmployeeId.index();
     public static final int ATTACHMENTTYPE = AttributesEnum.AttachmentType.index();
+    public static final int ATTACHMENTEXTENSION = AttributesEnum.AttachmentExtension.index();
     public static final int ATTACHEDFILE = AttributesEnum.AttachedFile.index();
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int CREATEDON = AttributesEnum.CreatedOn.index();
@@ -144,6 +148,22 @@ public class EmpAttachmentsVORowImpl extends ExtViewRowImpl implements EmpAttach
      */
     public void setAttachedFile(BlobDomain value) {
         setAttributeInternal(ATTACHEDFILE, value);
+    }
+
+    /**
+     * Gets the attribute value for ATTACHMENT_EXTENSION using the alias name AttachmentExtension.
+     * @return the ATTACHMENT_EXTENSION
+     */
+    public Number getAttachmentExtension() {
+        return (Number) getAttributeInternal(ATTACHMENTEXTENSION);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for ATTACHMENT_EXTENSION using the alias name AttachmentExtension.
+     * @param value value to set the ATTACHMENT_EXTENSION
+     */
+    public void setAttachmentExtension(Number value) {
+        setAttributeInternal(ATTACHMENTEXTENSION, value);
     }
 
     /**

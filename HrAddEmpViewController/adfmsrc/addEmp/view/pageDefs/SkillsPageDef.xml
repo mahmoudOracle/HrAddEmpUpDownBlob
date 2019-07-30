@@ -4,7 +4,8 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="EmpSkills1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="EmpSkills1Iterator"/>
+    <iterator Binds="EmpSkills1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="EmpSkills1Iterator" ChangeEventPolicy="ppr"/>
+    <iterator id="Skills1Iterator" Binds="Skills1" DataControl="HrAddEmpAppModuleDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EmpSkills1Iterator" id="EmployeeSkillId">
@@ -58,5 +59,26 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="Skills1Iterator" id="CreateInsertSkills" InstanceName="HrAddEmpAppModuleDataControl.Skills1"
+            DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="Skills1Iterator" id="SkillId1">
+      <AttrNames>
+        <Item Value="SkillId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Skills1Iterator" id="SkillName">
+      <AttrNames>
+        <Item Value="SkillName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Skills1Iterator" id="Comments">
+      <AttrNames>
+        <Item Value="Comments"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="true"
+            Action="commitTransaction"/>
+    <action id="Rollback" DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
   </bindings>
 </pageDefinition>

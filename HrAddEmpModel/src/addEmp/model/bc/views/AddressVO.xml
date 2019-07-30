@@ -39,23 +39,6 @@
     ViewObjectName="addEmp.model.bc.views.CityVO"
     RowLevelBinds="true"/>
   <ListBinding
-    Name="LOV_CountryId"
-    ListVOName="RefCountries1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="CountryId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Id"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Country"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_CityId"
     ListVOName="CityVO1"
     NullValueFlag="none"
@@ -64,11 +47,36 @@
       <Item Value="CityId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CountryId"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="CityId"/>
+      <Item Value="CountryId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="CityName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CountryId"
+    ListVOName="RefCountries1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CountryId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CountryName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+      <Item Value="Country"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Country"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -125,6 +133,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <AUTOSUBMIT
+          Value="true"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -140,8 +150,29 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <AUTOSUBMIT
+          Value="true"/>
       </SchemaBasedProperties>
     </Properties>
+    <Dependencies>
+      <Item
+        Value="CityId"/>
+    </Dependencies>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CountryName"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <Dependencies>
+      <Item
+        Value="CountryId"/>
+    </Dependencies>
   </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"

@@ -16,7 +16,7 @@
                             <af:button text="Save &amp; Go to Main Page" id="b5" action="save" icon="/images/SAVE.png"/>
                             <af:button text="Remove the Nwely Created Row &amp; Staty on the page" id="b4"
                                        immediate="true" icon="/images/UNDO.png"
-                                       actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_RollbackPageDef.Rollback.execute}"/>
+                                       actionListener="#{removeNewCreatedRowsInPages.removeEmpSkillRow}"/>
                             <af:button text="Rollback Go Back to Main Page" immediate="true" id="b3"
                                        icon="/images/UNDO.png" action="cancel">
                                 <af:resetActionListener/>
@@ -37,12 +37,18 @@
                             </af:outputText>
                         </af:panelLabelAndMessage>
                         <af:group id="Group">
-                            <af:selectOneChoice value="#{bindings.SkillId.inputValue}" label="#{bindings.SkillId.label}"
-                                                required="#{bindings.SkillId.hints.mandatory}"
-                                                shortDesc="#{bindings.SkillId.hints.tooltip}" id="soc1">
-                                <f:selectItems value="#{bindings.SkillId.items}" id="si1"/>
-                                <f:validator binding="#{bindings.SkillId.validator}"/>
-                            </af:selectOneChoice>
+                            <af:panelLabelAndMessage label="Skill Name" id="plam3">
+                                <af:selectOneChoice value="#{bindings.SkillId.inputValue}"
+                                                    label="#{bindings.SkillId.label}"
+                                                    required="#{bindings.SkillId.hints.mandatory}"
+                                                    shortDesc="#{bindings.SkillId.hints.tooltip}" id="soc1"
+                                                    simple="true" partialTriggers="p1">
+                                    <f:selectItems value="#{bindings.SkillId.items}" id="si1"/>
+                                    <f:validator binding="#{bindings.SkillId.validator}"/>
+                                </af:selectOneChoice>
+                                <af:button id="b6" icon="/images/add.png"
+                                           actionListener="#{addNewRowAddUpdateTF.ShowAddSkillPopup}"/>
+                            </af:panelLabelAndMessage>
                             <af:inputText value="#{bindings.SkillYears.inputValue}"
                                           label="#{bindings.SkillYears.hints.label}"
                                           required="#{bindings.SkillYears.hints.mandatory}"
@@ -120,6 +126,36 @@
                         </af:showDetailItem>
                     </af:panelAccordion>
                 </af:panelBox>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                          binding="#{addNewRowAddUpdateTF.addSkillPopup}" contentDelivery="lazyUncached"
+                          popupCanceledListener="#{addNewRowAddUpdateTF.cancelNewSkilltRow}">
+                    <af:dialog id="d1" dialogListener="#{addNewRowAddUpdateTF.confirmNewSkillRow2}"
+                               title="Add New Skill">
+                        <f:facet name="buttonBar"/>
+                        <af:panelFormLayout id="pfl2">
+                            <af:outputText value="#{bindings.SkillId1.inputValue}"
+                                           shortDesc="#{bindings.SkillId1.hints.tooltip}" id="ot3">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.SkillId1.format}"/>
+                            </af:outputText>
+                            <af:inputText value="#{bindings.SkillName.inputValue}"
+                                          label="#{bindings.SkillName.hints.label}"
+                                          required="#{bindings.SkillName.hints.mandatory}"
+                                          columns="#{bindings.SkillName.hints.displayWidth}"
+                                          maximumLength="#{bindings.SkillName.hints.precision}"
+                                          shortDesc="#{bindings.SkillName.hints.tooltip}" id="it5">
+                                <f:validator binding="#{bindings.SkillName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Comments.inputValue}"
+                                          label="#{bindings.Comments.hints.label}"
+                                          required="#{bindings.Comments.hints.mandatory}"
+                                          columns="#{bindings.Comments.hints.displayWidth}"
+                                          maximumLength="#{bindings.Comments.hints.precision}"
+                                          shortDesc="#{bindings.Comments.hints.tooltip}" id="it6">
+                                <f:validator binding="#{bindings.Comments.validator}"/>
+                            </af:inputText>
+                        </af:panelFormLayout>
+                    </af:dialog>
+                </af:popup>
             </af:gridCell>
         </af:gridRow>
         <af:gridRow height="50px" id="gr1">

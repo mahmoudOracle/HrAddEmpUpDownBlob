@@ -87,6 +87,12 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="AttachmentExtension"
+    PrecisionRule="true"
+    EntityAttrName="AttachmentExtension"
+    EntityUsage="EmployeeAttachments"
+    AliasName="ATTACHMENT_EXTENSION"/>
+  <ViewAttribute
     Name="AttachedFile"
     IsQueriable="false"
     IsNotNull="true"

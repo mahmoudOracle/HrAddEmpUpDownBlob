@@ -2,6 +2,8 @@ package addEmp.model.bc.am;
 
 import addEmp.model.bc.views.EmpAttachmentsVOImpl;
 
+import addEmp.model.bc.views.SkillsVOImpl;
+
 import model.shared.extensions.ExtApplicationModuleImpl;
 
 
@@ -274,8 +276,8 @@ public class HrAddEmpAppModuleImpl extends ExtApplicationModuleImpl {
      * Container's getter for Skills1.
      * @return Skills1
      */
-    public ExtViewObjectImpl getSkills1() {
-        return (ExtViewObjectImpl) findViewObject("Skills1");
+    public SkillsVOImpl getSkills1() {
+        return (SkillsVOImpl) findViewObject("Skills1");
     }
 
     /**

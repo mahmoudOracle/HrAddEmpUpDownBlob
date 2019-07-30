@@ -68,6 +68,9 @@
   <ViewUsage
     Name="Address1"
     ViewObjectName="addEmp.model.bc.views.AddressVO"/>
+  <ViewUsage
+    Name="Skills1"
+    ViewObjectName="addEmp.model.bc.views.SkillsVO"/>
   <ViewLinkUsage
     Name="EmployeeContractVL1"
     ViewLinkObjectName="addEmp.model.bc.viewLinks.EmployeeContractVL"

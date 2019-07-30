@@ -22,6 +22,27 @@
         ResId="addEmp.model.bc.views.CityVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="RefCountries1"
+    ViewObjectName="HrBCmodel.bc.staticLOV.RefCountries"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CountryId"
+    ListVOName="RefCountries1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CountryId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Country"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Cities"
     Entity="HrBCmodel.bc.entities.Cities"/>
@@ -45,7 +66,15 @@
     PrecisionRule="true"
     EntityAttrName="CountryId"
     EntityUsage="Cities"
-    AliasName="COUNTRY_ID"/>
+    AliasName="COUNTRY_ID"
+    LOVName="LOV_CountryId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"

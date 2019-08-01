@@ -4,7 +4,8 @@
     <af:panelGridLayout id="pgl1">
         <af:gridRow height="100%" id="gr2">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-                <af:panelBox text="Skills Info For: #{data.addEmp_view_BasicInfoPageDef.FirstName.inputValue} #{data.addEmp_view_BasicInfoPageDef.LastName.inputValue}" id="pb1">
+                <af:panelBox text="Skills Info For: #{data.addEmp_view_BasicInfoPageDef.FirstName.inputValue} #{data.addEmp_view_BasicInfoPageDef.LastName.inputValue}"
+                             id="pb1">
                     <f:facet name="toolbar">
                         <af:toolbar id="t1">
                             <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add Skills Info"
@@ -16,7 +17,10 @@
                             <af:button text="Save &amp; Go to Main Page" id="b5" action="save" icon="/images/SAVE.png"/>
                             <af:button text="Remove the Nwely Created Row &amp; Staty on the page" id="b4"
                                        immediate="true" icon="/images/UNDO.png"
-                                       actionListener="#{removeNewCreatedRowsInPages.removeEmpSkillRow}"/>
+                                       actionListener="#{removeNewCreatedRowsInPages.GeneralRemoveNewCreatedRow}">
+                                <f:attribute name="IteratorName" value="#{bindings.EmpSkills1Iterator.name}"/>
+                                <f:attribute name="EmployeeIdVal" value="#{bindings.EmployeeId.inputValue}"/>
+                            </af:button>
                             <af:button text="Rollback Go Back to Main Page" immediate="true" id="b3"
                                        icon="/images/UNDO.png" action="cancel">
                                 <af:resetActionListener/>
@@ -42,12 +46,13 @@
                                                     label="#{bindings.SkillId.label}"
                                                     required="#{bindings.SkillId.hints.mandatory}"
                                                     shortDesc="#{bindings.SkillId.hints.tooltip}" id="soc1"
-                                                    simple="true" partialTriggers="p1">
+                                                    simple="true" partialTriggers="p1 b4">
                                     <f:selectItems value="#{bindings.SkillId.items}" id="si1"/>
                                     <f:validator binding="#{bindings.SkillId.validator}"/>
                                 </af:selectOneChoice>
                                 <af:button id="b6" icon="/images/add.png"
-                                           actionListener="#{addNewRowAddUpdateTF.ShowAddSkillPopup}"/>
+                                           actionListener="#{addNewRowAddUpdateTF.ShowAddSkillPopup}"
+                                           rendered="#{bindings.EmployeeSkillId.inputValue != null}"/>
                             </af:panelLabelAndMessage>
                             <af:inputText value="#{bindings.SkillYears.inputValue}"
                                           label="#{bindings.SkillYears.hints.label}"

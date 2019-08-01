@@ -4,7 +4,8 @@
     <af:panelGridLayout id="pgl1">
         <af:gridRow height="100%" id="gr1">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
-                <af:panelBox text="Attachments For: #{data.addEmp_view_BasicInfoPageDef.FirstName.inputValue} #{data.addEmp_view_BasicInfoPageDef.LastName.inputValue}" id="pb1">
+                <af:panelBox text="Attachments For: #{data.addEmp_view_BasicInfoPageDef.FirstName.inputValue} #{data.addEmp_view_BasicInfoPageDef.LastName.inputValue}"
+                             id="pb1">
                     <f:facet name="toolbar">
                         <af:toolbar id="t1">
                             <af:button actionListener="#{bindings.CreateInsert.execute}" text="Attach The File"
@@ -16,7 +17,10 @@
                             <af:button text="Save &amp; Go to Main Page" id="b5" action="save" icon="/images/SAVE.png"/>
                             <af:button text="Remove the Nwely Created Row &amp; Staty on the page" id="b4"
                                        immediate="true" icon="/images/UNDO.png"
-                                       actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_RollbackPageDef.Rollback.execute}"/>
+                                       actionListener="#{removeNewCreatedRowsInPages.GeneralRemoveNewCreatedRow}">
+                                <f:attribute name="IteratorName" value="#{bindings.EmpAttachments1Iterator.name}"/>
+                                <f:attribute name="EmployeeIdVal" value="#{bindings.EmployeeId.inputValue}"/>
+                            </af:button>
                             <af:button text="Rollback Go Back to Main Page" immediate="true" id="b3"
                                        icon="/images/UNDO.png" action="cancel">
                                 <af:resetActionListener/>
@@ -44,8 +48,7 @@
                                 <f:selectItems value="#{bindings.AttachmentType.items}" id="si1"/>
                                 <f:validator binding="#{bindings.AttachmentType.validator}"/>
                             </af:selectOneChoice>
-                            <af:button text="Download Data Running" id="cb3"
-                                       actionListener="#{imageBean.testDownload}">
+                            <af:button text="Download Data Running" id="cb3" actionListener="#{imageBean.testDownload}">
                                 <af:fileDownloadActionListener method="#{imageBean.downloadBlobFile}"
                                                                filename="downloadBlobFile.jpg"/>
                             </af:button>
@@ -138,12 +141,11 @@
                                                 <af:convertNumber groupingUsed="false"
                                                                   pattern="#{bindings.EmpAttachmentsData1.hints.AttachmentType.format}"/>
                                             </af:outputFormatted>
-                                           
                                             <af:image id="i1"
                                                       source="/imagservlet?id=#{item.bindings.EmpAttachmentId.inputValue}"
                                                       shortDesc="Sameh"
                                                       inlineStyle="border-style:solid; height:300px; width:300px;"/>
-                                           </af:panelGroupLayout>
+                                        </af:panelGroupLayout>
                                     </af:listItem>
                                 </af:listView>
                             </af:panelGroupLayout>

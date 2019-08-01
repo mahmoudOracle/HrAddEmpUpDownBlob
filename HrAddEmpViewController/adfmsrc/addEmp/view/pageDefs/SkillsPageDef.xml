@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="EmpSkills1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="EmpSkills1Iterator" ChangeEventPolicy="ppr"/>
+    <iterator Binds="EmpSkills1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="EmpSkills1Iterator"/>
     <iterator id="Skills1Iterator" Binds="Skills1" DataControl="HrAddEmpAppModuleDataControl" RangeSize="25"/>
   </executables>
   <bindings>

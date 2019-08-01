@@ -6,16 +6,23 @@
   Name="DrivingLicenseVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
   RowClass="model.shared.extensions.ExtViewRowImpl"
   ComponentClass="model.shared.extensions.ExtViewObjectImpl"
   FetchMode="FETCH_AS_NEEDED"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="DrivingLicense.DRIVING_LICENSE_ID, 
+       DrivingLicense.EMPLOYEE_ID, 
+       DrivingLicense.DRIVING_LICENSE_TYPE, 
+       DrivingLicense.ISSUE_DATE, 
+       DrivingLicense.EXPIRATION_DATE, 
+       DrivingLicense.CREATED_BY, 
+       DrivingLicense.CREATED_ON, 
+       DrivingLicense.MODIFIED_BY, 
+       DrivingLicense.MODIFIED_ON, 
+       DrivingLicense.VERSION"
+  FromList="DRIVING_LICENSE DrivingLicense">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -98,25 +105,29 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="DrivingLicense"
-    AliasName="CREATED_BY"/>
+    AliasName="CREATED_BY"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedOn"
     PrecisionRule="true"
     EntityAttrName="CreatedOn"
     EntityUsage="DrivingLicense"
-    AliasName="CREATED_ON"/>
+    AliasName="CREATED_ON"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="ModifiedBy"
     PrecisionRule="true"
     EntityAttrName="ModifiedBy"
     EntityUsage="DrivingLicense"
-    AliasName="MODIFIED_BY"/>
+    AliasName="MODIFIED_BY"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="ModifiedOn"
     PrecisionRule="true"
     EntityAttrName="ModifiedOn"
     EntityUsage="DrivingLicense"
-    AliasName="MODIFIED_ON"/>
+    AliasName="MODIFIED_ON"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="Version"
     PrecisionRule="true"

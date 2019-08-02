@@ -48,15 +48,17 @@
                                 <f:selectItems value="#{bindings.AddressTypeId.items}" id="si1"/>
                                 <f:validator binding="#{bindings.AddressTypeId.validator}"/>
                             </af:selectOneChoice>
-                            <af:inputText value="#{bindings.AddressId.inputValue}"
-                                          label="#{bindings.AddressId.hints.label}"
-                                          required="#{bindings.AddressId.hints.mandatory}"
-                                          columns="#{bindings.AddressId.hints.displayWidth}"
-                                          maximumLength="#{bindings.AddressId.hints.precision}"
-                                          shortDesc="#{bindings.AddressId.hints.tooltip}" id="it1">
-                                <f:validator binding="#{bindings.AddressId.validator}"/>
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.AddressId.format}"/>
-                            </af:inputText>
+                            <af:inputListOfValues id="addressId1Id"
+                                                  popupTitle="Search and Select: #{bindings.AddressId1.hints.label}"
+                                                  value="#{bindings.AddressId1.inputValue}"
+                                                  label="#{bindings.AddressId1.hints.label}"
+                                                  model="#{bindings.AddressId1.listOfValuesModel}"
+                                                  required="#{bindings.AddressId1.hints.mandatory}"
+                                                  columns="#{bindings.AddressId1.hints.displayWidth}"
+                                                  shortDesc="#{bindings.AddressId1.hints.tooltip}" createPopupId="p1">
+                                <f:validator binding="#{bindings.AddressId1.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.AddressId1.format}"/>
+                            </af:inputListOfValues>
                         </af:group>
                         <af:group id="Group2">
                             <af:inputText value="#{bindings.CreatedBy.inputValue}"
@@ -126,6 +128,90 @@
                         </af:showDetailItem>
                     </af:panelAccordion>
                 </af:panelBox>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached"
+                          popupFetchListener="#{addNewRowAddUpdateTF.AddNewAddressRow}"
+                          popupCanceledListener="#{addNewRowAddUpdateTF.cancelNewAdressRow}">
+                    <af:dialog id="d1" dialogListener="#{addNewRowAddUpdateTF.confirmNewAddress}">
+                        <f:facet name="buttonBar">
+                            <af:panelFormLayout id="pfl2">
+                                <af:inputText value="#{bindings.AddressId2.inputValue}"
+                                              label="#{bindings.AddressId2.hints.label}"
+                                              required="#{bindings.AddressId2.hints.mandatory}"
+                                              columns="#{bindings.AddressId2.hints.displayWidth}"
+                                              maximumLength="#{bindings.AddressId2.hints.precision}"
+                                              shortDesc="#{bindings.AddressId2.hints.tooltip}" id="it1">
+                                    <f:validator binding="#{bindings.AddressId2.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.AddressId2.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.AddressLine1.inputValue}"
+                                              label="#{bindings.AddressLine1.hints.label}"
+                                              required="#{bindings.AddressLine1.hints.mandatory}"
+                                              columns="#{bindings.AddressLine1.hints.displayWidth}"
+                                              maximumLength="#{bindings.AddressLine1.hints.precision}"
+                                              shortDesc="#{bindings.AddressLine1.hints.tooltip}" id="it5">
+                                    <f:validator binding="#{bindings.AddressLine1.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.AddressLine2.inputValue}"
+                                              label="#{bindings.AddressLine2.hints.label}"
+                                              required="#{bindings.AddressLine2.hints.mandatory}"
+                                              columns="#{bindings.AddressLine2.hints.displayWidth}"
+                                              maximumLength="#{bindings.AddressLine2.hints.precision}"
+                                              shortDesc="#{bindings.AddressLine2.hints.tooltip}" id="it6">
+                                    <f:validator binding="#{bindings.AddressLine2.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Fax.inputValue}" label="#{bindings.Fax.hints.label}"
+                                              required="#{bindings.Fax.hints.mandatory}"
+                                              columns="#{bindings.Fax.hints.displayWidth}"
+                                              maximumLength="#{bindings.Fax.hints.precision}"
+                                              shortDesc="#{bindings.Fax.hints.tooltip}" id="it7">
+                                    <f:validator binding="#{bindings.Fax.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Fax.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Phone.inputValue}" label="#{bindings.Phone.hints.label}"
+                                              required="#{bindings.Phone.hints.mandatory}"
+                                              columns="#{bindings.Phone.hints.displayWidth}"
+                                              maximumLength="#{bindings.Phone.hints.precision}"
+                                              shortDesc="#{bindings.Phone.hints.tooltip}" id="it8">
+                                    <f:validator binding="#{bindings.Phone.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Phone.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.PostalCode.inputValue}"
+                                              label="#{bindings.PostalCode.hints.label}"
+                                              required="#{bindings.PostalCode.hints.mandatory}"
+                                              columns="#{bindings.PostalCode.hints.displayWidth}"
+                                              maximumLength="#{bindings.PostalCode.hints.precision}"
+                                              shortDesc="#{bindings.PostalCode.hints.tooltip}" id="it9">
+                                    <f:validator binding="#{bindings.PostalCode.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.PostalCode.format}"/>
+                                </af:inputText>
+                                <af:selectOneChoice value="#{bindings.CityId.inputValue}"
+                                                    label="#{bindings.CityId.label}"
+                                                    required="#{bindings.CityId.hints.mandatory}"
+                                                    shortDesc="#{bindings.CityId.hints.tooltip}" id="soc2"
+                                                    autoSubmit="true">
+                                    <f:selectItems value="#{bindings.CityId.items}" id="si2"/>
+                                    <f:validator binding="#{bindings.CityId.validator}"/>
+                                </af:selectOneChoice>
+                                <af:selectOneChoice value="#{bindings.CountryId.inputValue}"
+                                                    label="#{bindings.CountryId.label}"
+                                                    required="#{bindings.CountryId.hints.mandatory}"
+                                                    shortDesc="#{bindings.CountryId.hints.tooltip}" id="soc3"
+                                                    autoSubmit="true">
+                                    <f:selectItems value="#{bindings.CountryId.items}" id="si3"/>
+                                    <f:validator binding="#{bindings.CountryId.validator}"/>
+                                </af:selectOneChoice>
+                                <af:inputText value="#{bindings.CountryName.inputValue}"
+                                              label="#{bindings.CountryName.hints.label}"
+                                              required="#{bindings.CountryName.hints.mandatory}"
+                                              columns="#{bindings.CountryName.hints.displayWidth}"
+                                              maximumLength="#{bindings.CountryName.hints.precision}"
+                                              shortDesc="#{bindings.CountryName.hints.tooltip}" id="it10">
+                                    <f:validator binding="#{bindings.CountryName.validator}"/>
+                                </af:inputText>
+                            </af:panelFormLayout>
+                        </f:facet>
+                    </af:dialog>
+                </af:popup>
             </af:gridCell>
         </af:gridRow>
         <af:gridRow height="50px" id="gr1">

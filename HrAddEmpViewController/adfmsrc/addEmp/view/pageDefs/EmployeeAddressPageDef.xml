@@ -6,6 +6,7 @@
     <variableIterator id="variables"/>
     <iterator Binds="EmployeeAddress1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
               id="EmployeeAddress1Iterator"/>
+    <iterator Binds="Address1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="Address1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EmployeeAddress1Iterator" id="EmployeeAddressId">
@@ -60,5 +61,49 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <listOfValues IterBinding="EmployeeAddress1Iterator" StaticList="false" Uses="LOV_AddressId" id="AddressId1"/>
+    <attributeValues IterBinding="Address1Iterator" id="AddressId2">
+      <AttrNames>
+        <Item Value="AddressId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address1Iterator" id="AddressLine1">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address1Iterator" id="AddressLine2">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address1Iterator" id="Fax">
+      <AttrNames>
+        <Item Value="Fax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address1Iterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address1Iterator" id="PostalCode">
+      <AttrNames>
+        <Item Value="PostalCode"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="Address1Iterator" StaticList="false" Uses="LOV_CityId" id="CityId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="Address1Iterator" StaticList="false" Uses="LOV_CountryId" id="CountryId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="Address1Iterator" id="CountryName">
+      <AttrNames>
+        <Item Value="CountryName"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="Address1Iterator" id="CreateInsertAddress" InstanceName="HrAddEmpAppModuleDataControl.Address1"
+            DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="true"
+            Action="commitTransaction"/>
   </bindings>
 </pageDefinition>

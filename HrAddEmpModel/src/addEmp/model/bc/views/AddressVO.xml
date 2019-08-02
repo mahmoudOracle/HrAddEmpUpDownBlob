@@ -131,10 +131,10 @@
     LOVName="LOV_CityId">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <AUTOSUBMIT
           Value="true"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -171,8 +171,16 @@
     SQLType="VARCHAR">
     <Dependencies>
       <Item
+        Value="CityId"/>
+      <Item
         Value="CountryId"/>
     </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"

@@ -29,12 +29,18 @@ public class AddNewRowAddUpdateTF {
         return BindingContext.getCurrent().getCurrentBindingsEntry();
     }
 
+    public void AddNewAddressRow(PopupFetchEvent popupFetchEvent) {
+        BindingContainer bindings = getBindings();
+        bindings.getOperationBinding("CreateInsertAddress").execute();
+    }
+
+
     public void AddNewSkillRow(PopupFetchEvent popupFetchEvent) {
         BindingContainer bindings = getBindings();
         bindings.getOperationBinding("CreateInsertSkills").execute();
     }
 
-    public void cancelNewSkilltRow(PopupCanceledEvent popupCanceledEvent) {
+    public void cancelNewSkilltRow(PopupCanceledEvent popupCanceledEvent) {//Linked to the popup
         System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  CANCEL Button Pressed");
      //   BindingContext bc = BindingContext.getCurrent();
       //  BindingContainer binding = bc.getCurrentBindingsEntry();
@@ -52,13 +58,32 @@ public class AddNewRowAddUpdateTF {
         //IteratorUtils.findIterator("EmpSkills1Iterator").executeQuery();
     }
 
+    public void cancelNewAdressRow(PopupCanceledEvent popupCanceledEvent) {
+        System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  CANCEL Button Pressed");
+        //   BindingContext bc = BindingContext.getCurrent();
+        //  BindingContainer binding = bc.getCurrentBindingsEntry();
+        DCBindingContainer bindingsImpl = (DCBindingContainer) getBindings();
+        DCIteratorBinding dciter = bindingsImpl.findIteratorBinding("Address1Iterator");
+        ViewObject vo = dciter.getViewObject();
+        Row row = vo.getCurrentRow();
+        if (row != null) {
+            row.refresh(Row.REFRESH_REMOVE_NEW_ROWS |
+                        Row.REFRESH_FORGET_NEW_ROWS); //Works Goood before it leaves blank spaces in the end of lov
+            //(Row.REFRESH_UNDO_CHANGES | Row.REFRESH_WITH_DB_FORGET_CHANGES);//Main Code
+            System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO Inside Row Refresh");
+        }
+        //vo.executeQuery();
+        //EmpSkills1Iterator
+        //IteratorUtils.findIterator("EmpSkills1Iterator").executeQuery();
+    }
+
     public void confirmNewSkilltRow(DialogEvent dialogEvent) {
         BindingContainer bindings = getBindings();
         bindings.getOperationBinding("Commit").execute();
         //IteratorUtils.findIterator("EmpSkills1Iterator").executeQuery();
     }
 
-    public void ShowAddSkillPopup(ActionEvent actionEvent) {
+    public void ShowAddSkillPopup(ActionEvent actionEvent) {//linked to button beside the lov
         BindingContainer bindings = getBindings();
         OperationBinding ob = bindings.getOperationBinding("CreateInsertSkills");
         ob.execute();
@@ -73,7 +98,7 @@ public class AddNewRowAddUpdateTF {
         return addSkillPopup;
     }
 
-    public void confirmNewSkillRow2(DialogEvent dialogEvent) {
+    public void confirmNewSkillRow2(DialogEvent dialogEvent) {//linked to dialog
         if (dialogEvent.getOutcome()
                        .name()
                        .equals("ok")) {
@@ -83,6 +108,20 @@ public class AddNewRowAddUpdateTF {
             OperationBinding ob = bindings.getOperationBinding("Commit");
             ob.execute();
             IteratorUtils.findIterator("EmpSkills1Iterator").executeQuery();
+
+        }
+    }
+
+    public void confirmNewAddress(DialogEvent dialogEvent) {
+        if (dialogEvent.getOutcome()
+                       .name()
+                       .equals("ok")) {
+            System.out.println("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT  OK Button Pressed");
+
+            BindingContainer bindings = getBindings();
+            OperationBinding ob = bindings.getOperationBinding("Commit");
+            ob.execute();
+            IteratorUtils.findIterator("EmployeeAddress1Iterator").executeQuery();
 
         }
     }

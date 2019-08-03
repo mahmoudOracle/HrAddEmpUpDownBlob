@@ -20,6 +20,7 @@
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_finderName" Value="BaseEmployeesVO"/>
+      <Attr Name="_accessor" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="addEmp.model.bc.views.BaseEmployeesVO.EmployeeId"/>

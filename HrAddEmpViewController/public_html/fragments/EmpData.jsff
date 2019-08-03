@@ -232,58 +232,6 @@
                                         <f:validator binding="#{row.bindings.JobLevelTypeId.validator}"/>
                                     </af:selectOneChoice>
                                 </af:group>
-                                <af:group title="Audit Info" id="g6" startBoundary="show" endBoundary="show">
-                                    <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
-                                                  label="#{bindings.BaseEmployees1.hints.CreatedBy.label}"
-                                                  required="#{bindings.BaseEmployees1.hints.CreatedBy.mandatory}"
-                                                  readOnly="true"
-                                                  columns="#{bindings.BaseEmployees1.hints.CreatedBy.displayWidth}"
-                                                  maximumLength="#{bindings.BaseEmployees1.hints.CreatedBy.precision}"
-                                                  shortDesc="#{bindings.BaseEmployees1.hints.CreatedBy.tooltip}"
-                                                  id="it13">
-                                        <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
-                                    </af:inputText>
-                                    <af:inputDate value="#{row.bindings.CreatedOn.inputValue}" readOnly="true"
-                                                  label="#{bindings.BaseEmployees1.hints.CreatedOn.label}"
-                                                  required="#{bindings.BaseEmployees1.hints.CreatedOn.mandatory}"
-                                                  columns="#{bindings.BaseEmployees1.hints.CreatedOn.displayWidth}"
-                                                  shortDesc="#{bindings.BaseEmployees1.hints.CreatedOn.tooltip}"
-                                                  id="id10">
-                                        <f:validator binding="#{row.bindings.CreatedOn.validator}"/>
-                                        <af:convertDateTime pattern="#{bindings.BaseEmployees1.hints.CreatedOn.format}"/>
-                                    </af:inputDate>
-                                    <af:inputText value="#{row.bindings.ModifiedBy.inputValue}"
-                                                  label="#{bindings.BaseEmployees1.hints.ModifiedBy.label}"
-                                                  required="#{bindings.BaseEmployees1.hints.ModifiedBy.mandatory}"
-                                                  readOnly="true"
-                                                  columns="#{bindings.BaseEmployees1.hints.ModifiedBy.displayWidth}"
-                                                  maximumLength="#{bindings.BaseEmployees1.hints.ModifiedBy.precision}"
-                                                  shortDesc="#{bindings.BaseEmployees1.hints.ModifiedBy.tooltip}"
-                                                  id="it14">
-                                        <f:validator binding="#{row.bindings.ModifiedBy.validator}"/>
-                                    </af:inputText>
-                                    <af:inputDate value="#{row.bindings.ModifiedOn.inputValue}" readOnly="true"
-                                                  label="#{bindings.BaseEmployees1.hints.ModifiedOn.label}"
-                                                  required="#{bindings.BaseEmployees1.hints.ModifiedOn.mandatory}"
-                                                  columns="#{bindings.BaseEmployees1.hints.ModifiedOn.displayWidth}"
-                                                  shortDesc="#{bindings.BaseEmployees1.hints.ModifiedOn.tooltip}"
-                                                  id="id11">
-                                        <f:validator binding="#{row.bindings.ModifiedOn.validator}"/>
-                                        <af:convertDateTime pattern="#{bindings.BaseEmployees1.hints.ModifiedOn.format}"/>
-                                    </af:inputDate>
-                                    <af:inputText value="#{row.bindings.Version.inputValue}"
-                                                  label="#{bindings.BaseEmployees1.hints.Version.label}"
-                                                  required="#{bindings.BaseEmployees1.hints.Version.mandatory}"
-                                                  readOnly="true"
-                                                  columns="#{bindings.BaseEmployees1.hints.Version.displayWidth}"
-                                                  maximumLength="#{bindings.BaseEmployees1.hints.Version.precision}"
-                                                  shortDesc="#{bindings.BaseEmployees1.hints.Version.tooltip}"
-                                                  id="it15">
-                                        <f:validator binding="#{row.bindings.Version.validator}"/>
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.BaseEmployees1.hints.Version.format}"/>
-                                    </af:inputText>
-                                </af:group>
                                 <af:group id="g1" title="Contact Info">
                                     <af:inputText value="#{row.bindings.Email.inputValue}"
                                                   label="#{bindings.BaseEmployees1.hints.Email.label}"

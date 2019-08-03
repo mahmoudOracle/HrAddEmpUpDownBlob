@@ -11,11 +11,11 @@
                             <af:button actionListener="#{bindings.CreateInsert.execute}"
                                        text="Add Driving Licnese Details" disabled="#{!bindings.CreateInsert.enabled}"
                                        id="b1" icon="/images/add.png"/>
-                            <af:button text="Save and Go To Next Page" id="b2" icon="/images/SAVE.png"
-                                       action="#{customTrainNavigationHandler.navigateNextStop}"
-                                       actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_CommitPageDef.Commit.execute}"
-                                       partialSubmit="true"/>
-                            <af:button text="Save &amp; Go to Main Page" id="b5" action="save" icon="/images/SAVE.png"/>
+                            <af:button text="Save" id="b2" icon="/images/SAVE.png"
+                                       partialSubmit="true"
+                                       actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_CommitPageDef.Commit.execute}"/>
+                            <af:button text="Save &amp; Go to Main Page" id="b5" action="save" icon="/images/SAVE.png"
+                                       immediate="true"/>
                             <af:button text="Remove the Nwely Created Row &amp; Staty on the page" id="b4"
                                        immediate="true" icon="/images/UNDO.png"
                                        actionListener="#{removeNewCreatedRowsInPages.GeneralRemoveNewCreatedRow}">
@@ -65,48 +65,6 @@
                                 <f:validator binding="#{bindings.ExpirationDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.ExpirationDate.format}"/>
                             </af:inputDate>
-                        </af:group>
-                        <af:group id="g1">
-                            <af:inputText value="#{bindings.CreatedBy.inputValue}"
-                                          label="#{bindings.CreatedBy.hints.label}"
-                                          required="#{bindings.CreatedBy.hints.mandatory}"
-                                          columns="#{bindings.CreatedBy.hints.displayWidth}"
-                                          maximumLength="#{bindings.CreatedBy.hints.precision}"
-                                          shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it1">
-                                <f:validator binding="#{bindings.CreatedBy.validator}"/>
-                            </af:inputText>
-                            <af:inputDate value="#{bindings.CreatedOn.inputValue}"
-                                          label="#{bindings.CreatedOn.hints.label}"
-                                          required="#{bindings.CreatedOn.hints.mandatory}"
-                                          columns="#{bindings.CreatedOn.hints.displayWidth}"
-                                          shortDesc="#{bindings.CreatedOn.hints.tooltip}" id="id3">
-                                <f:validator binding="#{bindings.CreatedOn.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.CreatedOn.format}"/>
-                            </af:inputDate>
-                            <af:inputText value="#{bindings.ModifiedBy.inputValue}"
-                                          label="#{bindings.ModifiedBy.hints.label}"
-                                          required="#{bindings.ModifiedBy.hints.mandatory}"
-                                          columns="#{bindings.ModifiedBy.hints.displayWidth}"
-                                          maximumLength="#{bindings.ModifiedBy.hints.precision}"
-                                          shortDesc="#{bindings.ModifiedBy.hints.tooltip}" id="it2">
-                                <f:validator binding="#{bindings.ModifiedBy.validator}"/>
-                            </af:inputText>
-                            <af:inputDate value="#{bindings.ModifiedOn.inputValue}"
-                                          label="#{bindings.ModifiedOn.hints.label}"
-                                          required="#{bindings.ModifiedOn.hints.mandatory}"
-                                          columns="#{bindings.ModifiedOn.hints.displayWidth}"
-                                          shortDesc="#{bindings.ModifiedOn.hints.tooltip}" id="id4">
-                                <f:validator binding="#{bindings.ModifiedOn.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.ModifiedOn.format}"/>
-                            </af:inputDate>
-                            <af:inputText value="#{bindings.Version.inputValue}" label="#{bindings.Version.hints.label}"
-                                          required="#{bindings.Version.hints.mandatory}"
-                                          columns="#{bindings.Version.hints.displayWidth}"
-                                          maximumLength="#{bindings.Version.hints.precision}"
-                                          shortDesc="#{bindings.Version.hints.tooltip}" id="it3">
-                                <f:validator binding="#{bindings.Version.validator}"/>
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Version.format}"/>
-                            </af:inputText>
                         </af:group>
                     </af:panelFormLayout>
                 </af:panelBox>

@@ -100,6 +100,12 @@
     EntityAttrName="Version"
     EntityUsage="PassportInfo"
     AliasName="VERSION"/>
+  <ViewLinkAccessor
+    Name="BaseEmployeesVO"
+    ViewLink="addEmp.model.bc.viewLinks.EmpPassportVL"
+    Type="model.shared.extensions.ExtViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

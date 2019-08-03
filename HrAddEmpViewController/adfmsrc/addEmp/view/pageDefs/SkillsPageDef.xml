@@ -25,31 +25,6 @@
         <Item Value="SkillYears"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="EmpSkills1Iterator" id="CreatedBy">
-      <AttrNames>
-        <Item Value="CreatedBy"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EmpSkills1Iterator" id="CreatedOn">
-      <AttrNames>
-        <Item Value="CreatedOn"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EmpSkills1Iterator" id="ModifiedBy">
-      <AttrNames>
-        <Item Value="ModifiedBy"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EmpSkills1Iterator" id="ModifiedOn">
-      <AttrNames>
-        <Item Value="ModifiedOn"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EmpSkills1Iterator" id="Version">
-      <AttrNames>
-        <Item Value="Version"/>
-      </AttrNames>
-    </attributeValues>
     <action IterBinding="EmpSkills1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <tree IterBinding="EmpSkills1Iterator" id="EmpSkills1">
       <nodeDefinition DefName="addEmp.model.bc.views.EmpSkillsVO" Name="EmpSkills10">

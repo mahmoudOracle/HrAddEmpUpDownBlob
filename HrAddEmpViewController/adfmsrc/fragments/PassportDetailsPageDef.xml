@@ -38,31 +38,6 @@
         <Item Value="IssuingAuthority"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="PassportInfo1Iterator" id="CreatedBy">
-      <AttrNames>
-        <Item Value="CreatedBy"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PassportInfo1Iterator" id="CreatedOn">
-      <AttrNames>
-        <Item Value="CreatedOn"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PassportInfo1Iterator" id="ModifiedBy">
-      <AttrNames>
-        <Item Value="ModifiedBy"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PassportInfo1Iterator" id="ModifiedOn">
-      <AttrNames>
-        <Item Value="ModifiedOn"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PassportInfo1Iterator" id="Version">
-      <AttrNames>
-        <Item Value="Version"/>
-      </AttrNames>
-    </attributeValues>
     <action IterBinding="PassportInfo1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
             DataControl="HrAddEmpAppModuleDataControl"/>

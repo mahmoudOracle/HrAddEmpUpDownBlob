@@ -24,31 +24,6 @@
     </attributeValues>
     <list IterBinding="EmpAttachments1Iterator" StaticList="false" Uses="LOV_AttachmentType" id="AttachmentType"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="EmpAttachments1Iterator" id="CreatedBy">
-      <AttrNames>
-        <Item Value="CreatedBy"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EmpAttachments1Iterator" id="CreatedOn">
-      <AttrNames>
-        <Item Value="CreatedOn"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EmpAttachments1Iterator" id="ModifiedBy">
-      <AttrNames>
-        <Item Value="ModifiedBy"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EmpAttachments1Iterator" id="ModifiedOn">
-      <AttrNames>
-        <Item Value="ModifiedOn"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EmpAttachments1Iterator" id="Version">
-      <AttrNames>
-        <Item Value="Version"/>
-      </AttrNames>
-    </attributeValues>
     <action IterBinding="EmpAttachments1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <attributeValues IterBinding="variables" id="TemporaryFile1" ChangeEventPolicy="none">

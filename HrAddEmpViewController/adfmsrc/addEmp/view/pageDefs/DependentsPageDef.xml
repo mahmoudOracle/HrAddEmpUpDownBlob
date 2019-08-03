@@ -41,31 +41,6 @@
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="Depeendents1Iterator" StaticList="false" Uses="LOV_GenderId" id="GenderId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="Depeendents1Iterator" id="CreatedBy">
-      <AttrNames>
-        <Item Value="CreatedBy"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="Depeendents1Iterator" id="CreatedOn">
-      <AttrNames>
-        <Item Value="CreatedOn"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="Depeendents1Iterator" id="ModifiedBy">
-      <AttrNames>
-        <Item Value="ModifiedBy"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="Depeendents1Iterator" id="ModifiedOn">
-      <AttrNames>
-        <Item Value="ModifiedOn"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="Depeendents1Iterator" id="Version">
-      <AttrNames>
-        <Item Value="Version"/>
-      </AttrNames>
-    </attributeValues>
     <action IterBinding="Depeendents1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
   </bindings>
 </pageDefinition>

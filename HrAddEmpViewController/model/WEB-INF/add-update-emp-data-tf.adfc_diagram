@@ -41,7 +41,7 @@
       <property
          name="x">765.5569</property>
       <property
-         name="y">-170.64075</property>
+         name="y">-171.34192</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Identification Information &lt;/b> (Default Activity)&lt;/p>&lt;p>Activity ID:  IdInfo&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
@@ -171,7 +171,7 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="thumbnailExpanded">true</property>
+         name="thumbnailExpanded">false</property>
    </View>
    <View
       id="View29">
@@ -296,7 +296,7 @@
       <property
          name="fromOutcome">save</property>
       <property
-         name="sdm:polyPoints">L45,689.12354,2.8622284,605.1791,-90.58438,R50</property>
+         name="sdm:polyPoints">L45,689.12354,2.862234,605.1791,-90.58438,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -306,7 +306,7 @@
       <property
          name="fromOutcome">cancel</property>
       <property
-         name="sdm:polyPoints">L55,689.12354,9.862228,609.1693,97.766235,R50</property>
+         name="sdm:polyPoints">L55,689.12354,9.862234,609.1693,97.76622,R50</property>
    </ControlFlowCase>
    <View
       id="View40">
@@ -440,7 +440,7 @@
       from="View5"
       to="View3">
       <property
-         name="sdm:polyPoints">R50,806.5569,-170.99133,907.1293,-171.67755,L50</property>
+         name="sdm:polyPoints">R50,806.5569,-171.6925,907.1293,-171.67755,L50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"

@@ -78,31 +78,6 @@
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_ReligionId" id="ReligionId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="BaseEmployees2Iterator" id="CreatedBy">
-      <AttrNames>
-        <Item Value="CreatedBy"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="BaseEmployees2Iterator" id="CreatedOn">
-      <AttrNames>
-        <Item Value="CreatedOn"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="BaseEmployees2Iterator" id="ModifiedBy">
-      <AttrNames>
-        <Item Value="ModifiedBy"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="BaseEmployees2Iterator" id="ModifiedOn">
-      <AttrNames>
-        <Item Value="ModifiedOn"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="BaseEmployees2Iterator" id="Version">
-      <AttrNames>
-        <Item Value="Version"/>
-      </AttrNames>
-    </attributeValues>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
             DataControl="HrAddEmpAppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"

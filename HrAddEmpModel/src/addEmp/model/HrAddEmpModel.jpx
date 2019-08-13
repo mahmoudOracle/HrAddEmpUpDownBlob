@@ -8,7 +8,6 @@
   SeparateXMLFiles="true"
   PackageName="addEmp.model">
   <DesignTime>
-    <Attr Name="_DTExpressionTypeChecking" Value="true"/>
     <Attr Name="_jprName" Value="../../../HrAddEmpModel.jpr"/>
     <Attr Name="_NamedConnection" Value="hr0905"/>
     <Attr Name="_appModuleNames0" Value="addEmp.model.bc.am.HrAddEmpAppModule"/>

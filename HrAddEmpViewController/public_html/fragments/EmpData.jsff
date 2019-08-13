@@ -34,8 +34,9 @@
                               rowSelection="single" fetchSize="#{bindings.BaseEmployees1Iterator.estimatedRowCount}"
                               filterModel="#{bindings.BaseEmployees1Query.queryDescriptor}" filterVisible="true"
                               queryListener="#{bindings.BaseEmployees1Query.processQuery}" varStatus="vs" id="t1"
-                              summary="Employee Table Holds All Info" editingMode="clickToEdit"
-                              styleClass="AFStretchWidth" columnStretching="last" scrollPolicy="page">
+                              summary="Employee Table Holds All Info"
+                              styleClass="AFStretchWidth" columnStretching="last" scrollPolicy="page"
+                              editingMode="readOnly">
                         <af:column sortProperty="#{bindings.BaseEmployees1.hints.EmployeeId.name}" filterable="true"
                                    sortable="true" headerText="#{bindings.BaseEmployees1.hints.EmployeeId.label}"
                                    id="c1">

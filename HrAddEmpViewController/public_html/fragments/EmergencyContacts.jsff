@@ -11,14 +11,14 @@
                             <af:button actionListener="#{bindings.CreateInsert.execute}"
                                        text="Add Emergency Contact Details" disabled="#{!bindings.CreateInsert.enabled}"
                                        id="b1" icon="/images/back.png"/>
-                            <af:button text="Save" id="b2" icon="/images/SAVE.png"
-                                       partialSubmit="true"
+                            <af:button text="Save" id="b2" icon="/images/SAVE.png" partialSubmit="true"
                                        actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_CommitPageDef.Commit.execute}"/>
                             <af:button text="Save &amp; Go to Main Page" id="b5" action="save" icon="/images/SAVE.png"/>
                             <af:button text="Remove the Newly Created Row &amp; Staty on the page" id="b4"
                                        immediate="true" icon="/images/UNDO.png"
                                        actionListener="#{removeNewCreatedRowsInPages.GeneralRemoveNewCreatedRow}">
-                                <f:attribute name="IteratorName" value="#{bindings.EmergencyContactPerson1Iterator.name}"/>
+                                <f:attribute name="IteratorName"
+                                             value="#{bindings.EmergencyContactPerson1Iterator.name}"/>
                                 <f:attribute name="EmployeeIdVal" value="#{bindings.EmployeeId.inputValue}"/>
                             </af:button>
                             <af:button text="Rollback Go Back to Main Page" immediate="true" id="b3"
@@ -105,11 +105,17 @@
         </af:gridRow>
         <af:gridRow height="50px" id="gr2">
             <af:gridCell width="100%" id="gc2">
-                <!-- Footer -->
                 <af:panelGroupLayout id="pgl2">
-                    <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
-                                       id="tbb1"/>
-                    <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="t2"/>
+                    <af:navigationPane hint="buttons" id="np1"
+                                       value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}"
+                                       var="train">
+                        <f:facet name="nodeStamp">
+                            <af:commandNavigationItem text="#{train.textAndAccessKey}" id="cni1"
+                                                      visited="#{train.visited}" disabled="#{train.disabled}"
+                                                      action="#{train.action}"
+                                                      icon="#{backingBeanScope.trainStopHelper.trainStopImage}"/>
+                        </f:facet>
+                    </af:navigationPane>
                 </af:panelGroupLayout>
             </af:gridCell>
         </af:gridRow>

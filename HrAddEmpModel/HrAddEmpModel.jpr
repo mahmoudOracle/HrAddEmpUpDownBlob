@@ -90,6 +90,7 @@
    </hash>
    <value n="oracle.jbo.AMPackage" v="am"/>
    <value n="oracle.jbo.ASPackage" v="associations"/>
+   <value n="oracle.jbo.enableGroovyCodeSource" v="false"/>
    <value n="oracle.jbo.EOPackage" v="entities"/>
    <value n="oracle.jbo.ObjectPackage" v="bc"/>
    <value n="oracle.jbo.SavedPreferences" v="true"/>

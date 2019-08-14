@@ -8,8 +8,11 @@
                              id="pb1">
                     <f:facet name="toolbar">
                         <af:toolbar id="t1">
+                            <af:button text="Edit Form" id="b6"
+                                       actionListener="#{pageFlowScope.commonAction.EnableFormEdit}"/>
                             <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add Id Information"
-                                       disabled="#{bindings.IdInfo1Iterator.estimatedRowCount eq 1}" id="b1" icon="/images/add.png"/>
+                                       disabled="#{bindings.IdInfo1Iterator.estimatedRowCount eq 1}" id="b1" icon="/images/add.png"
+                                       rendered="#{bindings.IdInfo1Iterator.estimatedRowCount ne 1}"/>
                             <af:button text="Save" id="b2" icon="/images/SAVE.png" partialSubmit="true"
                                        actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_CommitPageDef.Commit.execute}"/>
                             <af:button text="Save &amp; Go to Main Page" id="b5" action="save" icon="/images/SAVE.png"/>
@@ -26,63 +29,45 @@
                         </af:toolbar>
                     </f:facet>
                     <af:panelFormLayout id="pfl1">
-                        <af:panelGroupLayout id="pgl4" layout="horizontal">
-                            <af:panelLabelAndMessage label="#{bindings.NationalidIqamaInfo.hints.label}" id="plam1">
-                                <af:outputText value="#{bindings.NationalidIqamaInfo.inputValue}"
-                                               shortDesc="#{bindings.NationalidIqamaInfo.hints.tooltip}" id="ot1">
-                                    <af:convertNumber groupingUsed="false"
-                                                      pattern="#{bindings.NationalidIqamaInfo.format}"/>
-                                </af:outputText>
-                            </af:panelLabelAndMessage>
-                        </af:panelGroupLayout>
-                        <af:group id="Group">
-                            <af:inputText value="#{bindings.EmployeeId.inputValue}"
-                                          label="#{bindings.EmployeeId.hints.label}"
-                                          required="#{bindings.EmployeeId.hints.mandatory}"
-                                          columns="#{bindings.EmployeeId.hints.displayWidth}"
-                                          maximumLength="#{bindings.EmployeeId.hints.precision}"
-                                          shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it1">
-                                <f:validator binding="#{bindings.EmployeeId.validator}"/>
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
-                            </af:inputText>
-                            <af:inputText value="#{bindings.IdNo.inputValue}" label="#{bindings.IdNo.hints.label}"
-                                          required="#{bindings.IdNo.hints.mandatory}"
-                                          columns="#{bindings.IdNo.hints.displayWidth}"
-                                          maximumLength="#{bindings.IdNo.hints.precision}"
-                                          shortDesc="#{bindings.IdNo.hints.tooltip}" id="it2">
-                                <f:validator binding="#{bindings.IdNo.validator}"/>
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.IdNo.format}"/>
-                            </af:inputText>
-                            <af:inputDate value="#{bindings.IssueDate.inputValue}"
-                                          label="#{bindings.IssueDate.hints.label}"
-                                          required="#{bindings.IssueDate.hints.mandatory}"
-                                          columns="#{bindings.IssueDate.hints.displayWidth}"
-                                          shortDesc="#{bindings.IssueDate.hints.tooltip}" id="id1">
-                                <f:validator binding="#{bindings.IssueDate.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.IssueDate.format}"/>
-                            </af:inputDate>
-                            <af:inputDate value="#{bindings.ExpirationDate.inputValue}"
-                                          label="#{bindings.ExpirationDate.hints.label}"
-                                          required="#{bindings.ExpirationDate.hints.mandatory}"
-                                          columns="#{bindings.ExpirationDate.hints.displayWidth}"
-                                          shortDesc="#{bindings.ExpirationDate.hints.tooltip}" id="id2">
-                                <f:validator binding="#{bindings.ExpirationDate.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.ExpirationDate.format}"/>
-                            </af:inputDate>
-                            <af:inputText value="#{bindings.IssuePlace.inputValue}"
-                                          label="#{bindings.IssuePlace.hints.label}"
-                                          required="#{bindings.IssuePlace.hints.mandatory}"
-                                          columns="#{bindings.IssuePlace.hints.displayWidth}"
-                                          maximumLength="#{bindings.IssuePlace.hints.precision}"
-                                          shortDesc="#{bindings.IssuePlace.hints.tooltip}" id="it3">
-                                <f:validator binding="#{bindings.IssuePlace.validator}"/>
-                            </af:inputText>
-                        </af:group>
+                        <af:inputText value="#{bindings.IdNo.inputValue}" label="#{bindings.IdNo.hints.label}"
+                                      required="#{bindings.IdNo.hints.mandatory}"
+                                      readOnly="#{pageFlowScope.commonAction.editable}"
+                                      columns="#{bindings.IdNo.hints.displayWidth}"
+                                      maximumLength="#{bindings.IdNo.hints.precision}"
+                                      shortDesc="#{bindings.IdNo.hints.tooltip}" id="it1">
+                            <f:validator binding="#{bindings.IdNo.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.IdNo.format}"/>
+                        </af:inputText>
+                        <af:inputDate value="#{bindings.IssueDate.inputValue}"
+                                      readOnly="#{pageFlowScope.commonAction.editable}"
+                                      label="#{bindings.IssueDate.hints.label}"
+                                      required="#{bindings.IssueDate.hints.mandatory}"
+                                      columns="#{bindings.IssueDate.hints.displayWidth}"
+                                      shortDesc="#{bindings.IssueDate.hints.tooltip}" id="id1">
+                            <f:validator binding="#{bindings.IssueDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.IssueDate.format}"/>
+                        </af:inputDate>
+                        <af:inputDate value="#{bindings.ExpirationDate.inputValue}"
+                                      readOnly="#{pageFlowScope.commonAction.editable}"
+                                      label="#{bindings.ExpirationDate.hints.label}"
+                                      required="#{bindings.ExpirationDate.hints.mandatory}"
+                                      columns="#{bindings.ExpirationDate.hints.displayWidth}"
+                                      shortDesc="#{bindings.ExpirationDate.hints.tooltip}" id="id2">
+                            <f:validator binding="#{bindings.ExpirationDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.ExpirationDate.format}"/>
+                        </af:inputDate>
+                        <af:inputText value="#{bindings.IssuePlace.inputValue}"
+                                      label="#{bindings.IssuePlace.hints.label}"
+                                      required="#{bindings.IssuePlace.hints.mandatory}"
+                                      readOnly="#{pageFlowScope.commonAction.editable}"
+                                      columns="#{bindings.IssuePlace.hints.displayWidth}"
+                                      maximumLength="#{bindings.IssuePlace.hints.precision}"
+                                      shortDesc="#{bindings.IssuePlace.hints.tooltip}" id="it2">
+                            <f:validator binding="#{bindings.IssuePlace.validator}"/>
+                        </af:inputText>
                     </af:panelFormLayout>
                 </af:panelBox>
             </af:gridCell>
-            <af:gridCell id="gc4"/>
-            <af:gridCell id="gc3"/>
         </af:gridRow>
         <af:gridRow height="50px" id="gr1">
             <af:gridCell width="100%" id="gc1">

@@ -8,8 +8,11 @@
                              id="pb1">
                     <f:facet name="toolbar">
                         <af:toolbar id="t1">
+                            <af:button text="Update" id="b6"
+                                       actionListener="#{pageFlowScope.commonAction.drivingLicenseUpdate}"/>
                             <af:button actionListener="#{bindings.CreateInsert.execute}"
-                                       text="Add Driving Licnese Details" disabled="#{!bindings.CreateInsert.enabled}"
+                                       text="Add Driving Licnese Details"
+                                       disabled="#{bindings.DrivingLicense1Iterator.estimatedRowCount eq 1}"
                                        id="b1" icon="/images/add.png"/>
                             <af:button text="Save" id="b2" icon="/images/SAVE.png" partialSubmit="true"
                                        actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_CommitPageDef.Commit.execute}"/>
@@ -28,23 +31,12 @@
                         </af:toolbar>
                     </f:facet>
                     <af:panelFormLayout id="pfl1">
-                        <af:panelLabelAndMessage label="#{bindings.DrivingLicenseId.hints.label}" id="plam1">
-                            <af:outputText value="#{bindings.DrivingLicenseId.inputValue}"
-                                           shortDesc="#{bindings.DrivingLicenseId.hints.tooltip}" id="ot1">
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.DrivingLicenseId.format}"/>
-                            </af:outputText>
-                        </af:panelLabelAndMessage>
-                        <af:panelLabelAndMessage label="#{bindings.EmployeeId.hints.label}" id="plam2">
-                            <af:outputText value="#{bindings.EmployeeId.inputValue}"
-                                           shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="ot2">
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
-                            </af:outputText>
-                        </af:panelLabelAndMessage>
                         <af:group id="Group">
                             <af:selectOneChoice value="#{bindings.DrivingLicenseType.inputValue}"
                                                 label="#{bindings.DrivingLicenseType.label}"
                                                 required="#{bindings.DrivingLicenseType.hints.mandatory}"
-                                                shortDesc="#{bindings.DrivingLicenseType.hints.tooltip}" id="soc1">
+                                                shortDesc="#{bindings.DrivingLicenseType.hints.tooltip}" id="soc1"
+                                                readOnly="#{pageFlowScope.commonAction.editDrivingLicense}">
                                 <f:selectItems value="#{bindings.DrivingLicenseType.items}" id="si1"/>
                                 <f:validator binding="#{bindings.DrivingLicenseType.validator}"/>
                             </af:selectOneChoice>
@@ -52,7 +44,8 @@
                                           label="#{bindings.IssueDate.hints.label}"
                                           required="#{bindings.IssueDate.hints.mandatory}"
                                           columns="#{bindings.IssueDate.hints.displayWidth}"
-                                          shortDesc="#{bindings.IssueDate.hints.tooltip}" id="id1">
+                                          shortDesc="#{bindings.IssueDate.hints.tooltip}" id="id1"
+                                          readOnly="#{pageFlowScope.commonAction.editDrivingLicense}">
                                 <f:validator binding="#{bindings.IssueDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.IssueDate.format}"/>
                             </af:inputDate>
@@ -60,7 +53,8 @@
                                           label="#{bindings.ExpirationDate.hints.label}"
                                           required="#{bindings.ExpirationDate.hints.mandatory}"
                                           columns="#{bindings.ExpirationDate.hints.displayWidth}"
-                                          shortDesc="#{bindings.ExpirationDate.hints.tooltip}" id="id2">
+                                          shortDesc="#{bindings.ExpirationDate.hints.tooltip}" id="id2"
+                                          readOnly="#{pageFlowScope.commonAction.editDrivingLicense}">
                                 <f:validator binding="#{bindings.ExpirationDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.ExpirationDate.format}"/>
                             </af:inputDate>

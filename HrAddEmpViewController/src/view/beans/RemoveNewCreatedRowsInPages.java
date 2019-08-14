@@ -64,7 +64,6 @@ public class RemoveNewCreatedRowsInPages {
     }
 
     private void refreshPage() {
-
         FacesContext fctx = FacesContext.getCurrentInstance();
         String refreshpage = fctx.getViewRoot().getViewId();
         ViewHandler ViewH = fctx.getApplication().getViewHandler();

@@ -7,16 +7,12 @@
     <iterator Binds="IdInfo1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="IdInfo1Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="IdInfo1Iterator" id="NationalidIqamaInfo">
-      <AttrNames>
-        <Item Value="NationalidIqamaInfo"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="IdInfo1Iterator" id="EmployeeId">
       <AttrNames>
         <Item Value="EmployeeId"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="IdInfo1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <attributeValues IterBinding="IdInfo1Iterator" id="IdNo">
       <AttrNames>
         <Item Value="IdNo"/>
@@ -37,6 +33,5 @@
         <Item Value="IssuePlace"/>
       </AttrNames>
     </attributeValues>
-    <action IterBinding="IdInfo1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
   </bindings>
 </pageDefinition>

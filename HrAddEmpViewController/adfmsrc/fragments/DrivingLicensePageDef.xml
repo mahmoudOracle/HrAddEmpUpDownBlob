@@ -8,11 +8,6 @@
               id="DrivingLicense1Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="DrivingLicense1Iterator" id="DrivingLicenseId">
-      <AttrNames>
-        <Item Value="DrivingLicenseId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="DrivingLicense1Iterator" id="EmployeeId">
       <AttrNames>
         <Item Value="EmployeeId"/>

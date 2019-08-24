@@ -26,26 +26,19 @@
                         </af:toolbar>
                     </f:facet>
                     <af:panelFormLayout id="pfl1">
-                        <af:panelLabelAndMessage label="#{bindings.EmployeeCourseId.hints.label}" id="plam1">
-                            <af:outputText value="#{bindings.EmployeeCourseId.inputValue}"
-                                           shortDesc="#{bindings.EmployeeCourseId.hints.tooltip}" id="ot1">
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeCourseId.format}"/>
-                            </af:outputText>
-                        </af:panelLabelAndMessage>
-                        <af:panelLabelAndMessage label="#{bindings.EmployeeId.hints.label}" id="plam2">
-                            <af:outputText value="#{bindings.EmployeeId.inputValue}"
-                                           shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="ot2">
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
-                            </af:outputText>
-                        </af:panelLabelAndMessage>
                         <af:group id="Group">
-                            <af:selectOneChoice value="#{bindings.CourseId.inputValue}"
-                                                label="#{bindings.CourseId.label}"
-                                                required="#{bindings.CourseId.hints.mandatory}"
-                                                shortDesc="#{bindings.CourseId.hints.tooltip}" id="soc1">
-                                <f:selectItems value="#{bindings.CourseId.items}" id="si1"/>
-                                <f:validator binding="#{bindings.CourseId.validator}"/>
-                            </af:selectOneChoice>
+                            <af:panelLabelAndMessage label="Course Name" id="plam1">
+                                <af:selectOneChoice value="#{bindings.CourseId.inputValue}"
+                                                    label="#{bindings.CourseId.label}"
+                                                    required="#{bindings.CourseId.hints.mandatory}"
+                                                    shortDesc="#{bindings.CourseId.hints.tooltip}" id="soc1">
+                                    <f:selectItems value="#{bindings.CourseId.items}" id="si1"/>
+                                    <f:validator binding="#{bindings.CourseId.validator}"/>
+                                </af:selectOneChoice>
+                                <af:spacer width="10" height="10" id="s1"/>
+                                <af:button text="Add New Course" id="b6" icon="/images/add.png"
+                                           useWindow="true" action="add" windowHeight="300" windowWidth="300"/>
+                            </af:panelLabelAndMessage>
                             <af:inputDate value="#{bindings.StartDate.inputValue}"
                                           label="#{bindings.StartDate.hints.label}"
                                           required="#{bindings.StartDate.hints.mandatory}"

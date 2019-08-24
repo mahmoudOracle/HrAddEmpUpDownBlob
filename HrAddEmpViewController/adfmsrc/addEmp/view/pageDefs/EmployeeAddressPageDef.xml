@@ -7,13 +7,9 @@
     <iterator Binds="EmployeeAddress1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
               id="EmployeeAddress1Iterator"/>
     <iterator Binds="Address1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="Address1Iterator"/>
+    <iterator Binds="Address2" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="Address2Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="EmployeeAddress1Iterator" id="EmployeeAddressId">
-      <AttrNames>
-        <Item Value="EmployeeAddressId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="EmployeeAddress1Iterator" id="EmployeeId">
       <AttrNames>
         <Item Value="EmployeeId"/>
@@ -21,21 +17,8 @@
     </attributeValues>
     <list IterBinding="EmployeeAddress1Iterator" StaticList="false" Uses="LOV_AddressTypeId" id="AddressTypeId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="EmployeeAddress1Iterator" id="AddressId">
-      <AttrNames>
-        <Item Value="AddressId"/>
-      </AttrNames>
-    </attributeValues>
     <action IterBinding="EmployeeAddress1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <tree IterBinding="EmployeeAddress1Iterator" id="EmployeeAddress1">
-      <nodeDefinition DefName="addEmp.model.bc.views.EmployeeAddressVO" Name="EmployeeAddress10">
-        <AttrNames>
-          <Item Value="AddressTypeId"/>
-          <Item Value="AddressId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <listOfValues IterBinding="EmployeeAddress1Iterator" StaticList="false" Uses="LOV_AddressId" id="AddressId1"/>
     <attributeValues IterBinding="Address1Iterator" id="AddressId2">
       <AttrNames>
@@ -80,5 +63,46 @@
             DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action id="Commit" DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="true"
             Action="commitTransaction"/>
+    <tree IterBinding="EmployeeAddress1Iterator" id="EmployeeAddress1">
+      <nodeDefinition DefName="addEmp.model.bc.views.EmployeeAddressVO" Name="EmployeeAddress10">
+        <AttrNames>
+          <Item Value="AddressType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="Address2Iterator" id="AddressLine11">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address2Iterator" id="AddressLine21">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address2Iterator" id="Fax1">
+      <AttrNames>
+        <Item Value="Fax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address2Iterator" id="Phone1">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address2Iterator" id="PostalCode1">
+      <AttrNames>
+        <Item Value="PostalCode"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="Address2Iterator" StaticList="false" Uses="LOV_CityId" id="CityId1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="Address2Iterator" StaticList="false" Uses="LOV_CountryId" id="CountryId1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="Address2Iterator" id="CountryName1">
+      <AttrNames>
+        <Item Value="CountryName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

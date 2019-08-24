@@ -121,6 +121,12 @@
     EntityAttrName="Version"
     EntityUsage="EmployeeCourses"
     AliasName="VERSION"/>
+  <ViewLinkAccessor
+    Name="CoursesVO"
+    ViewLink="addEmp.model.bc.viewLinks.CoursesEmpCoursesVL"
+    Type="model.shared.extensions.ExtViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

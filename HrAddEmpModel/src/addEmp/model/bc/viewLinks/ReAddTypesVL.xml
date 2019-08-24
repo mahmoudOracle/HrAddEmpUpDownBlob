@@ -3,38 +3,40 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="CoursesInstitutionCourseVL"
+  Name="ReAddTypesVL"
   Version="12.2.1.9.14"
   InheritPersonalization="merge">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="addEmp.model.bc.viewLinks.CoursesInstitutionCourseVL_LABEL"/>
+        ResId="addEmp.model.bc.viewLinks.ReAddTypesVL_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewLinkDefEnd
-    Name="CourseInstitutionVO"
+    Name="RefAddressTypes3"
     Cardinality="1"
     Source="true"
-    Owner="addEmp.model.bc.views.CourseInstitutionVO">
+    Owner="HrBCmodel.bc.staticLOV.RefAddressTypes">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="CourseInstitutionVO"/>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="RefAddressTypes3"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="addEmp.model.bc.views.CourseInstitutionVO.CourseInstitutionsId"/>
+      <Item Value="HrBCmodel.bc.staticLOV.RefAddressTypes.Id"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="CoursesVO"
+    Name="EmployeeAddressVO"
     Cardinality="-1"
-    Owner="addEmp.model.bc.views.CoursesVO">
+    Owner="addEmp.model.bc.views.EmployeeAddressVO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="CoursesVO"/>
+      <Attr Name="_accessor" Value="false"/>
+      <Attr Name="_finderName" Value="EmployeeAddressVO"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="addEmp.model.bc.views.CoursesVO.CourseInstitutionsId"/>
+      <Item Value="addEmp.model.bc.views.EmployeeAddressVO.AddressTypeId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>

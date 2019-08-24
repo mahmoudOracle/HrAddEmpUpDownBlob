@@ -7,11 +7,6 @@
     <iterator Binds="Depeendents1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="Depeendents1Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="Depeendents1Iterator" id="DependentId">
-      <AttrNames>
-        <Item Value="DependentId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="Depeendents1Iterator" id="EmployeeId">
       <AttrNames>
         <Item Value="EmployeeId"/>
@@ -42,5 +37,17 @@
     <list IterBinding="Depeendents1Iterator" StaticList="false" Uses="LOV_GenderId" id="GenderId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <action IterBinding="Depeendents1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="Depeendents1Iterator" id="Depeendents1">
+      <nodeDefinition DefName="addEmp.model.bc.views.DepeendentsVO" Name="Depeendents10">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="MiddleName"/>
+          <Item Value="LastName"/>
+          <Item Value="Dob"/>
+          <Item Value="RelationId"/>
+          <Item Value="GenderId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

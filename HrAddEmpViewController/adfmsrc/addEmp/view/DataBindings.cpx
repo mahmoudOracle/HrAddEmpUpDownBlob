@@ -31,6 +31,9 @@
           usageId="addEmp_view_add_new_emp_tf_add_new_emp_tf_CreateInsertPageDef"/>
     <page path="/fragments/DrivingLicense.jsff" usageId="addEmp_view_DrivingLicensePageDef1"/>
     <page path="/fragments/EmpAttachment.jsff" usageId="addEmp_view_EmpAttachmentPageDef"/>
+    <page path="/WEB-INF/add-new-course.xml#add-new-course@CreateInsert"
+          usageId="addEmp_view_add_new_course_add_new_course_CreateInsertPageDef"/>
+    <page path="/fragments/course.jsff" usageId="addEmp_view_coursePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="addEmp_view_BasicInfoPageDef" path="addEmp.view.pageDefs.BasicInfoPageDef"/>
@@ -61,6 +64,9 @@
     <page id="addEmp_view_DrivingLicensePageDef1" path="fragments.DrivingLicensePageDef"/>
     <page id="addEmp_view_EmpAttachmentPageDef" path="addEmp.view.pageDefs.EmpAttachmentPageDef"/>
     <page id="empAttachment_dummyPageDef" path="addEmp.view.pageDefs.xyz_dummyPageDef"/>
+    <page id="addEmp_view_add_new_course_add_new_course_CreateInsertPageDef"
+          path="addEmp.view.pageDefs.add_new_course_add_new_course_CreateInsertPageDef"/>
+    <page id="addEmp_view_coursePageDef" path="addEmp.view.pageDefs.coursePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="HrAddEmpAppModuleDataControl" Package="addEmp.model.bc.am"

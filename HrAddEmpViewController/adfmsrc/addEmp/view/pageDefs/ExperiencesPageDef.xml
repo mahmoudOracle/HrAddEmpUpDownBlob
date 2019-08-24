@@ -6,13 +6,9 @@
     <variableIterator id="variables"/>
     <iterator Binds="EmployeeExperience1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
               id="EmployeeExperience1Iterator"/>
+    <iterator Binds="Address3" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="Address3Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="EmployeeExperience1Iterator" id="EmployeeExperiencesId">
-      <AttrNames>
-        <Item Value="EmployeeExperiencesId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="EmployeeExperience1Iterator" id="EmployeeId">
       <AttrNames>
         <Item Value="EmployeeId"/>
@@ -55,5 +51,52 @@
     </attributeValues>
     <action IterBinding="EmployeeExperience1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
+    <tree IterBinding="EmployeeExperience1Iterator" id="EmployeeExperience1">
+      <nodeDefinition DefName="addEmp.model.bc.views.EmployeeExperienceVO" Name="EmployeeExperience10">
+        <AttrNames>
+          <Item Value="CompanyName"/>
+          <Item Value="CompanyPhoneNo"/>
+          <Item Value="JobTitle"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+          <Item Value="Comments"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="Address3Iterator" id="AddressLine1">
+      <AttrNames>
+        <Item Value="AddressLine1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address3Iterator" id="AddressLine2">
+      <AttrNames>
+        <Item Value="AddressLine2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address3Iterator" id="Fax">
+      <AttrNames>
+        <Item Value="Fax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address3Iterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address3Iterator" id="PostalCode">
+      <AttrNames>
+        <Item Value="PostalCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address3Iterator" id="CityName">
+      <AttrNames>
+        <Item Value="CityName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Address3Iterator" id="CountryName">
+      <AttrNames>
+        <Item Value="CountryName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

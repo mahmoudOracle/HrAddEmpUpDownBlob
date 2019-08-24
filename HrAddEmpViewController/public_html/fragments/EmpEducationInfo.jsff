@@ -103,6 +103,62 @@
                             </af:inputText>
                         </af:group>
                     </af:panelFormLayout>
+                    <af:table value="#{bindings.EmpEducation1.collectionModel}" var="row"
+                              rows="#{bindings.EmpEducation1.rangeSize}"
+                              emptyText="#{bindings.EmpEducation1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.EmpEducation1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.EmpEducation1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.EmpEducation1.rangeSize}" id="t2"
+                              partialTriggers="::b1" styleClass="AFStretchWidth" varStatus="vs">
+                        <af:column id="c33" rowHeader="true" width="14" headerText="SN">
+                            <af:outputText value="#{vs.index+1}" id="ot0"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmpEducation1.hints.EducationType.label}" id="c1">
+                            <af:outputText value="#{row.EducationType}"
+                                           shortDesc="#{bindings.EmpEducation1.hints.EducationType.tooltip}" id="ot3">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.EmpEducation1.hints.EducationType.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmpEducation1.hints.InstitutionName.label}" id="c2">
+                            <af:outputText value="#{row.InstitutionName}"
+                                           shortDesc="#{bindings.EmpEducation1.hints.InstitutionName.tooltip}"
+                                           id="ot4"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmpEducation1.hints.StartDate.label}" id="c3">
+                            <af:outputText value="#{row.StartDate}"
+                                           shortDesc="#{bindings.EmpEducation1.hints.StartDate.tooltip}" id="ot5">
+                                <af:convertDateTime pattern="#{bindings.EmpEducation1.hints.StartDate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmpEducation1.hints.GraduationDate.label}" id="c4">
+                            <af:outputText value="#{row.GraduationDate}"
+                                           shortDesc="#{bindings.EmpEducation1.hints.GraduationDate.tooltip}" id="ot6">
+                                <af:convertDateTime pattern="#{bindings.EmpEducation1.hints.GraduationDate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmpEducation1.hints.GradutaionDegree.label}" id="c5">
+                            <af:outputText value="#{row.GradutaionDegree}"
+                                           shortDesc="#{bindings.EmpEducation1.hints.GradutaionDegree.tooltip}"
+                                           id="ot7"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmpEducation1.hints.Degree.label}" id="c6">
+                            <af:outputText value="#{row.Degree}"
+                                           shortDesc="#{bindings.EmpEducation1.hints.Degree.tooltip}" id="ot8"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmpEducation1.hints.Major.label}" id="c7">
+                            <af:outputText value="#{row.Major}"
+                                           shortDesc="#{bindings.EmpEducation1.hints.Major.tooltip}" id="ot9"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmpEducation1.hints.Score.label}" id="c8">
+                            <af:outputText value="#{row.Score}"
+                                           shortDesc="#{bindings.EmpEducation1.hints.Score.tooltip}" id="ot10">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.EmpEducation1.hints.Score.format}"/>
+                            </af:outputText>
+                        </af:column>
+                    </af:table>
                 </af:panelBox>
             </af:gridCell>
         </af:gridRow>

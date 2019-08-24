@@ -7,11 +7,6 @@
     <iterator Binds="Contract1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="Contract1Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="Contract1Iterator" id="ContractId">
-      <AttrNames>
-        <Item Value="ContractId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="Contract1Iterator" id="EmployeeId">
       <AttrNames>
         <Item Value="EmployeeId"/>
@@ -43,15 +38,5 @@
       </AttrNames>
     </attributeValues>
     <action IterBinding="Contract1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <tree IterBinding="Contract1Iterator" id="Contract1">
-      <nodeDefinition DefName="addEmp.model.bc.views.ContractVO" Name="Contract10">
-        <AttrNames>
-          <Item Value="ContractId"/>
-          <Item Value="BasicSalary"/>
-          <Item Value="StartDate"/>
-          <Item Value="EndDate"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
   </bindings>
 </pageDefinition>

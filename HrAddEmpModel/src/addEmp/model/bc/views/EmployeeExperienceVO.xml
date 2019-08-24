@@ -152,6 +152,12 @@
     EntityAttrName="Version"
     EntityUsage="EmployeeExperiences"
     AliasName="VERSION"/>
+  <ViewLinkAccessor
+    Name="AddressVO"
+    ViewLink="addEmp.model.bc.viewLinks.AddressEmployeeExperienceVL"
+    Type="model.shared.extensions.ExtViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

@@ -6,16 +6,16 @@
   Name="EmployeeAddressVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
   RowClass="model.shared.extensions.ExtViewRowImpl"
   ComponentClass="model.shared.extensions.ExtViewObjectImpl"
   FetchMode="FETCH_AS_NEEDED"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  SelectAllAttributes="false">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -86,21 +86,6 @@
     EntityUsage="EmployeeAddress"
     AliasName="EMPLOYEE_ID"/>
   <ViewAttribute
-    Name="AddressTypeId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="AddressTypeId"
-    EntityUsage="EmployeeAddress"
-    AliasName="ADDRESS_TYPE_ID"
-    LOVName="LOV_AddressTypeId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
     Name="AddressId"
     IsNotNull="true"
     PrecisionRule="true"
@@ -114,6 +99,41 @@
           Value="input_text_lov"/>
       </SchemaBasedProperties>
     </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AddressTypeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AddressTypeId"
+    EntityUsage="EmployeeAddress"
+    AliasName="ADDRESS_TYPE_ID"
+    LOVName="LOV_AddressTypeId">
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AddressType"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    IsQueriable="false">
+    <TransientExpression
+      Name="ExpressionScript"><![CDATA[RefAddressTypes3.AddressTypes]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="AddressTypeId"/>
+    </Dependencies>
   </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
@@ -149,6 +169,18 @@
     EntityAttrName="Version"
     EntityUsage="EmployeeAddress"
     AliasName="VERSION"/>
+  <ViewLinkAccessor
+    Name="AddressVO"
+    ViewLink="addEmp.model.bc.viewLinks.AddressEmployeeAddressVL"
+    Type="model.shared.extensions.ExtViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="RefAddressTypes3"
+    ViewLink="addEmp.model.bc.viewLinks.ReAddTypesVL"
+    Type="model.shared.extensions.ExtViewRowImpl"
+    IsUpdateable="false"
+    Reversed="true"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

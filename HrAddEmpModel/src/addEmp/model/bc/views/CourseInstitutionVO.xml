@@ -126,11 +126,6 @@
     EntityAttrName="Version"
     EntityUsage="CourseInstitutions"
     AliasName="VERSION"/>
-  <ViewLinkAccessor
-    Name="CoursesVO"
-    ViewLink="addEmp.model.bc.viewLinks.CoursesInstitutionCourseVL"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

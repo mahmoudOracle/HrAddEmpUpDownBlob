@@ -26,19 +26,6 @@
                         </af:toolbar>
                     </f:facet>
                     <af:panelFormLayout id="pfl1">
-                        <af:panelLabelAndMessage label="#{bindings.EmployeeExperiencesId.hints.label}" id="plam1">
-                            <af:outputText value="#{bindings.EmployeeExperiencesId.inputValue}"
-                                           shortDesc="#{bindings.EmployeeExperiencesId.hints.tooltip}" id="ot1">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.EmployeeExperiencesId.format}"/>
-                            </af:outputText>
-                        </af:panelLabelAndMessage>
-                        <af:panelLabelAndMessage label="#{bindings.EmployeeId.hints.label}" id="plam2">
-                            <af:outputText value="#{bindings.EmployeeId.inputValue}"
-                                           shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="ot2">
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
-                            </af:outputText>
-                        </af:panelLabelAndMessage>
                         <af:group id="Group">
                             <af:inputText value="#{bindings.CompanyName.inputValue}"
                                           label="#{bindings.CompanyName.hints.label}"
@@ -99,6 +86,112 @@
                             </af:inputText>
                         </af:group>
                     </af:panelFormLayout>
+                    <af:table value="#{bindings.EmployeeExperience1.collectionModel}" var="row"
+                              rows="#{bindings.EmployeeExperience1.rangeSize}"
+                              emptyText="#{bindings.EmployeeExperience1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.EmployeeExperience1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.EmployeeExperience1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.EmployeeExperience1.rangeSize}" id="t2"
+                              partialTriggers="::b1" varStatus="vs" styleClass="AFStretchWidth">
+                        <af:column id="c33" rowHeader="true" width="14" headerText="SN">
+                            <af:outputText value="#{vs.index+1}" id="ot0"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmployeeExperience1.hints.CompanyName.label}" id="c1">
+                            <af:outputText value="#{row.CompanyName}"
+                                           shortDesc="#{bindings.EmployeeExperience1.hints.CompanyName.tooltip}"
+                                           id="ot1"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmployeeExperience1.hints.CompanyPhoneNo.label}" id="c2">
+                            <af:outputText value="#{row.CompanyPhoneNo}"
+                                           shortDesc="#{bindings.EmployeeExperience1.hints.CompanyPhoneNo.tooltip}"
+                                           id="ot2">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.EmployeeExperience1.hints.CompanyPhoneNo.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmployeeExperience1.hints.JobTitle.label}" id="c3">
+                            <af:outputText value="#{row.JobTitle}"
+                                           shortDesc="#{bindings.EmployeeExperience1.hints.JobTitle.tooltip}" id="ot3"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmployeeExperience1.hints.StartDate.label}" id="c4">
+                            <af:outputText value="#{row.StartDate}"
+                                           shortDesc="#{bindings.EmployeeExperience1.hints.StartDate.tooltip}" id="ot4">
+                                <af:convertDateTime pattern="#{bindings.EmployeeExperience1.hints.StartDate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmployeeExperience1.hints.EndDate.label}" id="c5">
+                            <af:outputText value="#{row.EndDate}"
+                                           shortDesc="#{bindings.EmployeeExperience1.hints.EndDate.tooltip}" id="ot5">
+                                <af:convertDateTime pattern="#{bindings.EmployeeExperience1.hints.EndDate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmployeeExperience1.hints.Comments.label}" id="c6">
+                            <af:outputText value="#{row.Comments}"
+                                           shortDesc="#{bindings.EmployeeExperience1.hints.Comments.tooltip}" id="ot6"/>
+                        </af:column>
+                        <f:facet name="detailStamp">
+                            <af:panelFormLayout id="pfl2">
+                                <af:inputText value="#{bindings.AddressLine1.inputValue}"
+                                              label="#{bindings.AddressLine1.hints.label}"
+                                              required="#{bindings.AddressLine1.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.AddressLine1.hints.displayWidth}"
+                                              maximumLength="#{bindings.AddressLine1.hints.precision}"
+                                              shortDesc="#{bindings.AddressLine1.hints.tooltip}" id="it6">
+                                    <f:validator binding="#{bindings.AddressLine1.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.AddressLine2.inputValue}"
+                                              label="#{bindings.AddressLine2.hints.label}"
+                                              required="#{bindings.AddressLine2.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.AddressLine2.hints.displayWidth}"
+                                              maximumLength="#{bindings.AddressLine2.hints.precision}"
+                                              shortDesc="#{bindings.AddressLine2.hints.tooltip}" id="it7">
+                                    <f:validator binding="#{bindings.AddressLine2.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Fax.inputValue}" label="#{bindings.Fax.hints.label}"
+                                              required="#{bindings.Fax.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.Fax.hints.displayWidth}"
+                                              maximumLength="#{bindings.Fax.hints.precision}"
+                                              shortDesc="#{bindings.Fax.hints.tooltip}" id="it8">
+                                    <f:validator binding="#{bindings.Fax.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Fax.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Phone.inputValue}" label="#{bindings.Phone.hints.label}"
+                                              required="#{bindings.Phone.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.Phone.hints.displayWidth}"
+                                              maximumLength="#{bindings.Phone.hints.precision}"
+                                              shortDesc="#{bindings.Phone.hints.tooltip}" id="it9">
+                                    <f:validator binding="#{bindings.Phone.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Phone.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.PostalCode.inputValue}"
+                                              label="#{bindings.PostalCode.hints.label}"
+                                              required="#{bindings.PostalCode.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.PostalCode.hints.displayWidth}"
+                                              maximumLength="#{bindings.PostalCode.hints.precision}"
+                                              shortDesc="#{bindings.PostalCode.hints.tooltip}" id="it10">
+                                    <f:validator binding="#{bindings.PostalCode.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.PostalCode.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.CityName.inputValue}"
+                                              label="#{bindings.CityName.hints.label}"
+                                              required="#{bindings.CityName.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.CityName.hints.displayWidth}"
+                                              maximumLength="#{bindings.CityName.hints.precision}"
+                                              shortDesc="#{bindings.CityName.hints.tooltip}" id="it11">
+                                    <f:validator binding="#{bindings.CityName.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.CountryName.inputValue}"
+                                              label="#{bindings.CountryName.hints.label}"
+                                              required="#{bindings.CountryName.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.CountryName.hints.displayWidth}"
+                                              maximumLength="#{bindings.CountryName.hints.precision}"
+                                              shortDesc="#{bindings.CountryName.hints.tooltip}" id="it12">
+                                    <f:validator binding="#{bindings.CountryName.validator}"/>
+                                </af:inputText>
+                            </af:panelFormLayout>
+                        </f:facet>
+                    </af:table>
                 </af:panelBox>
             </af:gridCell>
         </af:gridRow>

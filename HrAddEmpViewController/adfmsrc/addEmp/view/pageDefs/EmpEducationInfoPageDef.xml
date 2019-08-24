@@ -56,5 +56,19 @@
       </AttrNames>
     </attributeValues>
     <action IterBinding="EmpEducation1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="EmpEducation1Iterator" id="EmpEducation1">
+      <nodeDefinition DefName="addEmp.model.bc.views.EmpEducationVO" Name="EmpEducation10">
+        <AttrNames>
+          <Item Value="EducationType"/>
+          <Item Value="InstitutionName"/>
+          <Item Value="StartDate"/>
+          <Item Value="GraduationDate"/>
+          <Item Value="GradutaionDegree"/>
+          <Item Value="Degree"/>
+          <Item Value="Major"/>
+          <Item Value="Score"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

@@ -139,6 +139,21 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="CityName"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <TransientExpression
+      trustMode="untrusted"
+      Name="ExpressionScript"><![CDATA[CityVO.CityName]]></TransientExpression>
+  </ViewAttribute>
+  <ViewAttribute
     Name="CountryId"
     IsNotNull="true"
     PrecisionRule="true"
@@ -169,6 +184,9 @@
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR">
+    <TransientExpression
+      trustMode="untrusted"
+      Name="ExpressionScript"><![CDATA[RefCountries.Country]]></TransientExpression>
     <Dependencies>
       <Item
         Value="CityId"/>
@@ -280,6 +298,12 @@
     Name="EmployeeExperienceVO"
     ViewLink="addEmp.model.bc.viewLinks.AddressEmployeeExperienceVL"
     Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="CityVO"
+    ViewLink="addEmp.model.bc.viewLinks.CityAddressVL"
+    Type="model.shared.extensions.ExtViewRowImpl"
+    Reversed="true"
     IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle

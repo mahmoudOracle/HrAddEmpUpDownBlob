@@ -8,11 +8,6 @@
               id="EmergencyContactPerson1Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="EmergencyContactPerson1Iterator" id="EmergencyContactId">
-      <AttrNames>
-        <Item Value="EmergencyContactId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="EmergencyContactPerson1Iterator" id="EmployeeId">
       <AttrNames>
         <Item Value="EmployeeId"/>
@@ -52,5 +47,18 @@
     </attributeValues>
     <action IterBinding="EmergencyContactPerson1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
+    <tree IterBinding="EmergencyContactPerson1Iterator" id="EmergencyContactPerson1">
+      <nodeDefinition DefName="addEmp.model.bc.views.EmergencyContactPersonVO" Name="EmergencyContactPerson10">
+        <AttrNames>
+          <Item Value="FirstName"/>
+          <Item Value="MiddleName"/>
+          <Item Value="LastName"/>
+          <Item Value="RelationId"/>
+          <Item Value="OfficeNo"/>
+          <Item Value="MobileNo"/>
+          <Item Value="PhoneNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

@@ -100,7 +100,14 @@
     PrecisionRule="true"
     EntityAttrName="HomeNo"
     EntityUsage="EmployeeContactHomeCountry"
-    AliasName="HOME_NO"/>
+    AliasName="HOME_NO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="addEmp.model.bc.views.EmpContactHomeCountryVO.HomeNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MobileNo"
     IsNotNull="true"
@@ -113,7 +120,14 @@
     PrecisionRule="true"
     EntityAttrName="OfficeNo"
     EntityUsage="EmployeeContactHomeCountry"
-    AliasName="OFFICE_NO"/>
+    AliasName="OFFICE_NO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="addEmp.model.bc.views.EmpContactHomeCountryVO.OfficeNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     IsUpdateable="false"

@@ -3,39 +3,40 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="SkillsEmpSkillsVL"
+  Name="EducationTypeVLEmpEducation"
   Version="12.2.1.9.14"
   InheritPersonalization="merge">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="addEmp.model.bc.viewLinks.SkillsEmpSkillsVL_LABEL"/>
+        ResId="addEmp.model.bc.viewLinks.EducationTypeVLEmpEducation_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewLinkDefEnd
-    Name="SkillsVO"
+    Name="RefEducation"
     Cardinality="1"
     Source="true"
-    Owner="addEmp.model.bc.views.SkillsVO">
+    Owner="HrBCmodel.bc.staticLOV.RefEducation">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="SkillsVO"/>
       <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="RefEducation"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="addEmp.model.bc.views.SkillsVO.SkillId"/>
+      <Item Value="HrBCmodel.bc.staticLOV.RefEducation.Id"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="EmpSkillsVO"
+    Name="EmpEducationVO"
     Cardinality="-1"
-    Owner="addEmp.model.bc.views.EmpSkillsVO">
+    Owner="addEmp.model.bc.views.EmpEducationVO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="EmpSkillsVO"/>
+      <Attr Name="_accessor" Value="false"/>
+      <Attr Name="_finderName" Value="EmpEducationVO"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="addEmp.model.bc.views.EmpSkillsVO.SkillId"/>
+      <Item Value="addEmp.model.bc.views.EmpEducationVO.EducationType"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>

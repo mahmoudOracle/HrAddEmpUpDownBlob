@@ -26,14 +26,6 @@
       </AttrNames>
     </attributeValues>
     <action IterBinding="EmpSkills1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <tree IterBinding="EmpSkills1Iterator" id="EmpSkills1">
-      <nodeDefinition DefName="addEmp.model.bc.views.EmpSkillsVO" Name="EmpSkills10">
-        <AttrNames>
-          <Item Value="SkillId"/>
-          <Item Value="SkillYears"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <action IterBinding="Skills1Iterator" id="CreateInsertSkills" InstanceName="HrAddEmpAppModuleDataControl.Skills1"
             DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
     <attributeValues IterBinding="Skills1Iterator" id="SkillId1">
@@ -55,5 +47,13 @@
             Action="commitTransaction"/>
     <action id="Rollback" DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="false"
             Action="rollbackTransaction"/>
+    <tree IterBinding="EmpSkills1Iterator" id="EmpSkills1">
+      <nodeDefinition DefName="addEmp.model.bc.views.EmpSkillsVO" Name="EmpSkills10">
+        <AttrNames>
+          <Item Value="SkillName"/>
+          <Item Value="SkillYears"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

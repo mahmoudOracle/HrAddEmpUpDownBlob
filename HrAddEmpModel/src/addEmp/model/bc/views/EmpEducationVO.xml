@@ -76,6 +76,24 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="EduType"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <TransientExpression
+      Name="ExpressionScript"><![CDATA[RefEducation.EducationType]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="EducationType"/>
+    </Dependencies>
+  </ViewAttribute>
+  <ViewAttribute
     Name="InstitutionName"
     IsNotNull="true"
     PrecisionRule="true"
@@ -153,6 +171,12 @@
     EntityAttrName="Version"
     EntityUsage="EmployeeEducation"
     AliasName="VERSION"/>
+  <ViewLinkAccessor
+    Name="RefEducation"
+    ViewLink="addEmp.model.bc.viewLinks.EducationTypeVLEmpEducation"
+    Type="model.shared.extensions.ExtViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

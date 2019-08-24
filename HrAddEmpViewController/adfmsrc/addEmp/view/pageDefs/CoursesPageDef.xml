@@ -8,11 +8,6 @@
               id="EmployeeCourses1Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="EmployeeCourses1Iterator" id="EmployeeCourseId">
-      <AttrNames>
-        <Item Value="EmployeeCourseId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="EmployeeCourses1Iterator" id="EmployeeId">
       <AttrNames>
         <Item Value="EmployeeId"/>

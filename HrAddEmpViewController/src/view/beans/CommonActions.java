@@ -12,7 +12,8 @@ public class CommonActions {
 
     boolean makeEdit = true; // passport Page
     private boolean editable = true;  // id Page
-    private boolean editDrivingLicense = true;  // Driving Page
+    private boolean editDrivingLicense = true; // Driving Page
+    private boolean editContract = true;
 
     public void setMakeEdit(boolean makeEdit) {
         this.makeEdit = makeEdit;
@@ -104,5 +105,18 @@ public class CommonActions {
 
     public boolean getEditDrivingLicense() {
         return editDrivingLicense;
+    }
+
+    public void updateContractDetails(ActionEvent actionEvent) {
+        setEditContract(false);
+        this.refreshComponent("pfl1");
+    }
+
+    public void setEditContract(boolean editContract) {
+        this.editContract = editContract;
+    }
+
+    public boolean getEditContract() {
+        return editContract;
     }
 }

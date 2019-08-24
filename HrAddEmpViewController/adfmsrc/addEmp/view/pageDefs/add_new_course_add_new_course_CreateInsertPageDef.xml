@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="add_new_course_add_new_course_CreateInsertPageDef" Package="addEmp.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="Courses1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="Courses1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="Courses1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

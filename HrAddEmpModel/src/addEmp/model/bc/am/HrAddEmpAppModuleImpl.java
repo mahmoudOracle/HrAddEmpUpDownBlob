@@ -303,5 +303,62 @@ public class HrAddEmpAppModuleImpl extends ExtApplicationModuleImpl {
     public ExtViewObjectImpl getAddress1() {
         return (ExtViewObjectImpl) findViewObject("Address1");
     }
+
+    /**
+     * Container's getter for ContractExtend1.
+     * @return ContractExtend1
+     */
+    public ExtViewObjectImpl getContractExtend1() {
+        return (ExtViewObjectImpl) findViewObject("ContractExtend1");
+    }
+
+    /**
+     * Container's getter for ContractContractExtendVL1.
+     * @return ContractContractExtendVL1
+     */
+    public ViewLinkImpl getContractContractExtendVL1() {
+        return (ViewLinkImpl) findViewLink("ContractContractExtendVL1");
+    }
+
+
+    /**
+     * Container's getter for Address2.
+     * @return Address2
+     */
+    public ExtViewObjectImpl getAddress2() {
+        return (ExtViewObjectImpl) findViewObject("Address2");
+    }
+
+    /**
+     * Container's getter for AddressEmployeeAddressVL1.
+     * @return AddressEmployeeAddressVL1
+     */
+    public ViewLinkImpl getAddressEmployeeAddressVL1() {
+        return (ViewLinkImpl) findViewLink("AddressEmployeeAddressVL1");
+    }
+
+    /**
+     * Container's getter for Address3.
+     * @return Address3
+     */
+    public ExtViewObjectImpl getAddress3() {
+        return (ExtViewObjectImpl) findViewObject("Address3");
+    }
+
+    /**
+     * Container's getter for AddressEmployeeExperienceVL1.
+     * @return AddressEmployeeExperienceVL1
+     */
+    public ViewLinkImpl getAddressEmployeeExperienceVL1() {
+        return (ViewLinkImpl) findViewLink("AddressEmployeeExperienceVL1");
+    }
+
+    /**
+     * Container's getter for Courses1.
+     * @return Courses1
+     */
+    public ExtViewObjectImpl getCourses1() {
+        return (ExtViewObjectImpl) findViewObject("Courses1");
+    }
 }
 

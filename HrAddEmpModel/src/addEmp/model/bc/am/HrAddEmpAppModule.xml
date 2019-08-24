@@ -71,6 +71,18 @@
   <ViewUsage
     Name="Skills1"
     ViewObjectName="addEmp.model.bc.views.SkillsVO"/>
+  <ViewUsage
+    Name="ContractExtend1"
+    ViewObjectName="addEmp.model.bc.views.ContractExtendVO"/>
+  <ViewUsage
+    Name="Address2"
+    ViewObjectName="addEmp.model.bc.views.AddressVO"/>
+  <ViewUsage
+    Name="Address3"
+    ViewObjectName="addEmp.model.bc.views.AddressVO"/>
+  <ViewUsage
+    Name="Courses1"
+    ViewObjectName="addEmp.model.bc.views.CoursesVO"/>
   <ViewLinkUsage
     Name="EmployeeContractVL1"
     ViewLinkObjectName="addEmp.model.bc.viewLinks.EmployeeContractVL"
@@ -161,4 +173,22 @@
     SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.BaseEmployees1"
     DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.AllEmpAttachmentsData"
     Reversed="false"/>
+  <ViewLinkUsage
+    Name="ContractContractExtendVL1"
+    ViewLinkObjectName="addEmp.model.bc.viewLinks.ContractContractExtendVL"
+    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.Contract1"
+    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.ContractExtend1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="AddressEmployeeAddressVL1"
+    ViewLinkObjectName="addEmp.model.bc.viewLinks.AddressEmployeeAddressVL"
+    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.EmployeeAddress1"
+    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.Address2"
+    Reversed="true"/>
+  <ViewLinkUsage
+    Name="AddressEmployeeExperienceVL1"
+    ViewLinkObjectName="addEmp.model.bc.viewLinks.AddressEmployeeExperienceVL"
+    SrcViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.EmployeeExperience1"
+    DstViewUsageName="addEmp.model.bc.am.HrAddEmpAppModule.Address3"
+    Reversed="true"/>
 </AppModule>

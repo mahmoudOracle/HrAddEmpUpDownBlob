@@ -26,18 +26,6 @@
                         </af:toolbar>
                     </f:facet>
                     <af:panelFormLayout id="pfl1">
-                        <af:panelLabelAndMessage label="#{bindings.EmployeeSkillId.hints.label}" id="plam1">
-                            <af:outputText value="#{bindings.EmployeeSkillId.inputValue}"
-                                           shortDesc="#{bindings.EmployeeSkillId.hints.tooltip}" id="ot1">
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeSkillId.format}"/>
-                            </af:outputText>
-                        </af:panelLabelAndMessage>
-                        <af:panelLabelAndMessage label="#{bindings.EmployeeId.hints.label}" id="plam2">
-                            <af:outputText value="#{bindings.EmployeeId.inputValue}"
-                                           shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="ot2">
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeeId.format}"/>
-                            </af:outputText>
-                        </af:panelLabelAndMessage>
                         <af:group id="Group">
                             <af:panelLabelAndMessage label="Skill Name" id="plam3">
                                 <af:selectOneChoice value="#{bindings.SkillId.inputValue}"
@@ -48,6 +36,7 @@
                                     <f:selectItems value="#{bindings.SkillId.items}" id="si1"/>
                                     <f:validator binding="#{bindings.SkillId.validator}"/>
                                 </af:selectOneChoice>
+                                <af:spacer width="10" height="10" id="s1"/>
                                 <af:button id="b6" icon="/images/add.png"
                                            actionListener="#{addNewRowAddUpdateTF.ShowAddSkillPopup}"
                                            rendered="#{bindings.EmployeeSkillId.inputValue != null}"/>
@@ -63,29 +52,29 @@
                             </af:inputText>
                         </af:group>
                     </af:panelFormLayout>
-                    <af:panelAccordion discloseMany="false" id="pa1">
-                        <af:showDetailItem text="Skill Details" id="sdi1">
-                            <af:listView value="#{bindings.EmpSkills1.collectionModel}" var="item"
-                                         emptyText="#{bindings.EmpSkills1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                         fetchSize="#{bindings.EmpSkills1.rangeSize}" id="lv1">
-                                <af:listItem id="li1">
-                                    <af:panelGroupLayout layout="horizontal" id="pgl3">
-                                        <f:facet name="separator">
-                                            <af:spacer width="10" id="s1"/>
-                                        </f:facet>
-                                        <af:outputFormatted value="#{item.bindings.SkillId.inputValue}" id="of1">
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.EmpSkills1.hints.SkillId.format}"/>
-                                        </af:outputFormatted>
-                                        <af:outputFormatted value="#{item.bindings.SkillYears.inputValue}" id="of2">
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.EmpSkills1.hints.SkillYears.format}"/>
-                                        </af:outputFormatted>
-                                    </af:panelGroupLayout>
-                                </af:listItem>
-                            </af:listView>
-                        </af:showDetailItem>
-                    </af:panelAccordion>
+                    <af:table value="#{bindings.EmpSkills1.collectionModel}" var="row"
+                              rows="#{bindings.EmpSkills1.rangeSize}"
+                              emptyText="#{bindings.EmpSkills1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.EmpSkills1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.EmpSkills1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.EmpSkills1.rangeSize}" id="t2"
+                              partialTriggers="::b1" varStatus="vs">
+                        <af:column id="c33" rowHeader="true" width="14" headerText="SN">
+                            <af:outputText value="#{vs.index+1}" id="ot2"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmpSkills1.hints.SkillName.label}" id="c1">
+                            <af:outputText value="#{row.SkillName}"
+                                           shortDesc="#{bindings.EmpSkills1.hints.SkillName.tooltip}" id="ot1"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.EmpSkills1.hints.SkillYears.label}" id="c2">
+                            <af:outputText value="#{row.SkillYears}"
+                                           shortDesc="#{bindings.EmpSkills1.hints.SkillYears.tooltip}" id="ot0">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.EmpSkills1.hints.SkillYears.format}"/>
+                            </af:outputText>
+                        </af:column>
+                    </af:table>
                 </af:panelBox>
                 <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
                           binding="#{addNewRowAddUpdateTF.addSkillPopup}" contentDelivery="lazyUncached"

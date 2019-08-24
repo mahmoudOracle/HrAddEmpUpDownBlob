@@ -6,16 +6,16 @@
   Name="EmpSkillsVO"
   Version="12.2.1.9.14"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
   RowClass="model.shared.extensions.ExtViewRowImpl"
   ComponentClass="model.shared.extensions.ExtViewObjectImpl"
   FetchMode="FETCH_AS_NEEDED"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  SelectAllAttributes="false">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -76,6 +76,24 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="SkillName"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    IsQueriable="false">
+    <TransientExpression
+      Name="ExpressionScript"><![CDATA[(SkillsVO != null ? SkillsVO.SkillName : "Undefined")]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="SkillId"/>
+    </Dependencies>
+  </ViewAttribute>
+  <ViewAttribute
     Name="SkillYears"
     PrecisionRule="true"
     EntityAttrName="SkillYears"
@@ -115,6 +133,12 @@
     EntityAttrName="Version"
     EntityUsage="EmployeeSkills"
     AliasName="VERSION"/>
+  <ViewLinkAccessor
+    Name="SkillsVO"
+    ViewLink="addEmp.model.bc.viewLinks.SkillsEmpSkillsVL"
+    Type="model.shared.extensions.ExtViewRowImpl"
+    Reversed="true"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="addEmp.model.HrAddEmpModelBundle"/>

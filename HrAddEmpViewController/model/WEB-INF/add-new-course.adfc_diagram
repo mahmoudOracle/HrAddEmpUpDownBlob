@@ -7,17 +7,17 @@
       <property
          name="activityId">courseAddition</property>
       <property
-         name="pageFragment">true</property>
+         name="pageFragment">false</property>
       <property
-         name="x">648.0</property>
+         name="x">618.0</property>
       <property
          name="start">false</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>courseAddition&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">187.19531</property>
+         name="y">192.79297</property>
       <property
-         name="page">/fragments/course.jsff</property>
+         name="page">/fragments/course.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -26,11 +26,11 @@
       <property
          name="activityId">cancel</property>
       <property
-         name="x">901.0</property>
+         name="x">885.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>cancel&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  cancel&lt;/p></property>
       <property
-         name="y">115.84473</property>
+         name="y">117.28711</property>
       <property
          name="finish">true</property>
       <property
@@ -41,11 +41,11 @@
       <property
          name="activityId">save</property>
       <property
-         name="x">903.0</property>
+         name="x">885.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>save&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  save&lt;/p></property>
       <property
-         name="y">264.39062</property>
+         name="y">260.43066</property>
       <property
          name="finish">true</property>
       <property
@@ -59,7 +59,7 @@
       <property
          name="fromOutcome">c</property>
       <property
-         name="sdm:polyPoints">R46,689.0,183.34473,860.0,115.49414,L50</property>
+         name="sdm:polyPoints">R46,659.0,188.94238,844.0,116.93652,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -69,7 +69,7 @@
       <property
          name="fromOutcome">s</property>
       <property
-         name="sdm:polyPoints">R54,689.0,190.34473,862.0,264.04004,L50</property>
+         name="sdm:polyPoints">R54,659.0,195.94238,844.0,260.08008,L50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall7">
@@ -94,6 +94,6 @@
       <property
          name="fromOutcome">CreateInsert</property>
       <property
-         name="sdm:polyPoints">R50,459.01465,190.34473,607.0,186.84473,L50</property>
+         name="sdm:polyPoints">R50,459.01465,190.34473,577.0,192.44238,L50</property>
    </ControlFlowCase>
 </SDM>

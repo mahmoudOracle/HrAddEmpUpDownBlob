@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document id="d1">
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="100%" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                        <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.CourseName.inputValue}"
+                                          label="#{bindings.CourseName.hints.label}"
+                                          required="#{bindings.CourseName.hints.mandatory}"
+                                          columns="#{bindings.CourseName.hints.displayWidth}"
+                                          maximumLength="#{bindings.CourseName.hints.precision}"
+                                          shortDesc="#{bindings.CourseName.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.CourseName.validator}"/>
+                            </af:inputText>
+                            <af:selectOneChoice value="#{bindings.CourseInstitutionsId.inputValue}"
+                                                label="#{bindings.CourseInstitutionsId.label}"
+                                                required="#{bindings.CourseInstitutionsId.hints.mandatory}"
+                                                shortDesc="#{bindings.CourseInstitutionsId.hints.tooltip}" id="soc1">
+                                <f:selectItems value="#{bindings.CourseInstitutionsId.items}" id="si1"/>
+                                <f:validator binding="#{bindings.CourseInstitutionsId.validator}"/>
+                            </af:selectOneChoice>
+                            <f:facet name="footer">
+                                <af:button text="Save" id="b1" action="s"/>
+                                <af:button text="Cancel" id="b2" action="c"/>
+                            </f:facet>
+                        </af:panelFormLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

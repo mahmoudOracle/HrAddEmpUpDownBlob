@@ -33,7 +33,7 @@
     <page path="/fragments/EmpAttachment.jsff" usageId="addEmp_view_EmpAttachmentPageDef"/>
     <page path="/WEB-INF/add-new-course.xml#add-new-course@CreateInsert"
           usageId="addEmp_view_add_new_course_add_new_course_CreateInsertPageDef"/>
-    <page path="/fragments/course.jsff" usageId="addEmp_view_coursePageDef"/>
+    <page path="/fragments/course.jsf" usageId="addEmp_view_coursePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="addEmp_view_BasicInfoPageDef" path="addEmp.view.pageDefs.BasicInfoPageDef"/>

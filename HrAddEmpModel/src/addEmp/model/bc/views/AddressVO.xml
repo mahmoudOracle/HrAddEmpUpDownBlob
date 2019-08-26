@@ -163,10 +163,10 @@
     LOVName="LOV_CountryId">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <AUTOSUBMIT
           Value="true"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
     <Dependencies>
@@ -185,8 +185,7 @@
     AliasName="VIEW_ATTR"
     SQLType="VARCHAR">
     <TransientExpression
-      trustMode="untrusted"
-      Name="ExpressionScript"><![CDATA[RefCountries.Country]]></TransientExpression>
+      Name="ExpressionScript"><![CDATA[(RefCountries != null ? RefCountries.Country : "Undefined")]]></TransientExpression>
     <Dependencies>
       <Item
         Value="CityId"/>

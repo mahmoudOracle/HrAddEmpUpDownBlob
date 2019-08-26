@@ -66,6 +66,10 @@
         <skip>#{pageFlowScope.trainStopSkipHelper['IdInfo']}</skip>
       </train-stop>
     </view>
+    <view id="Courses">
+      <page>/fragments/Courses.jsff</page>
+      <train-stop/>
+    </view>
     <view id="PassportDetails">
       <page>/fragments/PassportDetails.jsff</page>
       <train-stop>
@@ -144,14 +148,6 @@
         <display-name>Employee Expreience</display-name>
         <sequential>#{pageFlowScope.trainStopSequenceHelper['Experiences']}</sequential>
         <skip>#{pageFlowScope.trainStopSkipHelper['Experiences']}</skip>
-      </train-stop>
-    </view>
-    <view id="Courses">
-      <page>/fragments/Courses.jsff</page>
-      <train-stop>
-        <display-name>Employee Token Courses</display-name>
-        <sequential>#{pageFlowScope.trainStopSequenceHelper['Courses']}</sequential>
-        <skip>#{pageFlowScope.trainStopSkipHelper['Courses']}</skip>
       </train-stop>
     </view>
     <view id="EmpAttachment">

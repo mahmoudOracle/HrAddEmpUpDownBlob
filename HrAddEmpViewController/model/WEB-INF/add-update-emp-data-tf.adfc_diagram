@@ -39,9 +39,9 @@
       <property
          name="start">true</property>
       <property
-         name="x">770.5569</property>
+         name="x">611.2977</property>
       <property
-         name="y">-267.8595</property>
+         name="y">-271.36542</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>IdInfo&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
@@ -180,11 +180,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">943.8352</property>
+         name="x">758.6504</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Courses&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">125.01642</property>
+         name="y">-270.71634</property>
       <property
          name="page">/fragments/Courses.jsff</property>
       <property
@@ -319,14 +319,6 @@
    </View>
    <TrainFlow
       islink="true"
-      id="TrainFlow69"
-      from="View5"
-      to="View3">
-      <property
-         name="sdm:polyPoints">R50,811.5569,-268.21008,898.1293,-265.37872,L50</property>
-   </TrainFlow>
-   <TrainFlow
-      islink="true"
       id="TrainFlow70"
       from="View3"
       to="View40">
@@ -347,7 +339,7 @@
       from="View9"
       to="View13">
       <property
-         name="sdm:polyPoints">R50,1325.9153,-261.07587,1395.3729,-261.27002,L50</property>
+         name="sdm:polyPoints">R50,1326.0326,-261.07587,1395.2556,-261.27002,L50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -379,7 +371,7 @@
       from="View17"
       to="View19">
       <property
-         name="sdm:polyPoints">L50,1582.3925,127.211975,1481.3815,127.82312,R50</property>
+         name="sdm:polyPoints">L50,1582.2751,127.211975,1481.4988,127.82312,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -395,23 +387,7 @@
       from="View33"
       to="View31">
       <property
-         name="sdm:polyPoints">L50,1242.6234,127.13129,1165.311,127.45587,R50</property>
-   </TrainFlow>
-   <TrainFlow
-      islink="true"
-      id="TrainFlow79"
-      from="View31"
-      to="View29">
-      <property
-         name="sdm:polyPoints">L50,1083.311,127.45587,984.8352,124.66583,R50</property>
-   </TrainFlow>
-   <TrainFlow
-      islink="true"
-      id="TrainFlow80"
-      from="View29"
-      to="View27">
-      <property
-         name="sdm:polyPoints">L50,902.8352,124.66583,807.7785,124.830444,R50</property>
+         name="sdm:polyPoints">L50,1242.5061,127.13129,1165.4283,127.45586,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -419,7 +395,7 @@
       from="View27"
       to="View35">
       <property
-         name="sdm:polyPoints">B50,766.7785,178.83044,766.71625,245.05225,T50</property>
+         name="sdm:polyPoints">B50,766.77844,178.94772,766.71625,244.93497,T50</property>
    </TrainFlow>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule68">
@@ -444,7 +420,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">R45,87.91869,-269.4541,523.1791,-90.58438,L50</property>
+         name="sdm:polyPoints">R44,88.10126,-269.57138,523.06177,-90.58438,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -458,7 +434,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">R55,86.0,-262.4541,527.1693,91.45569,L50</property>
+         name="sdm:polyPoints">R56,86.11729,-262.33682,527.052,91.4557,L50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall46">
@@ -471,9 +447,9 @@
       <property
          name="activityId">taskFlowCall1</property>
       <property
-         name="x">941.9753</property>
+         name="x">758.0249</property>
       <property
-         name="y">286.25198</property>
+         name="y">-142.95178</property>
       <property
          name="documentReference">/WEB-INF/add-new-course.xml</property>
       <property
@@ -489,6 +465,30 @@
       <property
          name="fromOutcome">add</property>
       <property
-         name="sdm:polyPoints">B50,943.8352,178.66583,941.9753,231.9014,T50</property>
+         name="sdm:polyPoints">B50,758.6504,-216.94965,758.0249,-197.41965,T50</property>
    </ControlFlowCase>
+   <TrainFlow
+      islink="true"
+      id="TrainFlow51"
+      from="View31"
+      to="View27">
+      <property
+         name="sdm:polyPoints">L50,1083.1937,127.45586,807.89575,124.830444,R50</property>
+   </TrainFlow>
+   <TrainFlow
+      islink="true"
+      id="TrainFlow53"
+      from="View5"
+      to="View29">
+      <property
+         name="sdm:polyPoints">R50,652.41504,-271.716,717.5331,-271.06693,L50</property>
+   </TrainFlow>
+   <TrainFlow
+      islink="true"
+      id="TrainFlow54"
+      from="View29"
+      to="View3">
+      <property
+         name="sdm:polyPoints">R50,799.7677,-271.06693,898.0119,-265.37872,L50</property>
+   </TrainFlow>
 </SDM>

@@ -6,10 +6,13 @@
       <new-transaction/>
     </transaction>
     <data-control-scope>
-      <shared/>
+      <isolated/>
     </data-control-scope>
+    <task-flow-reentry>
+      <reentry-not-allowed/>
+    </task-flow-reentry>
     <view id="courseAddition">
-      <page>/fragments/course.jsff</page>
+      <page>/fragments/course.jsf</page>
     </view>
     <task-flow-return id="cancel">
       <outcome>
@@ -47,6 +50,5 @@
         <to-activity-id>courseAddition</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
-    <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>

@@ -5,7 +5,7 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="EmployeeCourses1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
-              id="EmployeeCourses1Iterator"/>
+              id="EmployeeCourses1Iterator" Refresh="ifNeeded"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EmployeeCourses1Iterator" id="EmployeeId">

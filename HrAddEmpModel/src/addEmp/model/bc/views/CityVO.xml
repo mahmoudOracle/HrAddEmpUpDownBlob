@@ -22,6 +22,10 @@
         ResId="addEmp.model.bc.views.CityVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="countryIdParamInCityVO"
+    Kind="viewcriteria"
+    Type="oracle.jbo.domain.Number"/>
   <ViewAccessor
     Name="RefCountries1"
     ViewObjectName="HrBCmodel.bc.staticLOV.RefCountries"
@@ -109,6 +113,42 @@
     EntityAttrName="Version"
     EntityUsage="Cities"
     AliasName="VERSION"/>
+  <ViewCriteria
+    Name="CityVOCriteria"
+    ViewObjectName="addEmp.model.bc.views.CityVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="CityVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="CountryId"
+        ViewAttribute="CountryId"
+        Operator="="
+        Conjunction="AND"
+        Value=":countryIdParamInCityVO"
+        IsBindVarValue="true"
+        Required="Optional" GenerateIsNullClauseForBindVars="false"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="AddressVO"
     ViewLink="addEmp.model.bc.viewLinks.CityAddressVL"

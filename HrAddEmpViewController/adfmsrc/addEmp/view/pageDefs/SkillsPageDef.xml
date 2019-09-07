@@ -28,11 +28,6 @@
     <action IterBinding="EmpSkills1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="Skills1Iterator" id="CreateInsertSkills" InstanceName="HrAddEmpAppModuleDataControl.Skills1"
             DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
-    <attributeValues IterBinding="Skills1Iterator" id="SkillId1">
-      <AttrNames>
-        <Item Value="SkillId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="Skills1Iterator" id="SkillName">
       <AttrNames>
         <Item Value="SkillName"/>

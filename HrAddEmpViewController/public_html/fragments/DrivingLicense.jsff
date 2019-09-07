@@ -13,7 +13,7 @@
                             <af:button actionListener="#{bindings.CreateInsert.execute}"
                                        text="Add Driving Licnese Details"
                                        disabled="#{bindings.DrivingLicense1Iterator.estimatedRowCount eq 1}"
-                                       id="b1" icon="/images/add.png"/>
+                                       id="b1" icon="/images/add.png" rendered="#{bindings.DrivingLicense1Iterator.estimatedRowCount ne 1}"/>
                             <af:button text="Save" id="b2" icon="/images/SAVE.png" partialSubmit="true"
                                        actionListener="#{data.addEmp_view_add_emp_basic_data_tf_add_emp_basic_data_tf_CommitPageDef.Commit.execute}"/>
                             <af:button text="Save &amp; Go to Main Page" id="b5" action="save" icon="/images/SAVE.png"

@@ -39,9 +39,9 @@
       <property
          name="start">true</property>
       <property
-         name="x">611.2977</property>
+         name="x">726.11255</property>
       <property
-         name="y">-271.36542</property>
+         name="y">-265.54315</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>IdInfo&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
@@ -180,11 +180,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">758.6504</property>
+         name="x">1105.5641</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Courses&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">-270.71634</property>
+         name="y">117.471375</property>
       <property
          name="page">/fragments/Courses.jsff</property>
       <property
@@ -199,11 +199,11 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">1124.311</property>
+         name="x">952.7062</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Experiences&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">127.80646</property>
+         name="y">127.10527</property>
       <property
          name="page">/fragments/Experiences.jsff</property>
       <property
@@ -339,7 +339,7 @@
       from="View9"
       to="View13">
       <property
-         name="sdm:polyPoints">R50,1326.0326,-261.07587,1395.2556,-261.27002,L50</property>
+         name="sdm:polyPoints">R50,1325.9153,-261.07587,1395.3729,-261.27002,L50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -371,7 +371,7 @@
       from="View17"
       to="View19">
       <property
-         name="sdm:polyPoints">L50,1582.2751,127.211975,1481.4988,127.82312,R50</property>
+         name="sdm:polyPoints">L50,1582.3925,127.211975,1481.3815,127.82312,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -380,14 +380,6 @@
       to="View33">
       <property
          name="sdm:polyPoints">L50,1399.3815,127.82312,1324.6234,127.13129,R50</property>
-   </TrainFlow>
-   <TrainFlow
-      islink="true"
-      id="TrainFlow78"
-      from="View33"
-      to="View31">
-      <property
-         name="sdm:polyPoints">L50,1242.5061,127.13129,1165.4283,127.45586,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
@@ -420,7 +412,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">R44,88.10126,-269.57138,523.06177,-90.58438,L50</property>
+         name="sdm:polyPoints">R45,87.91869,-269.4541,523.1791,-90.58438,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -434,38 +426,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">R56,86.11729,-262.33682,527.052,91.4557,L50</property>
-   </ControlFlowCase>
-   <TaskFlowCall
-      id="TaskFlowCall46">
-      <property
-         name="runAsDialog">true</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>taskFlowCall1&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
-      <property
-         name="trainStop">false</property>
-      <property
-         name="activityId">taskFlowCall1</property>
-      <property
-         name="x">758.0249</property>
-      <property
-         name="y">-142.95178</property>
-      <property
-         name="documentReference">/WEB-INF/add-new-course.xml</property>
-      <property
-         name="exceptionHandler">false</property>
-      <property
-         name="taskFlowId">add-new-course</property>
-   </TaskFlowCall>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase48"
-      from="View29"
-      to="TaskFlowCall46">
-      <property
-         name="fromOutcome">add</property>
-      <property
-         name="sdm:polyPoints">B50,758.6504,-216.94965,758.0249,-197.41965,T50</property>
+         name="sdm:polyPoints">R55,86.0,-262.4541,527.1693,91.45569,L50</property>
    </ControlFlowCase>
    <TrainFlow
       islink="true"
@@ -473,22 +434,30 @@
       from="View31"
       to="View27">
       <property
-         name="sdm:polyPoints">L50,1083.1937,127.45586,807.89575,124.830444,R50</property>
+         name="sdm:polyPoints">L50,911.58887,126.75467,807.89575,124.830444,R50</property>
    </TrainFlow>
    <TrainFlow
       islink="true"
-      id="TrainFlow53"
+      id="TrainFlow44"
       from="View5"
-      to="View29">
-      <property
-         name="sdm:polyPoints">R50,652.41504,-271.716,717.5331,-271.06693,L50</property>
-   </TrainFlow>
-   <TrainFlow
-      islink="true"
-      id="TrainFlow54"
-      from="View29"
       to="View3">
       <property
-         name="sdm:polyPoints">R50,799.7677,-271.06693,898.0119,-265.37872,L50</property>
+         name="sdm:polyPoints">R50,767.22986,-265.54315,898.0119,-265.37872,L50</property>
+   </TrainFlow>
+   <TrainFlow
+      islink="true"
+      id="TrainFlow45"
+      from="View33"
+      to="View29">
+      <property
+         name="sdm:polyPoints">L50,1242.6234,127.13129,1146.5641,117.12079,R50</property>
+   </TrainFlow>
+   <TrainFlow
+      islink="true"
+      id="TrainFlow46"
+      from="View29"
+      to="View31">
+      <property
+         name="sdm:polyPoints">L50,1064.5641,117.12079,993.7062,126.754684,R50</property>
    </TrainFlow>
 </SDM>

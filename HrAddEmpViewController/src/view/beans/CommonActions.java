@@ -13,7 +13,7 @@ public class CommonActions {
     boolean makeEdit = true; // passport Page
     private boolean editable = true;  // id Page
     private boolean editDrivingLicense = true; // Driving Page
-    private boolean editContract = true;
+    private boolean editContract = true;  // Contract Page
 
     public void setMakeEdit(boolean makeEdit) {
         this.makeEdit = makeEdit;
@@ -108,7 +108,7 @@ public class CommonActions {
     }
 
     public void updateContractDetails(ActionEvent actionEvent) {
-        setEditContract(false);
+        setEditContract(false);// setting edit property for all input text of the form
         this.refreshComponent("pfl1");
     }
 

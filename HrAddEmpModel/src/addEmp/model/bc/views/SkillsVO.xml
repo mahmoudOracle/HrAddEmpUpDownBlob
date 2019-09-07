@@ -25,6 +25,10 @@
         ResId="addEmp.model.bc.views.SkillsVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="EmpSkillsVO1"
+    ViewObjectName="addEmp.model.bc.views.EmpSkillsVO"
+    RowLevelBinds="true"/>
   <EntityUsage
     Name="Skills"
     Entity="HrBCmodel.bc.entities.Skills"/>

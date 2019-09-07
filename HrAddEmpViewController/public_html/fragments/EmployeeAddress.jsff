@@ -197,13 +197,6 @@
                                 <f:validator binding="#{bindings.PostalCode.validator}"/>
                                 <af:convertNumber groupingUsed="false" pattern="#{bindings.PostalCode.format}"/>
                             </af:inputText>
-                            <af:selectOneChoice value="#{bindings.CityId.inputValue}" label="#{bindings.CityId.label}"
-                                                required="#{bindings.CityId.hints.mandatory}"
-                                                shortDesc="#{bindings.CityId.hints.tooltip}" id="soc2"
-                                                autoSubmit="true">
-                                <f:selectItems value="#{bindings.CityId.items}" id="si2"/>
-                                <f:validator binding="#{bindings.CityId.validator}"/>
-                            </af:selectOneChoice>
                             <af:selectOneChoice value="#{bindings.CountryId.inputValue}"
                                                 label="#{bindings.CountryId.label}"
                                                 required="#{bindings.CountryId.hints.mandatory}"
@@ -220,6 +213,15 @@
                                           shortDesc="#{bindings.CountryName.hints.tooltip}" id="it10">
                                 <f:validator binding="#{bindings.CountryName.validator}"/>
                             </af:inputText>
+                            <af:selectOneChoice value="#{bindings.CityId.inputValue}" label="#{bindings.CityId.label}"
+                                                required="#{bindings.CityId.hints.mandatory}"
+                                                shortDesc="#{bindings.CityId.hints.tooltip}" id="soc2"
+                                                autoSubmit="true">
+                                <f:selectItems value="#{bindings.CityId.items}" id="si2"/>
+                                <f:validator binding="#{bindings.CityId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:outputText value="City is: #{bindings.CityName.inputValue}"
+                                           shortDesc="#{bindings.CityName.hints.tooltip}" id="ot3"/>
                         </af:panelFormLayout>
                     </af:dialog>
                 </af:popup>

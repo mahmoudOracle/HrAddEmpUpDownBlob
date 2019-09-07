@@ -31,13 +31,15 @@
                                 <af:selectOneChoice value="#{bindings.CourseId.inputValue}"
                                                     label="#{bindings.CourseId.label}"
                                                     required="#{bindings.CourseId.hints.mandatory}"
-                                                    shortDesc="#{bindings.CourseId.hints.tooltip}" id="soc1">
+                                                    shortDesc="#{bindings.CourseId.hints.tooltip}" id="soc1"
+                                                    simple="true">
                                     <f:selectItems value="#{bindings.CourseId.items}" id="si1"/>
                                     <f:validator binding="#{bindings.CourseId.validator}"/>
                                 </af:selectOneChoice>
                                 <af:spacer width="10" height="10" id="s1"/>
-                                <af:button text="Add New Course" id="b6" icon="/images/add.png"
-                                           useWindow="true" action="add" windowHeight="300" windowWidth="300"/>
+                                <af:button id="b6" icon="/images/add.png"
+                                           actionListener="#{addNewRowAddUpdateTF.ShowAddCoursesPopup}"
+                                           rendered="#{bindings.CourseId.inputValue ne null}"/>
                             </af:panelLabelAndMessage>
                             <af:inputDate value="#{bindings.StartDate.inputValue}"
                                           label="#{bindings.StartDate.hints.label}"
@@ -56,6 +58,31 @@
                             </af:inputDate>
                         </af:group>
                     </af:panelFormLayout>
+                    <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                              binding="#{addNewRowAddUpdateTF.addCoursePopup}" contentDelivery="lazyUncached"
+                              popupCanceledListener="#{addNewRowAddUpdateTF.cancelNewCourseRow}">
+                        <af:dialog id="d1" dialogListener="#{addNewRowAddUpdateTF.confirmNewCourseRow}">
+                            <f:facet name="buttonBar"/>
+                            <af:panelFormLayout id="pfl2">
+                                <af:inputText value="#{bindings.CourseName.inputValue}"
+                                              label="#{bindings.CourseName.hints.label}"
+                                              required="#{bindings.CourseName.hints.mandatory}"
+                                              columns="#{bindings.CourseName.hints.displayWidth}"
+                                              maximumLength="#{bindings.CourseName.hints.precision}"
+                                              shortDesc="#{bindings.CourseName.hints.tooltip}" id="it1">
+                                    <f:validator binding="#{bindings.CourseName.validator}"/>
+                                </af:inputText>
+                                <af:selectOneChoice value="#{bindings.CourseInstitutionsId.inputValue}"
+                                                    label="#{bindings.CourseInstitutionsId.label}"
+                                                    required="#{bindings.CourseInstitutionsId.hints.mandatory}"
+                                                    shortDesc="#{bindings.CourseInstitutionsId.hints.tooltip}"
+                                                    id="soc2">
+                                    <f:selectItems value="#{bindings.CourseInstitutionsId.items}" id="si2"/>
+                                    <f:validator binding="#{bindings.CourseInstitutionsId.validator}"/>
+                                </af:selectOneChoice>
+                            </af:panelFormLayout>
+                        </af:dialog>
+                    </af:popup>
                 </af:panelBox>
             </af:gridCell>
         </af:gridRow>

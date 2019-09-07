@@ -6,6 +6,7 @@
     <variableIterator id="variables"/>
     <iterator Binds="EmployeeCourses1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl"
               id="EmployeeCourses1Iterator" Refresh="ifNeeded"/>
+    <iterator Binds="Courses1" RangeSize="25" DataControl="HrAddEmpAppModuleDataControl" id="Courses1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EmployeeCourses1Iterator" id="EmployeeId">
@@ -27,5 +28,18 @@
     </attributeValues>
     <action IterBinding="EmployeeCourses1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
+    <attributeValues IterBinding="Courses1Iterator" id="CourseName">
+      <AttrNames>
+        <Item Value="CourseName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="Courses1Iterator" StaticList="false" Uses="LOV_CourseInstitutionsId" id="CourseInstitutionsId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="Courses1Iterator" id="CreateInsertCourses" InstanceName="HrAddEmpAppModuleDataControl.Courses1"
+            DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="true"
+            Action="commitTransaction"/>
+    <action id="Rollback" DataControl="HrAddEmpAppModuleDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
   </bindings>
 </pageDefinition>

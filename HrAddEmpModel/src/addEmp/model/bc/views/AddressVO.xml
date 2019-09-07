@@ -37,7 +37,18 @@
   <ViewAccessor
     Name="CityVO1"
     ViewObjectName="addEmp.model.bc.views.CityVO"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="CityVOCriteria"
+      FullName="addEmp.model.bc.views.CityVO.CityVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="countryIdParamInCityVO">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[CountryId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_CityId"
     ListVOName="CityVO1"
@@ -48,11 +59,11 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
-      <Item Value="CountryId"/>
+      <Item Value="CityName"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="CityId"/>
-      <Item Value="CountryId"/>
+      <Item Value="CityName"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="CityName"/>
@@ -122,38 +133,6 @@
     EntityUsage="Address"
     AliasName="POSTAL_CODE"/>
   <ViewAttribute
-    Name="CityId"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="CityId"
-    EntityUsage="Address"
-    AliasName="CITY_ID"
-    LOVName="LOV_CityId">
-    <Properties>
-      <SchemaBasedProperties>
-        <AUTOSUBMIT
-          Value="true"/>
-        <CONTROLTYPE
-          Value="choice"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="CityName"
-    IsUpdateable="false"
-    IsSelected="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="255"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="VIEW_ATTR"
-    SQLType="VARCHAR">
-    <TransientExpression
-      trustMode="untrusted"
-      Name="ExpressionScript"><![CDATA[CityVO.CityName]]></TransientExpression>
-  </ViewAttribute>
-  <ViewAttribute
     Name="CountryId"
     IsNotNull="true"
     PrecisionRule="true"
@@ -169,10 +148,6 @@
           Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
-    <Dependencies>
-      <Item
-        Value="CityId"/>
-    </Dependencies>
   </ViewAttribute>
   <ViewAttribute
     Name="CountryName"
@@ -186,18 +161,52 @@
     SQLType="VARCHAR">
     <TransientExpression
       Name="ExpressionScript"><![CDATA[(RefCountries != null ? RefCountries.Country : "Undefined")]]></TransientExpression>
-    <Dependencies>
-      <Item
-        Value="CityId"/>
-      <Item
-        Value="CountryId"/>
-    </Dependencies>
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
       </SchemaBasedProperties>
     </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CityId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CityId"
+    EntityUsage="Address"
+    AliasName="CITY_ID"
+    LOVName="LOV_CityId">
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="CountryId"/>
+    </Dependencies>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CityName"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR">
+    <TransientExpression
+      trustMode="untrusted"
+      Name="ExpressionScript"><![CDATA[CityVO.CityName]]></TransientExpression>
+    <Dependencies>
+      <Item
+        Value="CountryId"/>
+    </Dependencies>
   </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"

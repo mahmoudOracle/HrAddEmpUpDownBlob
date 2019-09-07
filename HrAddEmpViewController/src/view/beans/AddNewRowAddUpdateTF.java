@@ -21,6 +21,7 @@ import view.util.IteratorUtils;
 
 public class AddNewRowAddUpdateTF {
     private RichPopup addSkillPopup;
+    private RichPopup addCoursePopup;
 
     public AddNewRowAddUpdateTF() {
     }
@@ -122,6 +123,46 @@ public class AddNewRowAddUpdateTF {
             OperationBinding ob = bindings.getOperationBinding("Commit");
             ob.execute();
             IteratorUtils.findIterator("EmployeeAddress1Iterator").executeQuery();
+
+        }
+    }
+
+    public void ShowAddCoursesPopup(ActionEvent actionEvent) {
+        BindingContainer bindings = getBindings();
+        OperationBinding ob = bindings.getOperationBinding("CreateInsertCourses");
+        ob.execute();
+        ADFUtils.showPopupAshish(addCoursePopup, true);
+    }
+
+    public void setAddCoursePopup(RichPopup addCoursePopup) {
+        this.addCoursePopup = addCoursePopup;
+    }
+
+    public RichPopup getAddCoursePopup() {
+        return addCoursePopup;
+    }
+
+    public void cancelNewCourseRow(PopupCanceledEvent popupCanceledEvent) {
+        DCBindingContainer bindingsImpl = (DCBindingContainer) getBindings();
+        DCIteratorBinding dciter = bindingsImpl.findIteratorBinding("Courses1Iterator");
+        ViewObject vo = dciter.getViewObject();
+        Row row = vo.getCurrentRow();
+        if (row != null) {
+            row.refresh(Row.REFRESH_REMOVE_NEW_ROWS |
+                        Row.REFRESH_FORGET_NEW_ROWS); //Works Goood before it leaves blank spaces in the end of lov
+            //(Row.REFRESH_UNDO_CHANGES | Row.REFRESH_WITH_DB_FORGET_CHANGES);//Main Code
+            System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO Inside Row Refresh");
+        }
+    }
+
+    public void confirmNewCourseRow(DialogEvent dialogEvent) {
+        if (dialogEvent.getOutcome()
+                       .name()
+                       .equals("ok")) {
+            BindingContainer bindings = getBindings();
+            OperationBinding ob = bindings.getOperationBinding("Commit");
+            ob.execute();
+            IteratorUtils.findIterator("EmployeeCourses1Iterator").executeQuery();
 
         }
     }

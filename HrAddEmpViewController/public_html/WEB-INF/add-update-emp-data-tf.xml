@@ -66,10 +66,6 @@
         <skip>#{pageFlowScope.trainStopSkipHelper['IdInfo']}</skip>
       </train-stop>
     </view>
-    <view id="Courses">
-      <page>/fragments/Courses.jsff</page>
-      <train-stop/>
-    </view>
     <view id="PassportDetails">
       <page>/fragments/PassportDetails.jsff</page>
       <train-stop>
@@ -142,6 +138,10 @@
         <skip>#{pageFlowScope.trainStopSkipHelper['Skills']}</skip>
       </train-stop>
     </view>
+    <view id="Courses">
+      <page>/fragments/Courses.jsff</page>
+      <train-stop/>
+    </view>
     <view id="Experiences">
       <page>/fragments/Experiences.jsff</page>
       <train-stop>
@@ -176,17 +176,6 @@
         <name>save</name>
       </outcome>
     </task-flow-return>
-    <task-flow-call id="taskFlowCall1">
-      <task-flow-reference>
-        <document>/WEB-INF/add-new-course.xml</document>
-        <id>add-new-course</id>
-      </task-flow-reference>
-      <run-as-dialog>
-        <display-type>
-          <inline-popup/>
-        </display-type>
-      </run-as-dialog>
-    </task-flow-call>
     <train/>
     <control-flow-rule id="__1">
       <from-activity-id>*</from-activity-id>
@@ -197,13 +186,6 @@
       <control-flow-case id="__3">
         <from-outcome>cancel</from-outcome>
         <to-activity-id>cancel</to-activity-id>
-      </control-flow-case>
-    </control-flow-rule>
-    <control-flow-rule id="__14">
-      <from-activity-id>Courses</from-activity-id>
-      <control-flow-case id="__15">
-        <from-outcome>add</from-outcome>
-        <to-activity-id>taskFlowCall1</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>

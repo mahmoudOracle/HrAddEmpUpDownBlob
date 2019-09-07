@@ -218,15 +218,6 @@
                         <af:dialog id="d1" dialogListener="#{addNewRows.confirmNewDeptRow}">
                             <f:facet name="buttonBar"/>
                             <af:panelFormLayout id="pfl2">
-                                <af:inputText value="#{bindings.DepartmentId.inputValue}"
-                                              label="#{bindings.DepartmentId.hints.label}"
-                                              required="#{bindings.DepartmentId.hints.mandatory}"
-                                              columns="#{bindings.DepartmentId.hints.displayWidth}"
-                                              maximumLength="#{bindings.DepartmentId.hints.precision}"
-                                              shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="it8">
-                                    <f:validator binding="#{bindings.DepartmentId.validator}"/>
-                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId.format}"/>
-                                </af:inputText>
                                 <af:inputText value="#{bindings.DepartmentName.inputValue}"
                                               label="#{bindings.DepartmentName.hints.label}"
                                               required="#{bindings.DepartmentName.hints.mandatory}"
@@ -262,14 +253,6 @@
                         <af:dialog id="d2" dialogListener="#{addNewRows.confirmNewJobRow}">
                             <f:facet name="buttonBar"/>
                             <af:panelFormLayout id="pfl3">
-                                <af:inputText value="#{bindings.JobId.inputValue}" label="#{bindings.JobId.hints.label}"
-                                              required="#{bindings.JobId.hints.mandatory}"
-                                              columns="#{bindings.JobId.hints.displayWidth}"
-                                              maximumLength="#{bindings.JobId.hints.precision}"
-                                              shortDesc="#{bindings.JobId.hints.tooltip}" id="it15">
-                                    <f:validator binding="#{bindings.JobId.validator}"/>
-                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.JobId.format}"/>
-                                </af:inputText>
                                 <af:inputText value="#{bindings.JobTitle.inputValue}"
                                               label="#{bindings.JobTitle.hints.label}"
                                               required="#{bindings.JobTitle.hints.mandatory}"

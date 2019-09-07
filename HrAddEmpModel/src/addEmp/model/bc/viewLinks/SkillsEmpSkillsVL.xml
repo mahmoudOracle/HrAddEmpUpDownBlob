@@ -28,7 +28,7 @@
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
     Name="EmpSkillsVO"
-    Cardinality="-1"
+    Cardinality="1"
     Owner="addEmp.model.bc.views.EmpSkillsVO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>

@@ -84,11 +84,6 @@
             DataControl="HrAddEmpAppModuleDataControl"/>
     <listOfValues IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_JobId" id="JobId1"/>
     <listOfValues IterBinding="BaseEmployees2Iterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId1"/>
-    <attributeValues IterBinding="Department1Iterator" id="DepartmentId">
-      <AttrNames>
-        <Item Value="DepartmentId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="Department1Iterator" id="DepartmentName">
       <AttrNames>
         <Item Value="DepartmentName"/>
@@ -102,11 +97,6 @@
     <attributeValues IterBinding="Department1Iterator" id="BracnhId">
       <AttrNames>
         <Item Value="BracnhId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="Jobs1Iterator" id="JobId">
-      <AttrNames>
-        <Item Value="JobId"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="Jobs1Iterator" id="JobTitle">

@@ -104,5 +104,10 @@
         <Item Value="CountryName"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="Address1Iterator" id="CityName">
+      <AttrNames>
+        <Item Value="CityName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
